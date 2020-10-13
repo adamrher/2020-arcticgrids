@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  1 AUG 2020 19:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  13 OCT 2020 15:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -278,37 +278,142 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <10.5> not available
 (Font)              size <10.95> substituted on input line 170.
 
 
-Overfull \hbox (16.82123pt too wide) in paragraph at lines 405--408
+Overfull \hbox (6.19627pt too wide) in paragraph at lines 183--184
+[]\OT1/cmr/m/n/10 General Cir-cu-la-tion Mod-els are a pow-er-ful tool for sim-
+u-lat-ing and un-der-stand-ing 
+ []
+
+
+Overfull \hbox (1.32123pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 the me-te-o-rol-ogy and cli-mate of the poles, which are among 
+the most sen-si-tive re-gions 
+ []
+
+
+Overfull \hbox (3.43239pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 on Earth to global and en-vi-ron-men-tal change. De-spite their
+ im-por-tance, the nu-mer-ics 
+ []
+
+
+Overfull \hbox (9.52908pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 of GCMs have had to grap-ple with the \OT1/cmr/m/it/10 pole-pro
+blem\OT1/cmr/m/n/10 , a nu-mer-i-cal in-sta-bil-ity aris-ing dis- 
+ []
+
+
+Overfull \hbox (8.98796pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 cretiz-ing the equa-tions of mo-tions on a latitude-longitude g
+rid, with the merid-i-ans con- 
+ []
+
+
+Overfull \hbox (21.73788pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 verg-ing at the poles. In the 1970's this is-sue was largely de
+-feated through the wide-spread 
+ []
+
+
+Overfull \hbox (9.11293pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 use of the global spectral-transform method in GCMs. But as com
+-put-ing power has in- 
+ []
+
+
+Overfull \hbox (11.599pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 creased, lo-cal nu-mer-i-cal meth-ods have be-come more de-sir-
+able for their abil-ity to run ef- 
+ []
+
+
+Overfull \hbox (7.29341pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 fi-ciently on mas-sively par-al-lel sys-tems. As the pole-probl
+em has re-emerged in con-tem- 
+ []
+
+
+Overfull \hbox (1.43234pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 po-rary cli-mate mod-els, some com-bi-na-tion of re-duced grids
+ and po-lar fil-ters are nec-es- 
+ []
+
+
+Overfull \hbox (13.23795pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 sary to sub-due this in-sta-bil-ity. An al-ter-na-tive ap-proac
+h is the use of un-struc-tured grids. 
+ []
+
+
+Overfull \hbox (6.3769pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 Un-struc-tured grids per-mit quasi-uniform grid spac-ing glob-a
+lly, thereby elim-i-nat-ing the 
+ []
+
+
+Overfull \hbox (1.23795pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 pole-problem. They are more flex-i-ble than struc-tured, latitu
+de-longitude grids, al-low- 
+ []
+
+
+Overfull \hbox (14.0435pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 ing for re-gional grid re-fine-ment that may be used to cap-tur
+e higher res-o-lu-tion in the po- 
+ []
+
+
+Overfull \hbox (8.15462pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 lar re-gions. Re-gional re-fine-ment of po-lar re-gions may be 
+de-sir-able as latitude-longitude 
+ []
+
+
+Overfull \hbox (16.62682pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 grids, by virtue of the con-ver-gence of merid-i-ans, have grea
+ter hor-i-zon-tal res-o-lu-tion in po- 
+ []
+
+
+Overfull \hbox (0.54347pt too wide) in paragraph at lines 183--184
+\OT1/cmr/m/n/10 lar re-gions com-pared to a quasi-uniform grid con-tain-ing the
+ same de-grees of free-dom.  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+Overfull \hbox (16.82123pt too wide) in paragraph at lines 402--405
 \OT1/cmr/m/n/10 This ma-te-rial is based upon work sup-ported by the Na-tional 
 Cen-ter for At-mo-spheric Re- 
  []
 
 
-Overfull \hbox (23.29344pt too wide) in paragraph at lines 405--408
+Overfull \hbox (23.29344pt too wide) in paragraph at lines 402--405
 \OT1/cmr/m/n/10 search (NCAR), which is a ma-jor fa-cil-ity spon-sored by the N
 SF un-der Co-op-er-a-tive Agree- 
  []
 
 
-Overfull \hbox (1.84904pt too wide) in paragraph at lines 405--408
+Overfull \hbox (1.84904pt too wide) in paragraph at lines 402--405
 \OT1/cmr/m/n/10 ment 1852977. Com-put-ing and data stor-age re-sources, in-clud
 -ing the Cheyenne su-per- 
  []
 
 
-Overfull \hbox (12.73807pt too wide) in paragraph at lines 405--408
+Overfull \hbox (12.73807pt too wide) in paragraph at lines 402--405
 \OT1/cmr/m/n/10 com-puter (doi:10.5065/D6RX99HX), were pro-vided by the Com-pu-
 ta-tional and In-for-ma- 
  []
 
 
-Overfull \hbox (32.23634pt too wide) in paragraph at lines 409--410
+Overfull \hbox (32.23634pt too wide) in paragraph at lines 406--407
 []\OT1/cmr/m/n/10 The data pre-sented in this manuscript is avail-able at $\OT1
 /cmtt/m/n/10 https :// github [] .com / adamrher / 
  []
 
 No file arcticgrids.bbl.
-[2] (./arcticgrids.aux)
+[3] (./arcticgrids.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.45pt have occurred.
@@ -317,11 +422,11 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  3226 strings out of 492616
  44475 string characters out of 6129482
- 118487 words of memory out of 5000000
+ 120487 words of memory out of 5000000
  7093 multiletter control sequences out of 15000+600000
  9281 words of font info for 33 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
- 43i,8n,37p,287b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,8n,37p,1509b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -332,13 +437,14 @@ ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
 l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on arcticgrids.pdf (2 pages, 155263 bytes).
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on arcticgrids.pdf (3 pages, 169156 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

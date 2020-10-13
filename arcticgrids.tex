@@ -179,13 +179,9 @@
 
 %%% Suggested section heads:
 \section{Introduction}
-%
-% The main text should start with an introduction. Except for short
-% manuscripts (such as comments and replies), the text should be divided
-% into sections, each with its own heading.
 
-% Headings should be sentence fragments and do not begin with a
-% lowercase letter or number. Examples of good headings are:
+General Circulation Models are a powerful tool for simulating and understanding the meteorology and climate of the poles, which are among the most sensitive regions on Earth to global and environmental change. Despite their importance, the numerics of GCMs have had to grapple with the \textit{pole-problem}, a numerical instability arising discretizing the equations of motions on a latitude-longitude grid, with the meridians converging at the poles. In the 1970's this issue was largely defeated through the wide-spread use of the global spectral-transform method in GCMs. But as computing power has increased, local numerical methods have become more desirable for their ability to run efficiently on massively parallel systems. As the pole-problem has re-emerged in contemporary climate models, some combination of reduced grids and polar filters are necessary to subdue this instability. An alternative approach is the use of unstructured grids. Unstructured grids permit quasi-uniform grid spacing globally, thereby eliminating the pole-problem. They are more flexible than structured, latitude-longitude grids, allowing for regional grid refinement that may be used to capture higher resolution in the polar regions. Regional refinement of polar regions may be desirable as latitude-longitude grids, by virtue of the convergence of meridians, have greater horizontal resolution in polar regions compared to a quasi-uniform grid containing the same degrees of freedom.
+
 
 \section{Methods}
 \subsection{Grids}
@@ -202,6 +198,7 @@
 \section{Results}
 
 \subsection{Tropospheric temperatures}
+\subsection{Inter-annual Variability}
 \subsection{Synoptic-scale storm characteristics}
 \subsection{Orographic gravity waves emanating from Greenland}
 \subsection{Katabatic winds emanating from Greenland}

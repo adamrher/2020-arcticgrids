@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  14 OCT 2020 19:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 OCT 2020 19:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -705,25 +705,36 @@ Package pdftex.def Info: figs/grid-ne30pg3.pdf  used on input line 213.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3 <./figs/grid-ARCTIC.pdf> <./figs/grid-ARCTICGRIS.pdf>]
-Overfull \hbox (16.82123pt too wide) in paragraph at lines 438--441
+<figs/temp_tseries_GRIS.pdf, id=49, 547.96866pt x 501.91295pt>
+File: figs/temp_tseries_GRIS.pdf Graphic file (type pdf)
+<use figs/temp_tseries_GRIS.pdf>
+Package pdftex.def Info: figs/temp_tseries_GRIS.pdf  used on input line 258.
+(pdftex.def)             Requested size: 284.52756pt x 260.62096pt.
+<figs/temp_violens.pdf, id=50, 547.8212pt x 209.21pt>
+File: figs/temp_violens.pdf Graphic file (type pdf)
+<use figs/temp_violens.pdf>
+Package pdftex.def Info: figs/temp_violens.pdf  used on input line 266.
+(pdftex.def)             Requested size: 369.88582pt x 141.25853pt.
+
+Overfull \hbox (16.82123pt too wide) in paragraph at lines 453--456
 \OT1/cmr/m/n/10 This ma-te-rial is based upon work sup-ported by the Na-tional 
 Cen-ter for At-mo-spheric Re- 
  []
 
 
-Overfull \hbox (23.29344pt too wide) in paragraph at lines 438--441
+Overfull \hbox (23.29344pt too wide) in paragraph at lines 453--456
 \OT1/cmr/m/n/10 search (NCAR), which is a ma-jor fa-cil-ity spon-sored by the N
 SF un-der Co-op-er-a-tive Agree- 
  []
 
 
-Overfull \hbox (1.84904pt too wide) in paragraph at lines 438--441
+Overfull \hbox (1.84904pt too wide) in paragraph at lines 453--456
 \OT1/cmr/m/n/10 ment 1852977. Com-put-ing and data stor-age re-sources, in-clud
 -ing the Cheyenne su-per- 
  []
 
 
-Overfull \hbox (12.73807pt too wide) in paragraph at lines 438--441
+Overfull \hbox (12.73807pt too wide) in paragraph at lines 453--456
 \OT1/cmr/m/n/10 com-puter (doi:10.5065/D6RX99HX), were pro-vided by the Com-pu-
 ta-tional and In-for-ma- 
  []
@@ -734,7 +745,7 @@ Overfull \vbox (184.15733pt too high) has occurred while \output is active []
 
 [4 <./figs/grid-f19.pdf> <./figs/grid-f09.pdf> <./figs/grid-ne30pg2.pdf> <./fig
 s/grid-ne30pg3.pdf>]
-Overfull \hbox (32.23634pt too wide) in paragraph at lines 442--443
+Overfull \hbox (32.23634pt too wide) in paragraph at lines 457--458
 []\OT1/cmr/m/n/10 The data pre-sented in this manuscript is avail-able at $\OT1
 /cmtt/m/n/10 https :// github [] .com / adamrher / 
  []
@@ -763,7 +774,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--62
 cmr/m/it/10 Jour-nal of Cli-mate\OT1/cmr/m/n/10 , 
  []
 
-
+[5 <./figs/temp_tseries_GRIS.pdf> <./figs/temp_violens.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 78--94
 []\OT1/cmr/m/n/10 Herrington, A. R., Lau-ritzen, P. H., Reed, K. A., Gold-haber
 , S., & Eaton, B. E. 
@@ -853,17 +864,17 @@ Underfull \hbox (badness 3838) in paragraph at lines 316--328
 s for global at-mo-spheric 
  []
 
-) [5] (./arcticgrids.aux)
+) [6] (./arcticgrids.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.45pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 3300 strings out of 492616
- 45909 string characters out of 6129482
- 123650 words of memory out of 5000000
- 7157 multiletter control sequences out of 15000+600000
+ 3312 strings out of 492616
+ 46248 string characters out of 6129482
+ 123666 words of memory out of 5000000
+ 7167 multiletter control sequences out of 15000+600000
  9589 words of font info for 34 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
  43i,12n,37p,1634b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -885,10 +896,10 @@ e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on arcticgrids.pdf (5 pages, 2203938 bytes).
+Output written on arcticgrids.pdf (6 pages, 2448972 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 160 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

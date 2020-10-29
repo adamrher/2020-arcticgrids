@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 OCT 2020 19:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 OCT 2020 19:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -705,11 +705,11 @@ Package pdftex.def Info: figs/grid-ne30pg3.pdf  used on input line 213.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3 <./figs/grid-ARCTIC.pdf> <./figs/grid-ARCTICGRIS.pdf>]
-<figs/temp_tseries_GRIS.pdf, id=49, 547.96866pt x 501.91295pt>
+<figs/temp_tseries_GRIS.pdf, id=49, 549.32957pt x 513.97974pt>
 File: figs/temp_tseries_GRIS.pdf Graphic file (type pdf)
 <use figs/temp_tseries_GRIS.pdf>
 Package pdftex.def Info: figs/temp_tseries_GRIS.pdf  used on input line 258.
-(pdftex.def)             Requested size: 284.52756pt x 260.62096pt.
+(pdftex.def)             Requested size: 284.52756pt x 266.22008pt.
 <figs/temp_violens.pdf, id=50, 547.8212pt x 209.21pt>
 File: figs/temp_violens.pdf Graphic file (type pdf)
 <use figs/temp_violens.pdf>
@@ -896,10 +896,10 @@ e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on arcticgrids.pdf (6 pages, 2448972 bytes).
+Output written on arcticgrids.pdf (6 pages, 2440387 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
+ 161 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

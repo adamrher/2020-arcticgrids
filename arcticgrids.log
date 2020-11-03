@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 OCT 2020 19:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  3 NOV 2020 16:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -290,207 +290,213 @@ t sen-si-tive re-gions on Earth
  []
 
 
-Overfull \hbox (3.94624pt too wide) in paragraph at lines 184--185
+Overfull \hbox (6.66849pt too wide) in paragraph at lines 184--185
 \OT1/cmr/m/n/10 to global and en-vi-ron-men-tal change. De-spite their im-por-t
-ance, the nu-mer-ics of GCMs 
+ance, not all GCMs treat the 
  []
 
 
-Overfull \hbox (6.94907pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 have had to grap-ple with the \OT1/cmr/m/it/10 pole-problem []\
-OT1/cmr/m/n/10 Williamson, 2007), an eco-nomic bot-tle-neck 
+Overfull \hbox (13.37659pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 poles the same way nu-mer-i-cally as they do other re-gions of 
+the globe, ow-ing to the \OT1/cmr/m/it/10 pole- 
  []
 
 
-Overfull \hbox (7.68245pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 aris-ing from the con-ver-gence of merid-i-ans into a po-lar si
-n-gu-lar-ity on latitude-longitude 
+Overfull \hbox (13.72704pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/it/10 problem []\OT1/cmr/m/n/10 Williamson, 2007). The pole-problem 
+refers to in-sta-bil-ity aris-ing from the con- 
  []
 
 
-Overfull \hbox (9.51569pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 grids. In the 1970's this is-sue was largely de-feated through 
-wide-spread adap-tion of the 
+Overfull \hbox (7.98799pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 ver-gence of merid-i-ans into a po-lar sin-gu-lar-ity on latitu
+de-longitude grids. In the 1970's 
  []
 
 
-Overfull \hbox (14.66852pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 spec-tral trans-form method in GCMs, which trans-forms grid poi
-nt fields into an isotropic 
+Overfull \hbox (4.84903pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 this is-sue was largely de-feated through wide-spread adap-tion
+ of the spec-tral trans-form 
  []
 
 
-Overfull \hbox (28.4601pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 rep-re-sen-ta-tion in wave space. But as com-put-ing power has 
-in-creased, lo-cal nu-mer-i-cal meth- 
+Overfull \hbox (0.47401pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 meth-ods in GCMs, which trans-forms grid point fields into an i
+sotropic rep-re-sen-ta-tion 
  []
 
 
-Overfull \hbox (0.51569pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 ods have be-come more de-sir-able for their abil-ity to run ef-
-fi-ciently on mas-sively par-al- 
+Overfull \hbox (14.51564pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 in wave space. But as com-put-ing power has in-creased, lo-cal 
+nu-mer-i-cal meth-ods have be- 
  []
 
 
-Overfull \hbox (9.54341pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 lel sys-tems. The pole-problem has thus re-emerged in con-tem-p
-o-rary cli-mate mod-els us- 
+Overfull \hbox (17.29347pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 come more de-sir-able for their abil-ity to run ef-fi-ciently o
+n mas-sively par-al-lel sys-tems. The 
  []
 
 
-Overfull \hbox (12.73799pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 ing latitude-longitude grids, and some com-bi-na-tion of re-duc
-ed grids and po-lar fil-ters are 
+Overfull \hbox (25.76578pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 pole-problem has thus re-emerged in con-tem-po-rary cli-mate mo
+d-els us-ing latitude-longitude 
  []
 
 
-Overfull \hbox (4.8769pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 nec-es-sary to sub-due this in-sta-bil-ity []Jablonowski & Will
-iamson, 2011). An al-ter-na-tive 
+Overfull \hbox (5.71013pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 grids, and some com-bi-na-tion of re-duced grids and po-lar fil
+-ters are nec-es-sary to sub-due 
  []
 
 
-Overfull \hbox (21.96016pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 ap-proach is to use un-struc-tured grids. Un-struc-tured grids 
-per-mit quasi-uniform grid spac- 
+Overfull \hbox (14.54358pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 this in-sta-bil-ity []Jablonowski & Williamson, 2011). An al-te
+r-na-tive ap-proach is to use un- 
  []
 
 
-Overfull \hbox (42.65471pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 ing glob-ally, thereby elim-i-nat-ing the pole-problem. They al
--low for more flex-i-ble grid-structures 
+Overfull \hbox (13.79355pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 struc-tured grids. Un-struc-tured grids per-mit quasi-uniform g
+rid spac-ing glob-ally, thereby 
  []
 
 
-Overfull \hbox (17.09914pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 than latitude-longitude grids, and can sup-port re-gional grid 
-re-fine-ment that may be used 
+Overfull \hbox (14.29353pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 elim-i-nat-ing the pole-problem. They al-low for more flex-i-bl
+e grid-structures than latitude- 
  []
 
 
-Overfull \hbox (2.59904pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 to cap-ture higher res-o-lu-tion in the po-lar re-gions. Re-gio
-nal re-fine-ment of po-lar re-gions 
+Overfull \hbox (4.90463pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 longitude grids, and can sup-port re-gional grid re-fine-ment t
+hat may be used to cap-ture 
  []
 
 
-Overfull \hbox (7.71016pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 may be de-sir-able as latitude-longitude grids, by virtue of th
-e con-ver-gence of merid-i-ans, 
+Overfull \hbox (6.18237pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 higher res-o-lu-tion in the po-lar re-gions. Re-gional re-fine-
+ment of po-lar re-gions may be de- 
  []
 
 
-Overfull \hbox (8.90463pt too wide) in paragraph at lines 184--185
-\OT1/cmr/m/n/10 have higher hor-i-zon-tal res-o-lu-tion in po-lar re-gions com-
-pared to quasi-uniform grids con- 
+Overfull \hbox (16.07127pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 sir-able as latitude-longitude grids, by virtue of the con-ver-
+gence of merid-i-ans, have higher 
  []
 
 
-Overfull \hbox (16.23683pt too wide) in paragraph at lines 186--187
-[]\OT1/cmr/m/n/10 The Com-mu-nity Earth Sys-tem Model, ver-sion 2.2 (CESM; $\OT
-1/cmtt/m/n/10 http :// www [] .cesm [] .ucar [] 
+Overfull \hbox (24.48802pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/10 hor-i-zon-tal res-o-lu-tion in po-lar re-gions com-pared to qua
+si-uniform grids con-tain-ing the same 
  []
 
 
-Overfull \hbox (13.68135pt too wide) in paragraph at lines 186--187
-\OT1/cmtt/m/n/10 .edu / models / cesm2 /$\OT1/cmr/m/n/10 ) sup-ports a di-verse
- num-ber of at-mo-spheric dy-nam-i-cal cores (here- 
+Overfull \hbox (5.07127pt too wide) in paragraph at lines 186--187
+[]\OT1/cmr/m/n/10 The at-mo-spheric com-po-nent of the Com-mu-nity Earth Sys-te
+m Model, ver-sion 2.2 
  []
 
 
-Overfull \hbox (2.17505pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 after re-ferred to as \OT1/cmr/m/it/10 dy-cores\OT1/cmr/m/n/10 
-). These range from dy-cores us-ing latitude-longitude grids, 
+Overfull \hbox (32.34702pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 (CESM; $\OT1/cmtt/m/n/10 http :// www [] .cesm [] .ucar [] .edu
+ / models / cesm2 /$\OT1/cmr/m/n/10 ), the Com-mu-nity At-mo-sphere Model, 
  []
 
 
-Overfull \hbox (5.40465pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 the finite-volume []FV; Lin, 2004) and eu-le-rian spec-tral tra
-ns-form []EUL; Collins et al.[], 
+Overfull \hbox (4.20824pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 ver-sion 6.3 (CAM; $\OT1/cmtt/m/n/10 https :// github [] .com /
+ ESCOMP / CAM / wiki$\OT1/cmr/m/n/10 ), sup-ports a di-verse num- 
  []
 
 
-Overfull \hbox (4.43237pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 2006) mod-els, and dy-cores built on un-struc-tured grids, the 
-spectral-element []SE; Lau- 
+Overfull \hbox (12.17503pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 ber of at-mo-spheric dy-nam-i-cal cores (here-after re-ferred t
+o as \OT1/cmr/m/it/10 dy-cores\OT1/cmr/m/n/10 ). These range from 
  []
 
 
-Overfull \hbox (3.40466pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 ritzen et al.[], 2018) and finite-volume 3 []FV3; Put-man & Lin
-, 2007) mod-els. The EUL 
+Overfull \hbox (15.3491pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 spec-tral trans-form []EUL; Collins et al.[], 2006) mod-els, an
+d dy-cores built on un-struc-tured 
  []
 
 
-Overfull \hbox (24.34904pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 dy-core is the old-est dy-core in the Com-mu-nity At-mo-sphere 
-Model (CAM), the at-mo-spheric 
+Overfull \hbox (5.04349pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 grids, the spectral-element []SE; Lau-ritzen et al.[], 2018) an
+d finite-volume 3 []FV3; Put- 
  []
 
 
-Overfull \hbox (2.18231pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 com-po-nent of CESM, and is the least sup-ported of all the dy-
-cores. FV3 is the newest 
+Overfull \hbox (18.37679pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 man & Lin, 2007) mod-els. The EUL dy-core is the old-est dy-cor
+e in CAM, and is the least 
  []
 
 
-Overfull \hbox (11.87685pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 dy-core in CESM, but it was not fully in-cor-po-rated into the 
-model at the time this work 
+Overfull \hbox (1.32121pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 sup-ported of all the dy-cores. FV3 is the newest dy-core in CE
+SM, but it was not fully 
  []
 
 
-Overfull \hbox (23.96016pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 com-menced, and so is omit-ted from this study. The au-thors in
--stead fo-cus on the two most 
+Overfull \hbox (4.57127pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 in-cor-po-rated into the model at the time this work com-menced
+, and so is omit-ted from 
  []
 
 
-Overfull \hbox (5.93231pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 well sup-ported dy-cores in CESM, SE and FV. The goal of this s
-tudy is to char-ac-ter-ize 
+Overfull \hbox (14.40456pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 this study. The au-thors in-stead fo-cus on the two most well s
+up-ported dy-cores in CESM, 
  []
 
 
-Overfull \hbox (7.62677pt too wide) in paragraph at lines 186--187
-\OT1/cmr/m/n/10 the rep-re-sen-ta-tion of po-lar re-gions us-ing the SE and FV 
-dy-cores, as these mod-els treat 
+Overfull \hbox (10.01567pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 SE and FV. The goal of this study is to char-ac-ter-ize the rep
+-re-sen-ta-tion of po-lar re-gions 
  []
 
 
-Overfull \hbox (0.23787pt too wide) in paragraph at lines 188--189
-[]\OT1/cmr/m/n/10 The Arc-tic re-gion has unique ge-og-ra-phy con-sist-ing of a
- po-lar ocean capped in a 
+Overfull \hbox (0.23787pt too wide) in paragraph at lines 186--187
+\OT1/cmr/m/n/10 us-ing the SE and FV dy-cores, as these mod-els treat the high-
+latitudes, e.g., the pole- 
  []
 
 
-Overfull \hbox (20.84897pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 layer of sea ice, par-tially en-cir-cled by the north-ern coast
-s of the north-ern hemi-sphere con- 
+Overfull \hbox (0.5989pt too wide) in paragraph at lines 188--189
+[]\OT1/cmr/m/n/10 The Arc-tic re-gion has a unique ge-og-ra-phy. It con-sists o
+f a po-lar ocean en-cir-cled 
  []
 
 
-Overfull \hbox (12.57118pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 ti-nents and the large is-land of Green-land. Green-land is cov
--ered in a kilo-me-ters thick ice 
+Overfull \hbox (29.27956pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 by the north-ern coasts of the north-ern hemi-sphere con-ti-nen
+ts and the large is-land of Green- 
  []
 
 
-Overfull \hbox (22.29344pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 sheet, and re-ceives a sub-stan-tial por-tion of its snow-fall 
-from synoptic-scale storms travers- 
+Overfull \hbox (12.72398pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 land, and capped by sea ice for half the year. Green-land is co
+v-ered in a kilo-me-ters thick 
  []
 
 
-Overfull \hbox (6.29338pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 ing up the east-ern sea-board of North Amer-ica, and steered in
- the di-rec-tion of the Ice- 
+Overfull \hbox (0.79341pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 ice sheet, and re-ceives a sub-stan-tial por-tion of its snow-f
+all from synoptic-scale storms 
  []
 
 
-Overfull \hbox (14.36281pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 landic low. Kata-batic winds ac-cel-er-ate down the steep slope
-s of the Green-land Ice Sheet 
+Overfull \hbox (16.9601pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 travers-ing up the east-ern sea-board of North Amer-ica, and st
+eered in the di-rec-tion of the 
+ []
+
+
+Overfull \hbox (26.86281pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 Ice-landic low. Kata-batic winds ac-cel-er-ate down the steep s
+lopes of the Green-land Ice Sheet 
  []
 
 
@@ -506,39 +512,39 @@ ean through river out-lets in
  []
 
 
-Overfull \hbox (11.76569pt too wide) in paragraph at lines 188--189
+Overfull \hbox (14.16846pt too wide) in paragraph at lines 188--189
 \OT1/cmr/m/n/10 Canada and Rus-sia, ice dis-charge and melt wa-ter runoff from 
-the nar-row ab-la-tion zones 
+the pe-riph-ery of GrIS. Po- 
  []
 
 
-Overfull \hbox (12.00177pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 of GrIS. Po-lar Lows form dur-ing the cold sea-son and their ga
-le-speed winds can kick up 
+Overfull \hbox (14.90451pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 lar Lows form dur-ing the cold sea-son and their gale-speed win
+ds can kick up large waves 
  []
 
 
-Overfull \hbox (10.62672pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 large waves and pose a haz-ard to mariners' and coastal com-mu-
-ni-ties. These Arc-tic pro- 
+Overfull \hbox (2.93227pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 and pose a haz-ard to mariners' and coastal com-mu-ni-ties. The
+se Arc-tic pro-cesses have 
  []
 
 
-Overfull \hbox (14.33499pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 cesses have proven chal-leng-ing to rep-re-sent in GCMs, pri-ma
-r-ily due to the fine-scales in- 
+Overfull \hbox (37.94624pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 proven chal-leng-ing to rep-re-sent in GCMs, pri-mar-ily due to
+ the fine-scales in-volved []Bromwich 
  []
 
 
-Overfull \hbox (24.55759pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 volved []Bromwich et al.[], 2001; Smirnova & Gol-ubkin, 2017; v
-an Kam-p-en-hout et al.[], 2018). 
+Overfull \hbox (0.89082pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 et al.[], 2001; Smirnova & Gol-ubkin, 2017; van Kam-p-en-hout e
+t al.[], 2018). As such, the 
  []
 
 
-Overfull \hbox (5.62668pt too wide) in paragraph at lines 188--189
-\OT1/cmr/m/n/10 As such, the Arc-tic serves as a chal-leng-ing test-bed for com
--par-ing the sim-u-lated me-te- 
+Overfull \hbox (8.32121pt too wide) in paragraph at lines 188--189
+\OT1/cmr/m/n/10 Arc-tic serves as a test-bed for com-par-ing the sim-u-lated me
+-te-o-rol-ogy and cli-mate in the 
  []
 
 
@@ -588,57 +594,57 @@ the physics on a finite-volume
  []
 
 
-Overfull \hbox (9.71005pt too wide) in paragraph at lines 190--191
-\OT1/cmr/m/n/10 of the SE dy-core dis-cussed herein are avail-able as part of t
-he CESM2.2 re-lease. A com- 
+Overfull \hbox (8.73787pt too wide) in paragraph at lines 190--191
+\OT1/cmr/m/n/10 son of the lower-resolution physics grid ver-sion of ne30pg3, r
+e-ferred to as ne30pg2, over 
  []
 
 
-Overfull \hbox (4.57123pt too wide) in paragraph at lines 190--191
-\OT1/cmr/m/n/10 par-i-son of the lower-resolution physics grid ver-sion of ne30
-pg3, re-ferred to as ne30pg2, 
+Overfull \hbox (3.29338pt too wide) in paragraph at lines 190--191
+\OT1/cmr/m/n/10 the Arc-tic is in-cluded in this study. All vari-ants of the SE
+ dy-core dis-cussed herein are 
  []
 
 
-Overfull \hbox (0.43233pt too wide) in paragraph at lines 192--193
+Overfull \hbox (12.09903pt too wide) in paragraph at lines 192--193
 []\OT1/cmr/m/n/10 The SE dy-core (not SE-CSLAM) sup-ports re-gional grid re-fin
-e-ment via it's vari- 
+e-ment via its vari-able 
  []
 
 
-Overfull \hbox (10.01569pt too wide) in paragraph at lines 192--193
-\OT1/cmr/m/n/10 able res-o-lu-tion con-fig-u-ra-tion. Two vari-able res-o-lu-ti
-on meshes were de-vel-oped as part of 
+Overfull \hbox (6.12679pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 res-o-lu-tion con-fig-u-ra-tion. Two vari-able res-o-lu-tion me
+shes were de-vel-oped as part of the 
  []
 
 
-Overfull \hbox (5.40445pt too wide) in paragraph at lines 192--193
-\OT1/cmr/m/n/10 the CESM2.2 re-lease that con-tains grid re-fine-ment over the 
-Arc-tic. The ARC-TIC grid 
+Overfull \hbox (6.5711pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 CESM2.2 re-lease that con-tains grid re-fine-ment over the Arc-
+tic. The ARC-TIC grid is a 
  []
 
 
-Overfull \hbox (19.47398pt too wide) in paragraph at lines 192--193
-\OT1/cmr/m/n/10 The ARC-TIC-GRIS grid is sim-i-lar to the ARC-TIC grid, but ad-
-di-tion-ally con-tains a patch 
+Overfull \hbox (20.02954pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 ARC-TIC-GRIS grid is sim-i-lar to the ARC-TIC grid, but ad-di-t
+ion-ally con-tains a patch cov- 
  []
 
 
-Overfull \hbox (7.78355pt too wide) in paragraph at lines 192--193
-\OT1/cmr/m/n/10 cov-er-ing the big is-land of Green-land with $^^A\OML/cmm/m/it
-/10 x \OT1/cmr/m/n/10 = [][]$ res-o-lu-tion. The Arc-tic re-fined grids 
+Overfull \hbox (2.00575pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 er-ing the big is-land of Green-land with $^^A\OML/cmm/m/it/10 
+x \OT1/cmr/m/n/10 = [][]$ res-o-lu-tion. These Arc-tic re-fined grids 
  []
 
 
-Overfull \hbox (9.34897pt too wide) in paragraph at lines 192--193
-\OT1/cmr/m/n/10 are de-picted in Fig-ure 1[], and are avail-able as part of the
- CESM2.2 re-lease. The sur-face 
+Overfull \hbox (2.2239pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 are de-picted in Fig-ure 1[]. The sur-face mass bal-ance of the
+ GrIS is com-pared across all 
  []
 
 
-Overfull \hbox (13.05731pt too wide) in paragraph at lines 192--193
-\OT1/cmr/m/n/10 mass bal-ance of the GrIS is com-pared across all grids and dy-
-cores in this study, and the 
+Overfull \hbox (9.75179pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/10 grids and dy-cores in this study, and the ARCTC-GRIS grid is ce
+r-tainly at an ad-van-tage 
  []
 
 
@@ -705,36 +711,41 @@ Package pdftex.def Info: figs/grid-ne30pg3.pdf  used on input line 213.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3 <./figs/grid-ARCTIC.pdf> <./figs/grid-ARCTICGRIS.pdf>]
-<figs/temp_tseries_GRIS.pdf, id=49, 549.32957pt x 513.97974pt>
-File: figs/temp_tseries_GRIS.pdf Graphic file (type pdf)
-<use figs/temp_tseries_GRIS.pdf>
-Package pdftex.def Info: figs/temp_tseries_GRIS.pdf  used on input line 258.
-(pdftex.def)             Requested size: 284.52756pt x 266.22008pt.
-<figs/temp_violens.pdf, id=50, 547.8212pt x 209.21pt>
+<figs/temp_violens.pdf, id=49, 547.8212pt x 209.21pt>
 File: figs/temp_violens.pdf Graphic file (type pdf)
 <use figs/temp_violens.pdf>
-Package pdftex.def Info: figs/temp_violens.pdf  used on input line 266.
+Package pdftex.def Info: figs/temp_violens.pdf  used on input line 258.
 (pdftex.def)             Requested size: 369.88582pt x 141.25853pt.
+<figs/temp_tseries_GRIS.pdf, id=50, 549.32957pt x 513.97974pt>
+File: figs/temp_tseries_GRIS.pdf Graphic file (type pdf)
+<use figs/temp_tseries_GRIS.pdf>
+Package pdftex.def Info: figs/temp_tseries_GRIS.pdf  used on input line 266.
+(pdftex.def)             Requested size: 284.52756pt x 266.22008pt.
+<figs/temp_PRECT.pdf, id=51, 544.93903pt x 340.73227pt>
+File: figs/temp_PRECT.pdf Graphic file (type pdf)
+<use figs/temp_PRECT.pdf>
+Package pdftex.def Info: figs/temp_PRECT.pdf  used on input line 274.
+(pdftex.def)             Requested size: 369.88582pt x 231.27374pt.
 
-Overfull \hbox (16.82123pt too wide) in paragraph at lines 453--456
+Overfull \hbox (16.82123pt too wide) in paragraph at lines 461--464
 \OT1/cmr/m/n/10 This ma-te-rial is based upon work sup-ported by the Na-tional 
 Cen-ter for At-mo-spheric Re- 
  []
 
 
-Overfull \hbox (23.29344pt too wide) in paragraph at lines 453--456
+Overfull \hbox (23.29344pt too wide) in paragraph at lines 461--464
 \OT1/cmr/m/n/10 search (NCAR), which is a ma-jor fa-cil-ity spon-sored by the N
 SF un-der Co-op-er-a-tive Agree- 
  []
 
 
-Overfull \hbox (1.84904pt too wide) in paragraph at lines 453--456
+Overfull \hbox (1.84904pt too wide) in paragraph at lines 461--464
 \OT1/cmr/m/n/10 ment 1852977. Com-put-ing and data stor-age re-sources, in-clud
 -ing the Cheyenne su-per- 
  []
 
 
-Overfull \hbox (12.73807pt too wide) in paragraph at lines 453--456
+Overfull \hbox (12.73807pt too wide) in paragraph at lines 461--464
 \OT1/cmr/m/n/10 com-puter (doi:10.5065/D6RX99HX), were pro-vided by the Com-pu-
 ta-tional and In-for-ma- 
  []
@@ -745,7 +756,7 @@ Overfull \vbox (184.15733pt too high) has occurred while \output is active []
 
 [4 <./figs/grid-f19.pdf> <./figs/grid-f09.pdf> <./figs/grid-ne30pg2.pdf> <./fig
 s/grid-ne30pg3.pdf>]
-Overfull \hbox (32.23634pt too wide) in paragraph at lines 457--458
+Overfull \hbox (32.23634pt too wide) in paragraph at lines 465--466
 []\OT1/cmr/m/n/10 The data pre-sented in this manuscript is avail-able at $\OT1
 /cmtt/m/n/10 https :// github [] .com / adamrher / 
  []
@@ -774,7 +785,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--62
 cmr/m/it/10 Jour-nal of Cli-mate\OT1/cmr/m/n/10 , 
  []
 
-[5 <./figs/temp_tseries_GRIS.pdf> <./figs/temp_violens.pdf>]
+[5 <./figs/temp_violens.pdf> <./figs/temp_tseries_GRIS.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 78--94
 []\OT1/cmr/m/n/10 Herrington, A. R., Lau-ritzen, P. H., Reed, K. A., Gold-haber
 , S., & Eaton, B. E. 
@@ -859,25 +870,28 @@ en-land sur-face
  []
 
 
+Underfull \vbox (badness 1769) has occurred while \output is active []
+
+ [6 <./figs/temp_PRECT.pdf>]
 Underfull \hbox (badness 3838) in paragraph at lines 316--328
 []\OT1/cmr/m/n/10 Williamson, D.  (2007).  The evo-lu-tion of dy-nam-i-cal core
 s for global at-mo-spheric 
  []
 
-) [6] (./arcticgrids.aux)
+) [7] (./arcticgrids.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.45pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 3312 strings out of 492616
- 46248 string characters out of 6129482
- 123666 words of memory out of 5000000
- 7167 multiletter control sequences out of 15000+600000
+ 3318 strings out of 492616
+ 46392 string characters out of 6129482
+ 123674 words of memory out of 5000000
+ 7172 multiletter control sequences out of 15000+600000
  9589 words of font info for 34 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
- 43i,12n,37p,1634b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,12n,37p,1707b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -896,10 +910,10 @@ e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on arcticgrids.pdf (6 pages, 2440387 bytes).
+Output written on arcticgrids.pdf (7 pages, 3650694 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 173 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

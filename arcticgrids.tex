@@ -215,17 +215,6 @@ The goal of this study is to characterize the representation of high-latitude re
 \label{fig:vr-grids}
 \end{figure}
 
-\begin{figure}[t]
-\begin{center}
-\begin{tabular}{cccc}
-         \includegraphics[width=60mm]{figs/temp_grisres_dxoverglc.pdf}&
-         \includegraphics[width=60mm]{figs/temp_grisres_error.pdf} \\
-\end{tabular}
-\end{center}
-\caption{.}
-\label{fig:prect}
-\end{figure}
-
 \section{Methods}\label{sec:methods}
 \subsection{Dynamical cores}
 
@@ -237,19 +226,19 @@ The FV dycore is a hydrostatic model that integrates the equations of motion usi
 
 \subsubsection{Spectral-element dynamical core}
 
-The SE dycore is a hydrostatic model that integrates the equations of motion using a high-order continuous Galerkin method \cite{TTI1997JCP,DetAl2012IJHPCA,LetAl2018JAMES}. The computational domain is a cubed-sphere grid tiled with quadrilateral elements (e.g., Figure~\ref{fig:vr-grids}). Each element contains a fourth order basis set in the two horizontal directions, with the solution defined at the roots of the basis functions, the Gauss-Lobatto-Lagendre (GLL) quadrature points. This results in 16 GLL point values within each element, with 12 of the points lying on the (shared) element boundary. Communication between elements happens via the direct stiffness summation \cite{canuto2007}, which applies a numerical flux to the element boundaries to reconcile overlapping nodal point values to produces a continuous global basis set. 
+The SE dycore is a hydrostatic model that integrates the equations of motion using a high-order continuous Galerkin method \cite{TTI1997JCP,DetAl2012IJHPCA}. The computational domain is a cubed-sphere grid tiled with quadrilateral elements (e.g., Figure~\ref{fig:vr-grids}). Each element contains a fourth order basis set in the two horizontal directions, with the solution defined at the roots of the basis functions, the Gauss-Lobatto-Lagendre (GLL) quadrature points. This results in 16 GLL nodal points within each element, with 12 of the points lying on the (shared) element boundary. Communication between elements happens via the direct stiffness summation \cite{canuto2007}, which applies a numerical flux to the element boundaries that reconciles overlapping nodal point values and produces a continuous global basis set. 
 
 As with the FV dycore, the dynamics evolve in floating Lagrangian layers that are subsequently mapped to a Eulerian reference grid. A dry mass vertical coordinate was more recently implemented for thermodynamic consistency with condensates \cite{LetAl2018JAMES}. The 2D dynamics have no implicit dissipation and so hyperviscosity operators are applied to all prognostic variables to remove spurious numerical errors \cite{DetAl2012IJHPCA}. Laplacian damping is applied in the sponge layer.
 
-The SE dycore supports regional grid refinement via its variable-resolution configuration, requiring two enhancements over uniform resolution grids. (1) As the numerical viscosity increases with resolution, explicit hyperviscosity relaxes according to the local element size, reducing their strength  by about an order of magnitude per doubling of resolution. A tensor-hyperviscosity formulation is used \cite{GetAl2014GMD}, which adjusts the coefficients in two orthogonal directions to more accurately target highly distorted quadrilateral elements. (2) The topography boundary conditions need to be smoothed in a way that does not excite grid scale modes. The NCAR topography software \cite{gmdd-8-4623-2015} was modified to scale the smoothing radius by the local element size. 
+The SE dycore supports regional grid refinement via its variable-resolution configuration, requiring two enhancements over uniform resolution grids. (1) As the numerical viscosity increases with resolution, explicit hyperviscosity relaxes according to the local element size, reducing in strength  by about an order of magnitude per halving of the grid spacing. A tensor-hyperviscosity formulation is used \cite{GetAl2014GMD}, which adjusts the coefficients in two orthogonal directions to more accurately target highly distorted quadrilateral elements. (2) The topography boundary conditions need to be smoothed in a way that does not excite grid scale modes, and so  the NCAR topography software \cite{gmdd-8-4623-2015} was modified to scale the smoothing radius by the local element size. 
 
 For spectral-element grids with quasi-uniform grid spacing, a variant in which tracer advection is computed using the Conservative Semi-Lagrangian Mulit-tracer tranport scheme is used instead \cite<CSLAM;>{LTOUNGK2017MWR}. CSLAM has improved tracer property preservation and accelerated multi-tracer transport. It uses a seperate grid from the spectral-element dynamics, through dividing each element into $3\times3$ quasi-equal area control volumes. The physical parameterizations are computed from the state on the CSLAM grid, which has clear advantages over the default SE dycore in which the physics are evaluated at the GLL nodal points \cite{HL2018MWR}. 
 
 \subsection{Grids}
 
-Six grid are evaluated in this study (Table X). The FV dycore is run with $1^{\circ}$ and $2^{\circ}$ grid spacing, referred to as $f09$ and $f19$, respectively (Figure~\ref{fig:uni-grids}a,b). The $1^{\circ}$ equivalent of the CAM-SE-CSLAM grid is also run, referred to as $ne30pg3$ (Figure~\ref{fig:uni-grids}c), where $ne$ refers to a grid with of $ne \times ne$ elements per cubed-sphere face, and $pg$ denotes that there are $pg \times pg$  control volumes per element for computing the physics. An additional $1^{\circ}$ CAM-SE-CSLAM grid is run, in which the physics are computed on a grid that is $\frac{3}{2} \times$ larger than $pg3$ grid spacing, $ne30pg2$ \cite<Figure~\ref{fig:uni-grids}d;>{HETAL2019JAMES}.
+Six grid are evaluated in this study (Table X). The FV dycore is run with $1^{\circ}$ and $2^{\circ}$ grid spacing, referred to as $f09$ and $f19$, respectively (Figure~\ref{fig:uni-grids}a,b). The $1^{\circ}$ equivalent of the CAM-SE-CSLAM grid is also run, referred to as $ne30pg3$ (Figure~\ref{fig:uni-grids}c), where $ne$ refers to a grid with of $ne \times ne$ elements per cubed-sphere face, and $pg$ denotes that there are $pg \times pg$  control volumes per element for computing the physics. An additional $1^{\circ}$ CAM-SE-CSLAM grid is run, but with the physical paramerizations computed on a grid that contains $2\times2$ control volumes per element, $ne30pg2$ \cite<Figure~\ref{fig:uni-grids}d;>{HETAL2019JAMES}.
 
-Two variable resolution meshes were developed as part of the CESM2.2 release that contains grid refinement over the Arctic. The software package SQuadgen (\url{https://github.com/ClimateGlobalChange/squadgen}) was used to generate these meshes. The $ARCTIC$ grid is a $1^{\circ}$ grid with $\frac{1}{4}^{\circ}$ regional refinement over the broader Arctic region. The $ARCTICGRIS$ grid is identical to the $ARCTIC$ grid, but contains an additional patch covering the big island of Greenland with $\frac{1}{8}^{\circ}$ resolution. Both of these grids are depicted in Figure~\ref{fig:vr-grids}.
+Two variable resolution meshes were developed as part of the CESM2.2 release that contains grid refinement over the Arctic (Figure~\ref{fig:vr-grids}). The Arctic meshes were developed using the software package SQuadgen (\url{https://github.com/ClimateGlobalChange/squadgen}). The $ARCTIC$ grid is a $1^{\circ}$ grid with $\frac{1}{4}^{\circ}$ regional refinement over the broader Arctic region. The $ARCTICGRIS$ grid is identical to the $ARCTIC$ grid, but contains an additional patch covering the big island of Greenland with $\frac{1}{8}^{\circ}$ resolution.
 
 \subsection{Physical parameterizations}
 
@@ -259,15 +248,16 @@ The CAM6 physical parameterization package (hereafter referred to as the \textit
 
 All grids and dycores are run using an identical transient 1979-1998 AMIP-style configuration, with prescribed monthly SST/sea-ice after \cite{CESMSST}. This configuration refers to the $FHIST \ compset$ and runs out of the box in CESM2.2. The Community Land Model (CLM5; \url{https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html}), which uses the same grid as the atmosphere grid, calculates the surface energy balance at each land tile within a grid cell, which is used to compute snow and bare ice melting to inform the surface mass balance (SMB) of a glacier unit \cite{VKETAL2020JGR}. Ice accumulation is modeled as a capping flux, or snow in excess of the assumed 10 m snow cap, and refreezing of liquid within the snowpack additionally acts as a source of mass in the SMB calculation. Since the 10 m snowcap needs to be reached in the accumulation zone to simulate the SMB, the snow depths in the variable-resolution grids were spun-up  by forcing CLM5 offline, cycling over 20 years of a fully coupled $ARCTIC$ run for about 500 years. The uniform resolution grids are all initialized with an SMB from an existing $f09$ spun-up initial condition. 
 
-\subsection{Observational datasets}
-\subsubsection{ERA5}
-\subsubsection{LIVVkit 2.1}
-\subsection{TempestExtremes}
-\subsection{StormCompositer}
-
 \section{Results}\label{sec:results}
 
 \subsection{Tropospheric temperatures}
+
+Before delving into the simulated characteristics of the Arctic, an understanding of the global mean differences between the grids and dycores are assessed, Figure~\ref{fig:dT-lores} shows the climatological, zonal mean height plots expressed as differences between the uniform resolution grids and dycores. The $f09$ grid is warmer than the $f19$ grid, primarily in the mid-to-high latitudes and throughout the depth of the troposphere.This is common response to increasing horizontal resolution in GCMs \cite{PS2002CD,RETAL2006JC}, and \cite{HK2020QJRMS} has shown that this occurs in CAM due to greater resolved vertical velocities that in turn, facilitate greater condensational heating in the macrophyiscs routine in CLUBB. The right columns in Figure~\ref{fig:dT-lores} supports this interpretation, which shows an increase in the climatological CLUBB heating in the mid-latitudes in the $f09$ grid. 
+
+As the SE dycore is less diffusive than the FV dycore, the resolved vertical velocities are larger in the SE dycore, and so a modest, resolution-like sensitivity occurs in which $ne30pg3$ is warmer than $f09$ (Figure~\ref{fig:dT-lores}). The stratosphere has a different signal, in which $ne30pg3$ is much cooler than $f09$ in the mid-to-high latitudes. The differences in temperature between $ne30pg3$ and $ne30pg2$ are small, with a slight warming near the tropopause at high latitudes. This is consistent with the similar climates using these grids shown in \cite{HETAL2019JAMES}.
+
+In comparing the variable-resolution grids to the uniform resolution grids is convoluted because not only is the resolution higher in refinement region, but the physics time-step is shorter in the variable-resolution runs. An additional $ne30pg3$ simulations was run with physics time-step used in the $ARCTIC$ grid, referred to as $ne30pg3^{*}$. Figure~\ref{fig:dT-hires} shows the changes in climatological temperature in zonal-mean height space between $ne30pg3^{*}$ and $ne30pg3$. A similar warming response to increase resolution occurs when the time-step is reduced, and the mechanism is similar in that this faciliates greater condensational heating by CLUBB. Figure~\ref{fig:dT-hires} shows difference in climatolgical temperature between the $ARCTIC$ grid and the $ne30pg3^{*}$ grid. The greater condensational heating and warmer temperatures are confined to the regionally refined region when the impact of physics time-steps is removed from the analysis.
+
 \subsection{Inter-annual variability}
 \subsection{Synoptic-scale storm characteristics}
 \subsection{Orographic gravity waves emanating from Greenland}
@@ -287,6 +277,33 @@ All grids and dycores are run using an identical transient 1979-1998 AMIP-style 
 %
 
 \section{Conclusions}\label{sec:conclusions}
+
+\begin{figure}[t]
+\begin{center}
+         \includegraphics[width=130mm]{figs/temp_dhgt_panel_STEND_CLUBB-lores.pdf}
+\end{center}
+\caption{.}
+\label{fig:dT-lores}
+\end{figure}
+
+\begin{figure}[t]
+\begin{center}
+         \includegraphics[width=130mm]{figs/temp_dhgt_panel_STEND_CLUBB_phytstep_JJA.pdf}
+\end{center}
+\caption{.}
+\label{fig:dT-hires}
+\end{figure}
+
+\begin{figure}[t]
+\begin{center}
+\begin{tabular}{cccc}
+         \includegraphics[width=60mm]{figs/temp_grisres_dxoverglc.pdf}&
+         \includegraphics[width=60mm]{figs/temp_grisres_error.pdf} \\
+\end{tabular}
+\end{center}
+\caption{.}
+\label{fig:prect}
+\end{figure}
 
 \begin{figure}[t]
 \begin{center}

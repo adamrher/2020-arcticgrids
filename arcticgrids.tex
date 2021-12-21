@@ -248,20 +248,25 @@ The CAM convention is that the physics package determines the vertical resolutio
 
 \subsection{Experimental design}
 
-All grids and dycores are run using an identical transient 1979-1998 AMIP-style configuration, with prescribed monthly SST/sea-ice after \cite{CESMSST}. This configuration refers to the $FHIST \ compset$ and runs out of the box in CESM2.2. The Community Land Model (CLM5; \url{https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html}), which uses the same grid as the atmosphere grid, calculates the surface energy balance at each land tile within a grid cell, which is used to compute snow and bare ice melting to inform the surface mass balance (SMB) of a glacier unit \cite{VKETAL2020JGR}. Ice accumulation is modeled as a capping flux, or snow in excess of the assumed 10 m snow cap, and refreezing of liquid within the snowpack additionally acts as a source of mass in the SMB calculation. Since the 10 m snowcap needs to be reached in the accumulation zone to simulate the SMB, the snow depths in the variable-resolution grids were spun-up  by forcing CLM5 offline, cycling over 20 years of a fully coupled $ARCTIC$ run for about 500 years. The uniform resolution grids are all initialized with an SMB from an existing $f09$ spun-up initial condition. 
+All grids and dycores are run using an identical transient 1979-1998 AMIP-style configuration, with prescribed monthly SST/sea-ice after \cite{CESMSST}. This configuration refers to the $FHIST \ compset$ and runs out of the box in CESM2.2. The Community Land Model (CLM5; \url{https://escomp.github.io/ctsm-docs/versions/release-clm5.0/html/users_guide/index.html}), which uses the same grid as the atmosphere grid, calculates the surface energy balance at each land tile within a grid cell, which is used to compute snow and bare ice melting to inform the surface mass balance (SMB) of a glacier unit \cite{VKETAL2020JGR}. For land ice tiles coinciding with the Antarctic and Greenland Ice Sheets, the surface energy and mass balance are evaluated at ten elevation classes, and integrated over sub-grid hypsometric area-elevation bins for more accurate estimation of the surface mass balance of the big ice sheets. Ice accumulation is modeled as a capping flux, or snow in excess of the assumed 10 m snow cap, and refreezing of liquid within the snowpack additionally acts as a source of mass in the SMB calculation. Since the 10 m snowcap needs to be reached in the accumulation zone to simulate the SMB, the snow depths in the variable-resolution grids were spun-up  by forcing CLM5 offline, cycling over 20 years of a fully coupled $ARCTIC$ run for about 500 years. The uniform resolution grids are all initialized with an SMB from an existing $f09$ spun-up initial condition. 
 
 \section{Results}\label{sec:results}
 
 \subsection{Tropospheric temperatures}
 
-Before delving into the simulated characteristics of the Arctic, an understanding of the global mean differences between the grids and dycores are assessed, Figure~\ref{fig:dT-lores} shows the climatological, zonal mean height plots expressed as differences between the uniform resolution grids and dycores. The $f09$ grid is warmer than the $f19$ grid, primarily in the mid-to-high latitudes and throughout the depth of the troposphere. This is a common response to increasing horizontal resolution in GCMs \cite{PS2002CD,RETAL2006JC}, and \cite{HK2020QJRMS} has shown that this occurs in CAM due to greater resolved vertical velocities that in turn, facilitate greater condensational heating in the macrophyiscs routine in CLUBB. The right columns in Figure~\ref{fig:dT-lores} supports this interpretation, which shows an increase in the climatological CLUBB heating in the mid-latitudes in the $f09$ grid. 
+Before delving into the simulated characteristics of the Arctic, the global mean differences between the grids and dycores are assessed, Figure~\ref{fig:dT-lores} shows the climatological, zonal mean height plots expressed as differences between the uniform resolution grids and dycores. The $f09$ grid is warmer than the $f19$ grid, primarily in the mid-to-high latitudes and throughout the depth of the troposphere. This is a common response to increasing horizontal resolution in GCMs \cite{PS2002CD,RETAL2006JC}, and \cite{HK2020QJRMS} has shown that this occurs in CAM due to greater resolved vertical velocities that in turn, facilitate greater condensational heating in the macrophyiscs routine in CLUBB. The right columns in Figure~\ref{fig:dT-lores} supports this interpretation, which shows an increase in the climatological CLUBB heating in the mid-latitudes in the $f09$ grid. 
 
 As the SE dycore is less diffusive than the FV dycore, the resolved vertical velocities are larger in the SE dycore, and so a modest, resolution-like sensitivity occurs in which $ne30pg3$ is warmer than $f09$ (Figure~\ref{fig:dT-lores}). The stratosphere has a different response, in which $ne30pg3$ is much cooler than $f09$ in the mid-to-high latitudes. The differences in temperature between $ne30pg3$ and $ne30pg2$ are small, with a slight warming near the tropopause at high latitudes. This is consistent with the similar climates found between these grids in \cite{HETAL2019JAMES}.
 
 Comparing the variable-resolution grids to the uniform resolution grids is complicated because we are simultaneously increase the grid resolution and reducing the physics time-step, both which noticeably impact the solution \cite{W2008TELLUS}. An additional $ne30pg3$ simulations is run with the physics time-step used in the $ARCTIC$ grid, referred to as $ne30pg3^{*}$. Figure~\ref{fig:dT-hires} shows the change in climatological temperature in zonal-mean height space between $ne30pg3^{*}$ and $ne30pg3$. A similar warming response to increasing resolution occurs when the time-step is reduced, and the mechanism is similar in that the shorter time-step facilitates greater condensational heating by CLUBB. Figure~\ref{fig:dT-hires} shows the difference in climatological temperature between the $ARCTIC$ grid and the $ne30pg3^{*}$ grid. The greater condensational heating and warmer temperatures are confined to the regionally refined region when the impact of physics time-steps is removed from the analysis.
 
-\subsection{Inter-annual variability}
 \subsection{Synoptic-scale storm characteristics}
+Synoptic storms are identified and analyzed using TempestExtremes \cite{UETAL2021}. The new $ARCTIC$ grid contains $\frac{1}{4}^{\circ}$ refinement north of about $45^{\circ}$ latitude, and so the storm tracker is applied to this region for the $ARCTIC$ and $ne30pg3$ run to identify differences in storm characteristics due to horizontal resolution. Figure~\ref{fig:comp-mean} shows the mean precipitation rates averaged over all January storms identified by TempestExtremes. The iconic comma structure of the mid-latitude cyclones is simulated in $ne30pg3$ and $ARCTIC$ grids, with the magnitudes about the same in these two grids, with perhaps a marginal increase in precipitation rates in the storm center of the $ARCTIC$ grid. For good measure, the $ne30pg3^{*}$ run is also plotted, and looks more-or-less identical to the $ne30pg3$ run.
+
+As has been previously reported, horizontal resolution can have large impacts on extreme precipitation events. Figure~\ref{fig:comp-pdf} is a PDF of the precipitation rates associated with synoptic storms, by month. The $ARCTIC$ run has larger extreme precipitation rates compared to $ne30pg3$ in every month, but the increase is greatest in the summer months, which coincides with the most extreme events of the year. This is primarily due to an increase in resolution; the $ne30pg3^{*}$ only marginally increases the precipitation rates compared with $ne30pg3$. It should also be noted that the PDFs are evaluated on an identical composite grid, and so storm statistics are not impacted by differences in dataset resolution.
+
+The extreme precipitation rates in the $ARCTIC$ run are closer to the ERA5 reanalysis than in $ne30pg3$ (Figure~\ref{fig:comp-pdf}). It's difficult to know the extent that the extreme precipitation rates in ERA5 are constrained by data assimilation, or whether these precipitation rates are due to using a similar $\frac{1}{4}^{\circ}$ model as the $ARCTIC$ grid. However, precipitation rates in $\frac{1}{4}^{\circ}$ models tend to produce more skillful extreme events \cite{OETAL2016JAMES}. 
+
 \subsection{Orographic gravity waves emanating from Greenland}
 \subsection{Katabatic winds emanating from Greenland}
 \subsection{Greenland surface mass balance}
@@ -294,6 +299,22 @@ Comparing the variable-resolution grids to the uniform resolution grids is compl
 \end{center}
 \caption{.}
 \label{fig:dT-hires}
+\end{figure}
+
+\begin{figure}[t]
+\begin{center}
+         \includegraphics[width=130mm]{figs/temp_composite_ge45N_JAN-PRECT.pdf}
+\end{center}
+\caption{.}
+\label{fig:comp-mean}
+\end{figure}
+
+\begin{figure}[t]
+\begin{center}
+         \includegraphics[width=130mm]{figs/temp_composite_ge45N_pdf.pdf}
+\end{center}
+\caption{.}
+\label{fig:comp-pdf}
 \end{figure}
 
 \begin{figure}[t]

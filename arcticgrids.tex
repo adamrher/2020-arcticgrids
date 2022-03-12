@@ -254,6 +254,14 @@ All grids and dycores are run using an identical transient 1979-1998 AMIP-style 
 
 The SMB is the sum of the mass source term, accumulation, or equivalently, precipitation, and the mass sink term, ablation. Ablation can be expressed as total runoff, which is a combination of liquid precipitation and snow and ice melt. Not all liquid precipitation becomes runoff; rain may penetrate pore spaces in the firn layer and freeze. These processes are represented by various components in CESM, and the surface mass balance is computed by CLM. CLM uses a downscaling technique to account for sub-grid variability in SMB. In short, the ice sheet patch in a CLM grid cell is subdivided into 10 elevation classes (EC), weighted by their respective area fractions at each EC, which is derived from a high resolution GrIS elevation model. The near surface air temperature, humidity and air density are calculated at each EC using an assumed lapse rate and the elevation difference from the grid mean, allowing for the precipitation rates to be repartitioned into solid or liquid based on the temperature of each EC. This technique allows for a unique surface energy balance and surface mass balance at each EC. Integrating over all ECs using the area weights then provides a more accurate SMB. For a more detailed description of how the surface mass balance is computed in the CESM, see \cite{KETAL2020JAMES}.
 
+\begin{figure}[t]
+\begin{center}
+         \includegraphics[width=130mm]{figs/temp_grisres.pdf}
+\end{center}
+\caption{The spatial properties of the GrIS for different grids in this study. (Left) approximate average grid spacing over GrIS, (right) GrIS area error, computed as the relative differences from a 4km dataset used to create the CESM ice masks.}
+\label{fig:grisdx}
+\end{figure}
+
 Simulated SMB are compared against several observational data products. RACMO2.3 11km and RACMO2.3p2 5.5km regional simulations forced by reanalysis at it's domain boundaries, performs very skillfully relative to observations and is therefore considered an ideal modeling target \cite{NETAL2019SCIENCE}. The Land Ice Verification and Validation toolkit (LIVVkit), version 2.1 \cite{LIVVkit} maintains a repository of snow pit and and ice core SMB measurements, as well as the IceBridge radar accumulation dataset.
 
 A common high resolution dataset is used to generate the GrIS boundary conditions using the CLM dataset creation tools. Since we are interested in the total ice sheet SMB, we seek to integrate various components of the SMB over a common ice mask to get the total mass change over the GrIS. Figure~\ref{fig:grisdx} shows the GrIS ice mask area across the different grids, as a function of the number of grid points. Due to the use conservative regridding in the CLM tools, the interpolation errors are small and ice mask areas have less than $1.5\%$ errors relative to the raw ice mask dataset. RACMO, however, uses a smaller ice mask, about $3\%$ smaller than the raw CLM dataset. While Figure~\ref{fig:grisdx} suggests integrating quantities over the native ice mask of the six grids would probably not suffer from large errors due to differing ice masks, we seek to compare these integrated quantities with RACMO. Therefore, we have taken the approach of mapping all model fields to the lowest resolution grids and integrating over the respective low resolution ice masks. Due to the sensitivity of mapping errors to grid coordinates (i.e., unstructured or structured), all quantities are evaluated on both the $f19$ and $ne30pg2$ low resolution grids. In addition, two remapping packages are used; ESMF conservative and a TempestRemap high-order, monotone algorithm. In all, each integrated quantity is evaluated (at most) four times to provide an estimate of uncertainty due to differences in grid coordinates and remapping algorithm.
@@ -322,17 +330,6 @@ The extreme precipitation rates in the $ARCTIC$ run are closer to the ERA5 reana
 \end{center}
 \caption{.}
 \label{fig:dT-hires}
-\end{figure}
-
-\begin{figure}[t]
-\begin{center}
-\begin{tabular}{cccc}
-         \includegraphics[width=60mm]{figs/temp_grisres_dxoverglc.pdf}&
-         \includegraphics[width=60mm]{figs/temp_grisres_error.pdf} \\
-\end{tabular}
-\end{center}
-\caption{.}
-\label{fig:grisdx}
 \end{figure}
 
 \begin{figure}[t]

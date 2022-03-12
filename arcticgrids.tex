@@ -79,7 +79,7 @@
 
 % Example: \title{This is a test title}
 
-\title{Impact of grids and dynamical cores in CESM2.2 on the meteorology and climate of the Arctic}
+\title{Impact of grids and dynamical cores in CESM2.2 on the surface mass balance of the Greenland Ice Sheet}
 
 %% ------------------------------------------------------------------------ %%
 %
@@ -252,19 +252,39 @@ All grids and dycores are run using an identical transient 1979-1998 AMIP-style 
 
 \subsection{SMB Analysis}
 
+The SMB is the sum of the mass source term, accumulation, or equivalently, precipitation, and the mass sink term, ablation. Ablation can be expressed as total runoff, which is a combination of liquid precipitation and snow and ice melt. Not all liquid precipitation becomes runoff; rain may penetrate pore spaces in the firn layer and freeze. These processes are represented by various components in CESM, and the surface mass balance is computed by CLM. CLM uses a downscaling technique to account for sub-grid variability in SMB. In short, the ice sheet patch in a CLM grid cell is subdivided into 10 elevation classes (EC), weighted by their respective area fractions at each EC, which is derived from a high resolution GrIS elevation model. The near surface air temperature, humidity and air density are calculated at each EC using an assumed lapse rate and the elevation difference from the grid mean, allowing for the precipitation rates to be repartitioned into solid or liquid based on the temperature of each EC. This technique allows for a unique surface energy balance and surface mass balance at each EC. Integrating over all ECs using the area weights then provides a more accurate SMB. For a more detailed description of how the surface mass balance is computed in the CESM, see \cite{KETAL2020JAMES}.
+
+Simulated SMB are compared against several observational data products. RACMO2.3 11km and RACMO2.3p2 5.5km regional simulations forced by reanalysis at it's domain boundaries, performs very skillfully relative to observations and is therefore considered an ideal modeling target \cite{NETAL2019SCIENCE}. The Land Ice Verification and Validation toolkit (LIVVkit), version 2.1 \cite{LIVVkit} maintains a repository of snow pit and and ice core SMB measurements, as well as the IceBridge radar accumulation dataset.
+
 A common high resolution dataset is used to generate the GrIS boundary conditions using the CLM dataset creation tools. Since we are interested in the total ice sheet SMB, we seek to integrate various components of the SMB over a common ice mask to get the total mass change over the GrIS. Figure~\ref{fig:grisdx} shows the GrIS ice mask area across the different grids, as a function of the number of grid points. Due to the use conservative regridding in the CLM tools, the interpolation errors are small and ice mask areas have less than $1.5\%$ errors relative to the raw ice mask dataset. RACMO, however, uses a smaller ice mask, about $3\%$ smaller than the raw CLM dataset. While Figure~\ref{fig:grisdx} suggests integrating quantities over the native ice mask of the six grids would probably not suffer from large errors due to differing ice masks, we seek to compare these integrated quantities with RACMO. Therefore, we have taken the approach of mapping all model fields to the lowest resolution grids and integrating over the respective low resolution ice masks. Due to the sensitivity of mapping errors to grid coordinates (i.e., unstructured or structured), all quantities are evaluated on both the $f19$ and $ne30pg2$ low resolution grids. In addition, two remapping packages are used; ESMF conservative and a TempestRemap high-order, monotone algorithm. In all, each integrated quantity is evaluated (at most) four times to provide an estimate of uncertainty due to differences in grid coordinates and remapping algorithm.
 
 \section{Results}\label{sec:results}
 
 \subsection{Tropospheric temperatures}
 
-Before delving into the simulated characteristics of the Arctic, the global mean differences between the grids and dycores are assessed, Figure~\ref{fig:dT-lores} shows the climatological, zonal mean height plots expressed as differences between the uniform resolution grids and dycores. The $f09$ grid is warmer than the $f19$ grid, primarily in the mid-to-high latitudes and throughout the depth of the troposphere. This is a common response to increasing horizontal resolution in GCMs \cite{PS2002CD,RETAL2006JC}, and \cite{HK2020QJRMS} has shown that this occurs in CAM due to greater resolved vertical velocities that in turn, facilitate greater condensational heating in the macrophyiscs routine in CLUBB. The right columns in Figure~\ref{fig:dT-lores} supports this interpretation, which shows an increase in the climatological CLUBB heating in the mid-latitudes in the $f09$ grid. 
+Before delving into the simulated characteristics of the Arctic, the global mean differences between the various grids and dycores are assessed. Figure~\ref{fig:dT-lores} shows the climatological, zonal mean height plots expressed as differences between the uniform resolution grids and dycores. The $f09$ grid is warmer than the $f19$ grid, primarily in the mid-to-high latitudes and throughout the depth of the troposphere. This is a common response to increasing horizontal resolution in GCMs \cite{PS2002CD,RETAL2006JC}, and \cite{HK2020QJRMS} has shown that this occurs in CAM due to greater resolved vertical velocities that in turn, facilitate greater condensational heating in the macrophyiscs routine in CLUBB. The right columns in Figure~\ref{fig:dT-lores} supports this interpretation, which shows an increase in the climatological CLUBB heating in the mid-latitudes in the $f09$ grid. 
 
 As the SE dycore is less diffusive than the FV dycore, the resolved vertical velocities are larger in the SE dycore, and so a modest, resolution-like sensitivity occurs in which $ne30pg3$ is warmer than $f09$ (Figure~\ref{fig:dT-lores}). The stratosphere has a different response, in which $ne30pg3$ is much cooler than $f09$ in the mid-to-high latitudes. The differences in temperature between $ne30pg3$ and $ne30pg2$ are small, with a slight warming near the tropopause at high latitudes. This is consistent with the similar climates found between these grids in \cite{HETAL2019JAMES}.
 
 Comparing the variable-resolution grids to the uniform resolution grids is complicated because we simultaneously increase the grid resolution and reduce the physics time-step, both which noticeably impact the solution \cite{W2008TELLUS}. An additional $ne30pg3$ simulations is run with the physics time-step used in the $ARCTIC$ grid, referred to as $ne30pg3^{*}$. Figure~\ref{fig:dT-hires} shows the change in climatological temperature in zonal-mean height space between $ne30pg3^{*}$ and $ne30pg3$. A similar warming response to increasing resolution occurs when the time-step is reduced, and the mechanism is similar in that the shorter time-step facilitates greater condensational heating by CLUBB. Figure~\ref{fig:dT-hires} shows the difference in climatological temperature between the $ARCTIC$ grid and the $ne30pg3^{*}$ grid. The greater condensational heating and warmer temperatures are confined to the regionally refined region when the impact of physics time-steps is removed from the analysis.
 
-\subsection{Synoptic-scale storm characteristics}
+\subsection{Greenland surface mass balance}
+
+The surface mass balance (SMB) of the Greenland Ice Sheet (GrIS) is simulated in all grids and dycores in this study. As the accuracy of the computed SMB is sensitive to grid resolution, Figure~\ref{fig:grisdx} shows the average grid spacing for all six grids in this study. The $ne30pg2$ grid has the coarsest representation with an average $\Delta x=160~km$, and the $ARCTICGRIS$ grid has the highest resolution with an average $\Delta x=14.6~km$, similar to the grid spacing of the $11~km$ RACMO model. The $ne30pg3$ grid has an average $\Delta x=111.2~km$, which is substantially more coarse than the $f09$ grid, having an average $\Delta x=60~km$. This is interesting because $ne30pg3$ and $f09$ have similar average grid spacing over the entire globe, and comparable computational costs, but due to the convergence of meridians the finite-volume model has enhanced resolution over GrIS. The $ARCTIC$ grid has an average grid spacing over GrIS of $\Delta x=27.8~km$, and is about 10 times more expensive than the $1^{\circ}$ models. The $ARCTICGRIS$ grid is about twice as expensive as the $ARCTIC$ grid.
+
+The climatological mean precipitation bias over GrIS is shown in Figure~\ref{fig:grisdx}, defined as differences from the RACMO2.3p2 5.5km solution \cite{NETAL2019SCIENCE}. What sticks out is that the uniform $1^{\circ}-2^{\circ}$ grids have positive bias centered over the southern dome. The $ARCTIC$ runs improves this bias substantially, and is all but eliminated in $ARCTCIGRIS$ run. The southern dome bias is therefore due to inadequate horizontal resolution, which is consistent with the results of \cite{VETAL2018TC}. Southeast Greenland has the largest accumulation rates in GrIS due to synoptic systems moving in from the southeast, which become orographically lifted by the steep southeast ice sheet margin, dumping large amounts of precipitation along the southeast coast. At lower horizontal resolutions, the topography is too smooth and large amounts of moisture penetrates further inland, incorrectly dumping large amounts of precipitation onto the interior of the ice sheet.
+
+Figure~\ref{fig:tseries} shows time-series of integrated precipitation and snow/ice melt over the GrIS in the various different grids and dycores, with both RACMO2.3 and 2.3p2 show in black. The 1979-1998 climatological mean values are provided as circles on the right side of the panels. The uniform $1^{\circ}-2^{\circ}$ grids all show a distinctive positive bias in precipitation due to this over-prediction of interior precipitation rates. The the variable-resolution grids have the smallest precipitation biases, providing a comparable solution to RACMO.The $f19$ and $f09$ perform similarly, with +110 Gt/yr bias, whereas $ne30pg3$ is biased by about +170 Gt/yr and $ne30pg2$, +230 Gt/yr. The results suggest that uniform resolution spectral-element grids have larger biases than the finite-volume grids, consistent with spectral-element grids having a coarser representation of GrIS (Figure~\ref{fig:grisdx}). While it seems likely that $ne30pg2$ has the largest bias of all the grids, it's difficult to say for certain that the $ne30pg3$ precipitation biases are worse than the finite-volume grids, owing to the use of a single realization for each grid.
+
+The combined snow/ice melt integrated over the GrIS is given by the bottom panel of Figure~\ref{fig:tseries}. The $ARCTIC$ grid simulates the most realistic melt rates, with all other grids tending to have larger melt rates than RACMO. The $ARCTICGRIS$ grid over predicts melting by about 150 Gt/yr. This is likely due to an anomalously warm lower troposphere during the summer, relative to the $ARCTIC$ run (not shown). The $f19$ and $f09$ melting rates are improved over $ARCTICGRIS$, with a positive melt bias between 70-90 Gt/yr. The spectral-element grids have the largest positive melt bias, between 210-230 Gt/yr.
+
+Figure~\ref{fig:pointdiff} shows the distribution of point-wise differences from LIVVkit observational database, as a violin plot. The IceBridge dataset is exclusively from the interior of the ice sheet and represents accumulation rates. The uniform $1^{\circ}-2^{\circ}$ grids have similar median errors of about +35-50 mm.w.e, while the variable-resolution errors are noticeably smaller. The in-situ observations in the accumulation zone, shown in the middle plot looks very similar to the IceBridge errors, and so provides confidence that the variable-resolution grids are outperforming the uniform grids in the interior accumulation zone. The errors evaluated at in-situ ablation zone measurements are in tension with the RACMO results in Figure~\ref{fig:tseries}, indicating that the uniform $1^{\circ}-2^{\circ}$ grids perform similarly, the $ARCTIC$ grid showing a reduction in bias and the $ARCTICGRIS$ having the smallest bias of all the grids. However, the in-situ ablation measurements are sparse in time and space, and so there is a large uncertainty in extending these results to the entirety of the ablation zone.
+
+The infamous k-transect mass balance profile is contained in the LIVVkit database, and shown in Figure~\ref{fig:trans}, along with the all the simulations. The in-situ observation points seem to be nicely replicated by the $ARCTCIGRIS$ run, whereas the $ARCTIC$ grid seems to biased positive in the higher-elevations of the ablation zone. The $f09$ grid is surprisingly competitive with the variable-resolution grids, capturing a realistic slope of the elevation-SMB curve. The elevation-SMB slopes of the uniform spectral-element and $f19$ grid simulate too shallow a slope in the higher elevation regions of the k-transect. Figure~\ref{ztrans} shows the representation of the surface of the ice sheet along these transects in the simulations, compared to a high resolution elevation dataset. The $1^{\circ}-2^{\circ}$ grids are noticeably coarse, with only a handful of grid cells populating the transect. The $f09$ grid is a bit of an exception, since the grid cells become very narrow in the meridional direction at high latitudes, and so a larger number of grid cells can populate the transect, consistent with its skillful representation of the ablation zone.
+
+What the authors refer to as the ``b-transect" in northwest Greenland (Figure~\ref{fig:trans}) is characterized by orographic precipitation, resulting in the accumulation zone extending down to the ice margin. The variable resolution grids perform relatively well, with larger SMBs at lower elevations where the precipitation rates are highest, whereas the $1^{\circ}-2^{\circ}$ grids underestimate the SMB in these lower elevation regions. Only the variable resolution grids can capture the local reduction in SMB in the 1500-2000 m region. The skill of the variable-resolution grids is clearly related to the accurate representation of this steep transect, while also capturing the protrusion around 1500-2000 m that coincides with the local minimum in SMB (Figure~\ref{ztrans}).
+
+\subsection{Impact of horizontal resolution on extremes}
 Synoptic storms are identified and analyzed using TempestExtremes \cite{UETAL2021}. The new $ARCTIC$ grid contains $\frac{1}{4}^{\circ}$ refinement north of about $45^{\circ}$ latitude, and so the storm tracker is applied to this region for the $ARCTIC$ and $ne30pg3$ run to identify differences in storm characteristics due to horizontal resolution. Figure~\ref{fig:comp-mean} shows the mean precipitation rates averaged over all January storms identified by TempestExtremes. The iconic comma structure of the mid-latitude cyclones is simulated in $ne30pg3$ and $ARCTIC$ grids, with the magnitudes about the same in these two grids, with perhaps a marginal increase in precipitation rates in the storm center of the $ARCTIC$ grid. For good measure, the $ne30pg3^{*}$ run is also plotted, and looks more-or-less identical to the $ne30pg3$ run.
 
 As has been previously reported, horizontal resolution can have large impacts on extreme precipitation events. Figure~\ref{fig:comp-pdf} is a PDF of the precipitation rates associated with synoptic storms, by month. The $ARCTIC$ run has larger extreme precipitation rates compared to $ne30pg3$ in every month, but the increase is greatest in the summer months, which coincides with the most extreme events of the year. This is primarily due to an increase in resolution; the $ne30pg3^{*}$ only marginally increases the precipitation rates compared with $ne30pg3$. The $f09$ and $f19$ grids looks similar to $ne30pg3$, but with $f09$ having more frequent extreme precipitation events than $f19$ (not shown). It should also be noted that the PDFs are evaluated on an identical composite grid for all runs, and so storm statistics are not impacted by differences in output resolution.
@@ -273,9 +293,6 @@ The extreme precipitation rates in the $ARCTIC$ run are closer to the ERA5 reana
 
 \subsection{Orographic gravity waves emanating from Greenland}
 \subsection{Katabatic winds emanating from Greenland}
-\subsection{Greenland surface mass balance}
-
-The surface mass balance (SMB) of the Greenland Ice Sheet (GrIS) is simulated in all grids and dycores in this study. As the accuracy of the computed SMB is sensitive to grid resolution, Figure~\ref{fig:grisdx} shows the average grid spacing for all six grids in this study. The $ne30pg2$ grid has the coarsest representation with an average $\Delta x=160~km$, and the $ARCTICGRIS$ grid has the highest resolution with an average $\Delta x=14.6~km$, similar to the grid spacing of the $11~km$ RACMO model. The $ne30pg3$ grid has an average $\Delta x=111.2~km$, which is substantially more coarse than the $f09$ grid, having an average $\Delta x=60~km$. This is interesting because $ne30pg3$ and $f09$ have similar average grid spacing over the entire globe, and comparable computational costs, but due to the convergence of meridians the finite-volume model has enhanced resolution over GrIS. The $ARCTIC$ grid has an average grid spacing over GrIS of $\Delta x=27.8~km$, and is about 10 times more expensive than the $1^{\circ}$ models. The $ARCTICGRIS$ grid is about twice as expensive as the $ARCTIC$ grid.
 
 % \section{Materials and Methods}
 % Here is text on Materials and Methods.
@@ -309,22 +326,6 @@ The surface mass balance (SMB) of the Greenland Ice Sheet (GrIS) is simulated in
 
 \begin{figure}[t]
 \begin{center}
-         \includegraphics[width=130mm]{figs/temp_composite_ge45N_JAN-PRECT.pdf}
-\end{center}
-\caption{.}
-\label{fig:comp-mean}
-\end{figure}
-
-\begin{figure}[t]
-\begin{center}
-         \includegraphics[width=130mm]{figs/temp_composite_ge45N_pdf.pdf}
-\end{center}
-\caption{.}
-\label{fig:comp-pdf}
-\end{figure}
-
-\begin{figure}[t]
-\begin{center}
 \begin{tabular}{cccc}
          \includegraphics[width=60mm]{figs/temp_grisres_dxoverglc.pdf}&
          \includegraphics[width=60mm]{figs/temp_grisres_error.pdf} \\
@@ -338,7 +339,7 @@ The surface mass balance (SMB) of the Greenland Ice Sheet (GrIS) is simulated in
 \begin{center}
          \includegraphics[width=130mm]{figs/temp_diffRACMO23p2_5p5km.pdf}
 \end{center}
-\caption{Climatological (1979-1998) annual precipitation rate bias relative to the RACMO2.3p2 5.5km resolution data product \cite{NETAL2019SCIENCE}.}
+\caption{Climatological (1979-1998) annual precipitation rate bias (in mm/yr) relative to the RACMO2.3p2 5.5km resolution data product \cite{NETAL2019SCIENCE}.}
 \label{fig:prect}
 \end{figure}
 
@@ -350,21 +351,13 @@ The surface mass balance (SMB) of the Greenland Ice Sheet (GrIS) is simulated in
 \label{fig:tseries}
 \end{figure}
 
-\begin{figure}[t]
-\begin{center}
-         \includegraphics[width=100mm]{figs/temp_climo_GRIS.pdf}
-\end{center}
-\caption{.}
-\label{fig:climo}
-\end{figure}
-
-\begin{figure}[t]
-\begin{center}
-         \includegraphics[width=100mm]{figs/temp_tseries_BASIN_uqmap.pdf}
-\end{center}
-\caption{.}
-\label{fig:zwally}
-\end{figure}
+%\begin{figure}[t]
+%\begin{center}
+%         \includegraphics[width=100mm]{figs/temp_tseries_BASIN_uqmap.pdf}
+%\end{center}
+%\caption{.}
+%\label{fig:zwally}
+%\end{figure}
 
 \begin{figure}[t]
 \begin{center}
@@ -377,23 +370,40 @@ The surface mass balance (SMB) of the Greenland Ice Sheet (GrIS) is simulated in
 \begin{figure}[t]
 \begin{center}
 \begin{tabular}{cccc}
-         \includegraphics[width=100mm]{figs/temp_ktransect.pdf} \\
-         \includegraphics[width=100mm]{figs/temp_btransect.pdf} \\
+         \includegraphics[width=25mm]{figs/temp_icemask.pdf} \\
+         \includegraphics[width=50mm]{figs/temp_zsmb_ktrans_obsperiod.pdf}&
+         \includegraphics[width=50mm]{figs/temp_zsmb_btrans_obsperiod.pdf} \\
 \end{tabular}
 \end{center}
 \caption{.}
-\label{fig:prect}
+\label{fig:trans}
 \end{figure}
 
 \begin{figure}[t]
 \begin{center}
 \begin{tabular}{cccc}
-         \includegraphics[width=60mm]{figs/temp_zsmb_ktrans_obsperiod.pdf}&
-         \includegraphics[width=60mm]{figs/temp_zsmb_btrans_obsperiod.pdf} \\
+         \includegraphics[width=100mm]{figs/temp_ktransect.pdf} \\
+         \includegraphics[width=100mm]{figs/temp_btransect.pdf} \\
 \end{tabular}
 \end{center}
 \caption{.}
-\label{fig:prect}
+\label{fig:ztrans}
+\end{figure}
+
+\begin{figure}[t]
+\begin{center}
+         \includegraphics[width=130mm]{figs/temp_composite_ge45N_JAN-PRECT.pdf}
+\end{center}
+\caption{.}
+\label{fig:comp-mean}
+\end{figure}
+
+\begin{figure}[t]
+\begin{center}
+         \includegraphics[width=130mm]{figs/temp_composite_ge45N_pdf.pdf}
+\end{center}
+\caption{.}
+\label{fig:comp-pdf}
 \end{figure}
 
 %Text here ===>>>

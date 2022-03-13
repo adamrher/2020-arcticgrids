@@ -200,7 +200,7 @@ The goal of this study is to characterize the representation of high-latitude re
          \includegraphics[width=60mm]{figs/grid-ne30pg3.pdf} \\
 \end{tabular}
 \end{center}
-\caption{.}
+\caption{Computational grids for the uniform $1^{\circ}-2^{\circ}$ grids in this study.}
 \label{fig:uni-grids}
 \end{figure}
 
@@ -211,7 +211,7 @@ The goal of this study is to characterize the representation of high-latitude re
          \includegraphics[width=60mm]{figs/grid-ARCTICGRIS.pdf} \\
 \end{tabular}
 \end{center}
-\caption{.}
+\caption{Spectral-element grid for the variable-resolution ARCTIC grid in this study. Note that this is not the computational grid; each element has $3\times3$ independent grid points.}
 \label{fig:vr-grids}
 \end{figure}
 
@@ -252,13 +252,13 @@ All grids and dycores are run using an identical transient 1979-1998 AMIP-style 
 
 \subsection{SMB Analysis}
 
-The SMB is the sum of the mass source term, accumulation, or equivalently, precipitation, and the mass sink term, ablation. Ablation can be expressed as total runoff, which is a combination of liquid precipitation and snow and ice melt. Not all liquid precipitation becomes runoff; rain may penetrate pore spaces in the firn layer and freeze. These processes are represented by various components in CESM, and the surface mass balance is computed by CLM. CLM uses a downscaling technique to account for sub-grid variability in SMB. In short, the ice sheet patch in a CLM grid cell is subdivided into 10 elevation classes (EC), weighted by their respective area fractions at each EC, which is derived from a high resolution GrIS elevation model. The near surface air temperature, humidity and air density are calculated at each EC using an assumed lapse rate and the elevation difference from the grid mean, allowing for the precipitation rates to be repartitioned into solid or liquid based on the temperature of each EC. This technique allows for a unique surface energy balance and surface mass balance at each EC. Integrating over all ECs using the area weights then provides a more accurate SMB. For a more detailed description of how the surface mass balance is computed in the CESM, see \cite{KETAL2020JAMES}.
+The SMB is the sum of the mass source term, accumulation (i.e., precipitation), and the mass sink term, ablation. Ablation can be expressed as sublimation plus total runoff, with runoff being a combination of liquid precipitation and snow and ice melt. Not all liquid precipitation becomes runoff; rain may penetrate pore spaces in the firn layer and freeze, forming ice lenses in the subsurface. All these processes are represented by different components in CESM, but the surface mass balance proper is computed by CLM. CLM uses a downscaling technique to account for sub-grid variability in SMB. In short, the ice sheet patch in a CLM grid cell is subdivided into 10 elevation classes (EC), weighted by their respective area fractions at each EC, which is derived from a high resolution GrIS elevation model. The near surface air temperature, humidity and air density are calculated at each EC using an assumed lapse rate and the elevation difference from the grid mean, allowing for the precipitation rates to be repartitioned into solid or liquid based on the temperature of each EC. This technique allows for a unique surface energy balance and surface mass balance at each EC. Integrating over all ECs using the area weights then provides a more accurate SMB. For a more detailed description of how the surface mass balance is computed in the CESM, see \cite{KETAL2020JAMES}.
 
 \begin{figure}[t]
 \begin{center}
          \includegraphics[width=130mm]{figs/temp_grisres.pdf}
 \end{center}
-\caption{The spatial properties of the GrIS for different grids in this study. (Left) approximate average grid spacing over GrIS, (right) GrIS area error, computed as the relative differences from a 4km dataset used to create the CESM ice masks.}
+\caption{The spatial properties of the GrIS as represented by different grids in this study. (Left) approximate average grid spacing over GrIS, (right) GrIS area error, computed as the relative differences from a 4km dataset used to create the CESM ice masks.}
 \label{fig:grisdx}
 \end{figure}
 

@@ -1,0 +1,189 @@
+/* DATA DESCRIPTION:
+Citation:	van de Wal, Roderik S W; Boot, W; Smeets, C J P Paul; Snellen, H; van den Broeke, Michiel R; Oerlemans, Johannes (2012): Surface mass balance along the K-transect in West Greenland. PANGAEA, https://doi.org/10.1594/PANGAEA.779181, 
+	Supplement to: van de Wal, RSW et al. (2012): Twenty-one years of mass balance observations along the K-transect, West-Greenland. Earth System Science Data, 4(1), 31-35, https://doi.org/10.5194/essd-4-31-2012
+Abstract:	A 21-year record is presented of surface mass balance measurements along the K-transect. The series covers the period 1990-2011. Data are available at 8 sites along a transect over an altitude range of 390 - 1850 m at approximately 67° N in West Greenland. The surface mass balance gradient is on average 3.8 x 10**-3 m w.e./m, and the mean equilibrium line altitude is 1553 m a.s.l. Only the lower 3 sites within 10 km of the margin experience a significant increasing trend in the ablation over the entire period.
+Related to:	van de Wal, Roderik S W; van den Broeke, Michiel R; Oerlemans, Johannes (2006): Surface mass-balance observations and automatic weather station data along a transect near Kangerlussuaq, West Greenland. Annals of Glaciology, 42, 311-316, https://doi.org/10.3189/172756405781812529
+Other version:	Surface mass balance along the K-transect in West Greenland 1990-2011 (URI: hdl:10013/epic.39032.d001)
+Coverage:	MEDIAN LATITUDE: 67.052625 * MEDIAN LONGITUDE: -49.112750 * SOUTH-BOUND LATITUDE: 66.992000 * WEST-BOUND LONGITUDE: -50.195000 * NORTH-BOUND LATITUDE: 67.099000 * EAST-BOUND LONGITUDE: -47.015000
+	DATE/TIME START: 1990-01-01T00:00:00 * DATE/TIME END: 2010-01-01T00:00:00
+	MINIMUM ELEVATION: 383.0 m * MAXIMUM ELEVATION: 1850.0 m
+Event(s):	SHR (K-transect) * LATITUDE: 67.099000 * LONGITUDE: -49.936000 * ELEVATION: 710.0 m * LOCATION: West Greenland Margin * METHOD/DEVICE: Observation (OBSE) * COMMENT: Distance from western ice margin: 14 km
+	Site-10 (K-transect) * LATITUDE: 67.000000 * LONGITUDE: -47.015000 * ELEVATION: 1850.0 m * LOCATION: West Greenland Margin * METHOD/DEVICE: Observation (OBSE) * COMMENT: Distance from western ice margin: 143 km
+	Site-4 (K-transect) * LATITUDE: 67.097000 * LONGITUDE: -50.195000 * ELEVATION: 383.0 m * LOCATION: West Greenland Margin * METHOD/DEVICE: Observation (OBSE) * COMMENT: Distance from western ice margin: 3 km
+	Site-5 (K-transect) * LATITUDE: 67.098000 * LONGITUDE: -50.084000 * ELEVATION: 490.0 m * LOCATION: West Greenland Margin * METHOD/DEVICE: Observation (OBSE) * COMMENT: Distance from western ice margin: 6 km
+	Site-6 (K-transect) * LATITUDE: 67.078000 * LONGITUDE: -49.396000 * ELEVATION: 1010.0 m * LOCATION: West Greenland Margin * METHOD/DEVICE: Observation (OBSE) * COMMENT: Distance from western ice margin: 37 km
+	Site-7 (K-transect) * LATITUDE: 66.992000 * LONGITUDE: -49.150000 * ELEVATION: 1110.0 m * LOCATION: West Greenland Margin * METHOD/DEVICE: Observation (OBSE) * COMMENT: Distance from western ice margin: 52 km
+	Site-8 (K-transect) * LATITUDE: 67.005000 * LONGITUDE: -48.876000 * ELEVATION: 1260.0 m * LOCATION: West Greenland Margin * METHOD/DEVICE: Observation (OBSE) * COMMENT: Distance from western ice margin: 63 km
+	Site-9 (K-transect) * LATITUDE: 67.052000 * LONGITUDE: -48.250000 * ELEVATION: 1520.0 m * LOCATION: West Greenland Margin * METHOD/DEVICE: Observation (OBSE) * COMMENT: Distance from western ice margin: 91 km
+Parameter(s):	Event label (Event)
+	DATE/TIME (Date/Time) * GEOCODE
+	Date/time end (Date/time end)
+	Mass balance in water equivalent per year [mm w.e./a] (MB) * PI: van de Wal, Roderik S W (r.s.w.vandewal@uu.nl)
+	Comment of event (Comment)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	326 data points
+*/
+Event	Date/Time	Date/time end	MB [mm w.e./a]	Comment
+Site-4	1990	1991	-4.23	Distance from western ice margin: 3 km
+Site-4	1991	1992	-2.14	Distance from western ice margin: 3 km
+Site-4	1992	1993	-3.05	Distance from western ice margin: 3 km
+Site-4	1993	1994	-3.58	Distance from western ice margin: 3 km
+Site-4	1994	1995	-4.41	Distance from western ice margin: 3 km
+Site-4	1995	1996	-4.04	Distance from western ice margin: 3 km
+Site-4	1996	1997	-4.40	Distance from western ice margin: 3 km
+Site-4	1997	1998	-4.08	Distance from western ice margin: 3 km
+Site-4	1998	1999	-4.55	Distance from western ice margin: 3 km
+Site-4	1999	2000	-4.17	Distance from western ice margin: 3 km
+Site-4	2000	2001	-4.58	Distance from western ice margin: 3 km
+Site-4	2001	2002	-4.23	Distance from western ice margin: 3 km
+Site-4	2002	2003	-5.04	Distance from western ice margin: 3 km
+Site-4	2003	2004	-4.68	Distance from western ice margin: 3 km
+Site-4	2004	2005	-4.28	Distance from western ice margin: 3 km
+Site-4	2005	2006	-4.17	Distance from western ice margin: 3 km
+Site-4	2006	2007	-4.70	Distance from western ice margin: 3 km
+Site-4	2007	2008	-4.29	Distance from western ice margin: 3 km
+Site-4	2008	2009	-3.97	Distance from western ice margin: 3 km
+Site-4	2009	2010	-5.90	Distance from western ice margin: 3 km
+Site-4	2010	2011	-3.81	Distance from western ice margin: 3 km
+Site-5	1990	1991	-3.64	Distance from western ice margin: 6 km
+Site-5	1991	1992	-2.03	Distance from western ice margin: 6 km
+Site-5	1992	1993	-3.04	Distance from western ice margin: 6 km
+Site-5	1993	1994	-3.49	Distance from western ice margin: 6 km
+Site-5	1994	1995	-4.00	Distance from western ice margin: 6 km
+Site-5	1995	1996	-2.87	Distance from western ice margin: 6 km
+Site-5	1996	1997	-3.87	Distance from western ice margin: 6 km
+Site-5	1997	1998	-4.08	Distance from western ice margin: 6 km
+Site-5	1998	1999	-3.77	Distance from western ice margin: 6 km
+Site-5	1999	2000	-3.31	Distance from western ice margin: 6 km
+Site-5	2000	2001	-3.66	Distance from western ice margin: 6 km
+Site-5	2001	2002	-3.29	Distance from western ice margin: 6 km
+Site-5	2002	2003	-3.89	Distance from western ice margin: 6 km
+Site-5	2003	2004	-3.99	Distance from western ice margin: 6 km
+Site-5	2004	2005	-3.63	Distance from western ice margin: 6 km
+Site-5	2005	2006	-3.70	Distance from western ice margin: 6 km
+Site-5	2006	2007	-4.19	Distance from western ice margin: 6 km
+Site-5	2007	2008	-4.10	Distance from western ice margin: 6 km
+Site-5	2008	2009	-3.38	Distance from western ice margin: 6 km
+Site-5	2009	2010	-5.12	Distance from western ice margin: 6 km
+Site-5	2010	2011	-4.23	Distance from western ice margin: 6 km
+SHR	1990	1991	-3.20	Distance from western ice margin: 14 km
+SHR	1991	1992	-1.52	Distance from western ice margin: 14 km
+SHR	1992	1993	-2.71	Distance from western ice margin: 14 km
+SHR	1993	1994	-3.08	Distance from western ice margin: 14 km
+SHR	1994	1995	-3.52	Distance from western ice margin: 14 km
+SHR	1995	1996	-1.95	Distance from western ice margin: 14 km
+SHR	1996	1997	-3.30	Distance from western ice margin: 14 km
+SHR	1997	1998	-3.22	Distance from western ice margin: 14 km
+SHR	1998	1999	-3.35	Distance from western ice margin: 14 km
+SHR	1999	2000	-2.70	Distance from western ice margin: 14 km
+SHR	2000	2001	-3.16	Distance from western ice margin: 14 km
+SHR	2001	2002	-2.95	Distance from western ice margin: 14 km
+SHR	2002	2003	-3.29	Distance from western ice margin: 14 km
+SHR	2003	2004	-3.53	Distance from western ice margin: 14 km
+SHR	2004	2005	-3.24	Distance from western ice margin: 14 km
+SHR	2005	2006	-2.97	Distance from western ice margin: 14 km
+SHR	2006	2007	-3.55	Distance from western ice margin: 14 km
+SHR	2007	2008	-3.54	Distance from western ice margin: 14 km
+SHR	2008	2009	-2.84	Distance from western ice margin: 14 km
+SHR	2009	2010	-4.39	Distance from western ice margin: 14 km
+SHR	2010	2011	-3.21	Distance from western ice margin: 14 km
+Site-6	1990	1991	-2.77	Distance from western ice margin: 37 km
+Site-6	1991	1992	-1.02	Distance from western ice margin: 37 km
+Site-6	1992	1993	-1.54	Distance from western ice margin: 37 km
+Site-6	1993	1994	-1.37	Distance from western ice margin: 37 km
+Site-6	1994	1995	-1.70	Distance from western ice margin: 37 km
+Site-6	1995	1996	-0.93	Distance from western ice margin: 37 km
+Site-6	1996	1997	-2.84	Distance from western ice margin: 37 km
+Site-6	1997	1998	-1.59	Distance from western ice margin: 37 km
+Site-6	1998	1999	-1.46	Distance from western ice margin: 37 km
+Site-6	1999	2000	-1.26	Distance from western ice margin: 37 km
+Site-6	2000	2001	-1.03	Distance from western ice margin: 37 km
+Site-6	2001	2002	-1.30	Distance from western ice margin: 37 km
+Site-6	2002	2003	-1.97	Distance from western ice margin: 37 km
+Site-6	2003	2004	-1.47	Distance from western ice margin: 37 km
+Site-6	2004	2005	-1.28	Distance from western ice margin: 37 km
+Site-6	2005	2006	-1.50	Distance from western ice margin: 37 km
+Site-6	2006	2007	-2.00	Distance from western ice margin: 37 km
+Site-6	2007	2008	-1.48	Distance from western ice margin: 37 km
+Site-6	2008	2009	-1.34	Distance from western ice margin: 37 km
+Site-6	2009	2010	-2.95	Distance from western ice margin: 37 km
+Site-6	2010	2011	-2.08	Distance from western ice margin: 37 km
+Site-7	1990	1991	-1.75	Distance from western ice margin: 52 km
+Site-7	1991	1992	-0.30	Distance from western ice margin: 52 km
+Site-7	1992	1993	-1.60	Distance from western ice margin: 52 km
+Site-7	1993	1994	-1.06	Distance from western ice margin: 52 km
+Site-7	1994	1995	-1.78	Distance from western ice margin: 52 km
+Site-7	1995	1996	-0.47	Distance from western ice margin: 52 km
+Site-7	1996	1997	-1.64	Distance from western ice margin: 52 km
+Site-7	1997	1998	-1.57	Distance from western ice margin: 52 km
+Site-7	1998	1999	-1.30	Distance from western ice margin: 52 km
+Site-7	1999	2000	-1.05	Distance from western ice margin: 52 km
+Site-7	2000	2001	-0.98	Distance from western ice margin: 52 km
+Site-7	2001	2002	-1.55	Distance from western ice margin: 52 km
+Site-7	2002	2003	-1.77	Distance from western ice margin: 52 km
+Site-7	2003	2004	-1.73	Distance from western ice margin: 52 km
+Site-7	2004	2005	-1.57	Distance from western ice margin: 52 km
+Site-7	2005	2006	-1.13	Distance from western ice margin: 52 km
+Site-7	2006	2007	-2.30	Distance from western ice margin: 52 km
+Site-7	2007	2008	-1.36	Distance from western ice margin: 52 km
+Site-7	2008	2009	-1.47	Distance from western ice margin: 52 km
+Site-7	2009	2010	-2.99	Distance from western ice margin: 52 km
+Site-7	2010	2011	-1.59	Distance from western ice margin: 52 km
+Site-8	1990	1991	-1.47	Distance from western ice margin: 63 km
+Site-8	1991	1992	0.08	Distance from western ice margin: 63 km
+Site-8	1992	1993	-0.14	Distance from western ice margin: 63 km
+Site-8	1993	1994	-0.45	Distance from western ice margin: 63 km
+Site-8	1994	1995	-1.09	Distance from western ice margin: 63 km
+Site-8	1995	1996	-0.03	Distance from western ice margin: 63 km
+Site-8	1996	1997	-0.88	Distance from western ice margin: 63 km
+Site-8	1997	1998	-0.97	Distance from western ice margin: 63 km
+Site-8	1998	1999	-0.86	Distance from western ice margin: 63 km
+Site-8	1999	2000	-0.51	Distance from western ice margin: 63 km
+Site-8	2000	2001	-0.49	Distance from western ice margin: 63 km
+Site-8	2001	2002	-0.93	Distance from western ice margin: 63 km
+Site-8	2002	2003	-1.07	Distance from western ice margin: 63 km
+Site-8	2003	2004	-0.66	Distance from western ice margin: 63 km
+Site-8	2004	2005	-0.17	Distance from western ice margin: 63 km
+Site-8	2005	2006	-0.23	Distance from western ice margin: 63 km
+Site-8	2006	2007	-1.16	Distance from western ice margin: 63 km
+Site-8	2007	2008	-0.44	Distance from western ice margin: 63 km
+Site-8	2008	2009	-0.22	Distance from western ice margin: 63 km
+Site-8	2009	2010	-1.93	Distance from western ice margin: 63 km
+Site-8	2010	2011	-1.89	Distance from western ice margin: 63 km
+Site-9	1990	1991	-0.26	Distance from western ice margin: 91 km
+Site-9	1991	1992	0.46	Distance from western ice margin: 91 km
+Site-9	1992	1993	0.23	Distance from western ice margin: 91 km
+Site-9	1993	1994	0.10	Distance from western ice margin: 91 km
+Site-9	1994	1995	-0.05	Distance from western ice margin: 91 km
+Site-9	1995	1996	0.40	Distance from western ice margin: 91 km
+Site-9	1996	1997	-0.02	Distance from western ice margin: 91 km
+Site-9	1997	1998	-0.01	Distance from western ice margin: 91 km
+Site-9	1998	1999	-0.17	Distance from western ice margin: 91 km
+Site-9	1999	2000	-0.06	Distance from western ice margin: 91 km
+Site-9	2000	2001	0.16	Distance from western ice margin: 91 km
+Site-9	2001	2002	0.17	Distance from western ice margin: 91 km
+Site-9	2002	2003	-0.53	Distance from western ice margin: 91 km
+Site-9	2003	2004	0.01	Distance from western ice margin: 91 km
+Site-9	2004	2005	0.08	Distance from western ice margin: 91 km
+Site-9	2005	2006	0.08	Distance from western ice margin: 91 km
+Site-9	2006	2007	-0.68	Distance from western ice margin: 91 km
+Site-9	2007	2008	0.02	Distance from western ice margin: 91 km
+Site-9	2008	2009	0.23	Distance from western ice margin: 91 km
+Site-9	2009	2010	-1.01	Distance from western ice margin: 91 km
+Site-9	2010	2011	-0.84	Distance from western ice margin: 91 km
+Site-10	1994	1995	0.01	Distance from western ice margin: 143 km
+Site-10	1995	1996	0.49	Distance from western ice margin: 143 km
+Site-10	1996	1997	0.27	Distance from western ice margin: 143 km
+Site-10	1997	1998	0.29	Distance from western ice margin: 143 km
+Site-10	1998	1999	0.06	Distance from western ice margin: 143 km
+Site-10	1999	2000	0.26	Distance from western ice margin: 143 km
+Site-10	2000	2001	0.57	Distance from western ice margin: 143 km
+Site-10	2001	2002	0.29	Distance from western ice margin: 143 km
+Site-10	2002	2003	0.11	Distance from western ice margin: 143 km
+Site-10	2003	2004	0.45	Distance from western ice margin: 143 km
+Site-10	2004	2005	0.45	Distance from western ice margin: 143 km
+Site-10	2005	2006	0.39	Distance from western ice margin: 143 km
+Site-10	2006	2007	0.04	Distance from western ice margin: 143 km
+Site-10	2007	2008	0.21	Distance from western ice margin: 143 km
+Site-10	2008	2009	0.20	Distance from western ice margin: 143 km
+Site-10	2009	2010	0.20	Distance from western ice margin: 143 km

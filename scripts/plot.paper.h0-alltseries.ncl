@@ -337,6 +337,9 @@ begin
  pNam = unique_string("tmp")
  plot@$pNam$ = gsn_add_polymarker(wks,plot(1),xmax-1,obarann2,polyres)
 
+   print("RACMO PRECIP: " + obarann1)
+   print("RACMO MELT: " + obarann2)
+
  ;;all cases
  do n = 0,nfiles-1
 
@@ -413,6 +416,9 @@ begin
    pNam = unique_string("tmp")
    plot@$pNam$ = gsn_add_polymarker(wks,plot(1),xmax-1,barann2,polyres)
    delete([/ann11d,ann21d/])
+
+   print(label(n) + " PRECIP: " + barann1)
+   print(label(n) + " MELT: " + barann2)
 
  end do
 

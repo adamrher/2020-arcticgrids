@@ -18,10 +18,10 @@ begin
   Rd = 287.
 ;****************************************
 
-  fname = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs", \
+  fname = (/"cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs", \
+            "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs", \
+	    "cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs", \
 	    "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs", \
-	    "cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs", \
-	    "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs", \
 	    "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs", \
 	    "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs"/)
   nfiles = dimsizes(fname)
@@ -61,7 +61,8 @@ begin
   STDEV2 = new( (/nbasins*(nfiles+1)/), "double" )
 
   dx = 0.75
-  colors = (/"blue","deepskyblue1","green4","green","darkorchid4","magenta","black"/)
+  colors0 = (/"blue","deepskyblue1","green4","green","darkorchid4","magenta","black"/)
+  colors = (/"green4","green","blue","deepskyblue1","darkorchid4","magenta","black"/)
   ;;colors = (/"blue","deepskyblue1","green4","green","red","black"/)
   COLORS = new( (/nbasins*(nfiles+1)/), "string" )
 
@@ -129,7 +130,7 @@ begin
 
        fname_in = fname(n) + ".GRIS." + VAR1 + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ncdf = addfile("data/basinseries/"+fname_in,"r")
        xann1 = ncdf->xann
 
        ann1 = ncdf->ann
@@ -137,7 +138,7 @@ begin
 
        fname_in = fname(n) + ".GRIS." + VAR1b + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ncdf = addfile("data/basinseries/"+fname_in,"r")
        ann1b = ncdf->ann
        delete(ncdf)
        ann1 = ann1 + ann1b
@@ -145,14 +146,14 @@ begin
 
        fname_in = fname(n) + ".GRIS." + VAR2 + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ncdf = addfile("data/basinseries/"+fname_in,"r")
        xann2 = ncdf->xann
        ann2 = ncdf->ann
        delete(ncdf)
 
        fname_in = fname(n) + ".GRIS." + VAR2b + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ncdf = addfile("data/basinseries/"+fname_in,"r")
        ann2b = ncdf->ann
        delete(ncdf)
        ann2 = ann2 + ann2b
@@ -161,14 +162,14 @@ begin
        if (n.eq.0) then
          fname_in = obsname1 + ".GRIS." + obsvar1 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile("data/basinseries/"+fname_in,"r")
          otime1 = ncdf->otime
          oann1 = ncdf->oann
          delete(ncdf)
 
          fname_in = obsname1 + ".GRIS." + obsvar2 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile("data/basinseries/"+fname_in,"r")
          otime2 = ncdf->otime
          oann2 = ncdf->oann
          delete(ncdf)
@@ -177,14 +178,14 @@ begin
 
          fname_in = obsname2 + ".GRIS." + obsvar1 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile("data/basinseries/"+fname_in,"r")
          otime1a = ncdf->otime(0:notime-1)
          oann1a = ncdf->oann(0:notime-1)
          delete(ncdf)
 
          fname_in = obsname2 + ".GRIS." + obsvar2 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile("data/basinseries/"+fname_in,"r")
          otime2a = ncdf->otime(0:notime-1)
          oann2a = ncdf->oann(0:notime-1)
          delete(ncdf)
@@ -333,10 +334,10 @@ begin
  res@gsMarkerThicknessF = 6
 
  yy = (/0.95,0.92,0.95,0.92,0.95,0.92,0.95,0.92/) - 0.01
- xx = (/0.23,0.23,0.43,0.43,0.63,0.63,0.83,0.83/) - 0.07
+ xx = (/0.29,0.29,0.43,0.43,0.63,0.63,0.83,0.83/) - 0.07
  dx = 0.05
  do n = 0,nfiles-1
-   resln@gsLineColor = colors(n)
+   resln@gsLineColor = colors0(n)
    gsn_polyline_ndc(wks,(/xx(n),xx(n)+dx/),(/yy(n),yy(n)/),resln)
    gsn_text_ndc(wks,label(n),xx(n)+dx,yy(n),txres)
  end do

@@ -36,6 +36,9 @@ begin
   VAR1b= "RAIN"
   VAR2 = "QSNOMELT"
   VAR2b= "QICE_MELT"
+  VAR3 = "PDD"
+  beta = 5. ;;pdd factor
+  xfactor = 1.e-12;;mm/yr->Gt/yr
 
   modi = (/".regrid_TO_f19.cnsrv.basin",\
 	   ".regrid_TO_f19.te.basin", \
@@ -44,8 +47,8 @@ begin
   nregrid = dimsizes(modi)
 
   obsvar1  = "precip"
-  obsvar2  = "runoff"
   obsvar2  = "snowmelt"
+  obsvar3  = "pdd"
 
   nobs = 2
   obsname1 = "racmo23"
@@ -57,8 +60,10 @@ begin
   X1 = new( (/nbasins*(nfiles+1)/), "float" )
   CLIM1 = new( (/nbasins*(nfiles+1)/), "double" )
   CLIM2 = new( (/nbasins*(nfiles+1)/), "double" )
+  CLIM3 = new( (/nbasins*(nfiles+1)/), "double" )
   STDEV1 = new( (/nbasins*(nfiles+1)/), "double" )
   STDEV2 = new( (/nbasins*(nfiles+1)/), "double" )
+  STDEV3 = new( (/nbasins*(nfiles+1)/), "double" )
 
   dx = 0.75
   colors0 = (/"blue","deepskyblue1","green4","green","darkorchid4","magenta","black"/)
@@ -74,7 +79,7 @@ begin
 
   xmin = 0.5
   xmax = tofloat(nbasins) + 0.5
-  xaxis = "Rignot and Mouginot Basins"
+  xaxis = "Greenland Basins"
 
   ymin1 =   0.
   ymax1 = 280.
@@ -84,6 +89,10 @@ begin
   ymax2 = 180.
   yaxis2 = "SNOW+ICE MELT (Gt/yr)"
 
+  ymin3 =   0.
+  ymax3 = 180.
+  yaxis3 = "PDD METHOD (Gt/yr)"
+
   ;;mm/s -> kg/(m2*yr) = mm/s [1m/1000mm] * rhoh2o * secpday*365 
 
 ;******************************************************
@@ -91,7 +100,7 @@ begin
 ;******************************************************
   wkstype = "pdf"
   wks = gsn_open_wks(wkstype,pltNam)               ; open workstation
-  plot = new( (/2/), "graphic")
+  plot = new( (/3/), "graphic")
 
   res                          = True
 
@@ -130,7 +139,7 @@ begin
 
        fname_in = fname(n) + ".GRIS." + VAR1 + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("data/basinseries/"+fname_in,"r")
+       ncdf = addfile("../data/basinseries/"+fname_in,"r")
        xann1 = ncdf->xann
 
        ann1 = ncdf->ann
@@ -138,7 +147,7 @@ begin
 
        fname_in = fname(n) + ".GRIS." + VAR1b + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("data/basinseries/"+fname_in,"r")
+       ncdf = addfile("../data/basinseries/"+fname_in,"r")
        ann1b = ncdf->ann
        delete(ncdf)
        ann1 = ann1 + ann1b
@@ -146,68 +155,95 @@ begin
 
        fname_in = fname(n) + ".GRIS." + VAR2 + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("data/basinseries/"+fname_in,"r")
+       ncdf = addfile("../data/basinseries/"+fname_in,"r")
        xann2 = ncdf->xann
        ann2 = ncdf->ann
        delete(ncdf)
 
        fname_in = fname(n) + ".GRIS." + VAR2b + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("data/basinseries/"+fname_in,"r")
+       ncdf = addfile("../data/basinseries/"+fname_in,"r")
        ann2b = ncdf->ann
        delete(ncdf)
        ann2 = ann2 + ann2b
        delete(ann2b)
 
+       fname_in = fname(n) + ".GRIS." + VAR3 + modi(m) + "." + tostring(q+1) + ".h0.nc"
+       print("load: " + fname_in)
+       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ann3 = ncdf->ann
+       delete(ncdf)
+
+       ann3 = ann3*beta*xfactor
+
        if (n.eq.0) then
          fname_in = obsname1 + ".GRIS." + obsvar1 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("data/basinseries/"+fname_in,"r")
-         otime1 = ncdf->otime
-         oann1 = ncdf->oann
+         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         otime1 = ncdf->otime(ot0:ot1)
+         oann1 = ncdf->oann(ot0:ot1)
          delete(ncdf)
 
          fname_in = obsname1 + ".GRIS." + obsvar2 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("data/basinseries/"+fname_in,"r")
-         otime2 = ncdf->otime
-         oann2 = ncdf->oann
+         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         otime2 = ncdf->otime(ot0:ot1)
+         oann2 = ncdf->oann(ot0:ot1)
          delete(ncdf)
 
-         notime = dimsizes(otime2)
+         fname_in = obsname1 + ".GRIS." + obsvar3 + modi(m) + "." + tostring(q+1) + ".nc"
+         print("load: " + fname_in)
+         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         oann3 = ncdf->oann
+         delete(ncdf)
+
+         oann3 = oann3*beta*xfactor
 
          fname_in = obsname2 + ".GRIS." + obsvar1 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("data/basinseries/"+fname_in,"r")
-         otime1a = ncdf->otime(0:notime-1)
-         oann1a = ncdf->oann(0:notime-1)
+         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         otime1a = ncdf->otime(ot0:ot1)
+         oann1a = ncdf->oann(ot0:ot1)
          delete(ncdf)
 
          fname_in = obsname2 + ".GRIS." + obsvar2 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("data/basinseries/"+fname_in,"r")
-         otime2a = ncdf->otime(0:notime-1)
-         oann2a = ncdf->oann(0:notime-1)
+         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         otime2a = ncdf->otime(ot0:ot1)
+         oann2a = ncdf->oann(ot0:ot1)
          delete(ncdf)
+
+         fname_in = obsname2 + ".GRIS." + obsvar3 + modi(m) + "." + tostring(q+1) + ".nc"
+         print("load: " + fname_in)
+         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         oann3a = ncdf->oann
+         delete(ncdf)
+
+         oann3a = oann3a*beta*xfactor
 
        end if
 
        if (n.eq.0 .and. m.eq.0 .and. q.eq.0) then
          ANN1 = new( (/nfiles,nregrid,nbasins,dimsizes(xann1)/), "double" )
          ANN2 = new( (/nfiles,nregrid,nbasins,dimsizes(xann1)/), "double" )
+         ANN3 = new( (/nfiles,nregrid,nbasins,dimsizes(xann1)/), "double" )
          OANN1= new( (/nobs,nregrid,nbasins,dimsizes(otime1)/), "double" )
          OANN2= new( (/nobs,nregrid,nbasins,dimsizes(otime1)/), "double" )
+         OANN3= new( (/nobs,nregrid,nbasins,dimsizes(otime1)/), "double" )
        end if
 
        ANN1(n,m,q,:) = ann1
        ANN2(n,m,q,:) = ann2
+       ANN3(n,m,q,:) = ann3
        delete([/xann1,ann1,xann2,ann2/])
        if (n.eq.0) then
          OANN1(0,m,q,:) = oann1
          OANN2(0,m,q,:) = oann2
+         OANN3(0,m,q,:) = oann3
          OANN1(1,m,q,:) = oann1a
          OANN2(1,m,q,:) = oann2a
-         delete([/oann1,oann2,oann1a,oann2a,otime1,otime2,otime1a,otime2a/])
+         OANN3(1,m,q,:) = oann3a
+         delete([/oann1,oann2,oann1a,oann2a,oann3,oann3a,otime1,otime2,otime1a,otime2a/])
        end if
      end do;;q
    end do;;m
@@ -222,13 +258,17 @@ begin
 
      clim11d = ndtooned(ANN1(n,:,q,:))
      clim21d = ndtooned(ANN2(n,:,q,:))
+     clim31d = ndtooned(ANN3(n,:,q,:))
      CLIM1(idx) = dim_avg(clim11d)
      CLIM2(idx) = dim_avg(clim21d)
+     CLIM3(idx) = dim_avg(clim31d)
 
      mu1 = sum((clim11d-dim_avg(clim11d))^2.)/dimsizes(clim11d) 
      mu2 = sum((clim21d-dim_avg(clim21d))^2.)/dimsizes(clim21d)
+     mu3 = sum((clim31d-dim_avg(clim31d))^2.)/dimsizes(clim31d)
      STDEV1(idx) = sqrt(mu1)
      STDEV2(idx) = sqrt(mu2)
+     STDEV3(idx) = sqrt(mu3)
 
      COLORS(idx) = colors(n)
  
@@ -238,20 +278,24 @@ begin
        ox1 = tofloat(q+1) - dx/2. + dx
        X1(idx) = ox1
 
-       oclim11d = ndtooned(OANN1(:,:,q,ot0:ot1))
-       oclim21d = ndtooned(OANN2(:,:,q,ot0:ot1))
+       oclim11d = ndtooned(OANN1(:,:,q,:))
+       oclim21d = ndtooned(OANN2(:,:,q,:))
+       oclim31d = ndtooned(OANN3(:,:,q,:))
        CLIM1(idx) = dim_avg(oclim11d)
        CLIM2(idx) = dim_avg(oclim21d)
+       CLIM3(idx) = dim_avg(oclim31d)
 
        mu1 = sum((oclim11d-dim_avg(oclim11d))^2.)/dimsizes(oclim11d) 
        mu2 = sum((oclim21d-dim_avg(oclim21d))^2.)/dimsizes(oclim21d)
+       mu3 = sum((oclim31d-dim_avg(oclim31d))^2.)/dimsizes(oclim31d)
        STDEV1(idx) = sqrt(mu1)
        STDEV2(idx) = sqrt(mu2)
+       STDEV3(idx) = sqrt(mu3)
 
        COLORS(idx) = colors(nfiles)
-       delete([/oclim11d,oclim21d/])
+       delete([/oclim11d,oclim21d,oclim31d/])
      end if
-     delete([/clim11d,clim21d/])
+     delete([/clim11d,clim21d,clim31d/])
    end do
  end do
 
@@ -259,6 +303,8 @@ begin
  NEG1 = CLIM1-STDEV1
  POS2 = CLIM2+STDEV2
  NEG2 = CLIM2-STDEV2
+ POS3 = CLIM3+STDEV3
+ NEG3 = CLIM3-STDEV3
 
  res@tmXBLabelFontHeightF     = 0.015
 
@@ -280,13 +326,19 @@ begin
 
  plot(0) = gsn_csm_xy(wks,X1,CLIM1,res)
 
- res@tiXAxisString = xaxis
-
  res@tiYAxisString = yaxis2
  res@trYMinF                = ymin2
  res@trYMaxF                = ymax2
 
  plot(1) = gsn_csm_xy(wks,X1,CLIM2,res)
+
+ res@tiXAxisString = xaxis
+
+ res@tiYAxisString = yaxis3
+ res@trYMinF                = ymin3
+ res@trYMaxF                = ymax3
+
+ plot(2) = gsn_csm_xy(wks,X1,CLIM3,res)
 
  pgres                  = True
  pgres@gsLineThicknessF = 2.0
@@ -316,6 +368,13 @@ begin
    plot@$pNam$ = gsn_add_polyline(wks,plot(1),(/X1(n)-ddx/2.,X1(n)+ddx/2./),(/NEG2(n),NEG2(n)/),pgres)
    pNam = unique_string("tmp")
    plot@$pNam$ = gsn_add_polyline(wks,plot(1),(/X1(n)-ddx/2.,X1(n)+ddx/2./),(/POS2(n),POS2(n)/),pgres)
+
+   pNam = unique_string("tmp")
+   plot@$pNam$ = gsn_add_polyline(wks,plot(2),(/X1(n),X1(n)/),(/NEG3(n),POS3(n)/),pgres)
+   pNam = unique_string("tmp")
+   plot@$pNam$ = gsn_add_polyline(wks,plot(2),(/X1(n)-ddx/2.,X1(n)+ddx/2./),(/NEG3(n),NEG3(n)/),pgres)
+   pNam = unique_string("tmp")
+   plot@$pNam$ = gsn_add_polyline(wks,plot(2),(/X1(n)-ddx/2.,X1(n)+ddx/2./),(/POS3(n),POS3(n)/),pgres)
  end do
 
 
@@ -323,7 +382,7 @@ begin
 ; Add legend
 ;*****************************************************
  txres = True
- txres@txFontHeightF = 0.02
+ txres@txFontHeightF = 0.015
  txres@txJust = "CenterLeft"
 
  resln             = True
@@ -333,8 +392,8 @@ begin
  res@gsMarkerSizeF = 30
  res@gsMarkerThicknessF = 6
 
- yy = (/0.95,0.92,0.95,0.92,0.95,0.92,0.95,0.92/) - 0.01
- xx = (/0.29,0.29,0.43,0.43,0.63,0.63,0.83,0.83/) - 0.07
+ yy = (/0.95,0.93,0.95,0.93,0.95,0.93,0.95,0.93/) - 0.01
+ xx = (/0.20,0.20,0.32,0.32,0.51,0.51,0.67,0.67/) - 0.01
  dx = 0.05
  do n = 0,nfiles-1
    resln@gsLineColor = colors0(n)
@@ -364,7 +423,7 @@ begin
   ;resP@txString = pltTitle
   resP@gsnPanelTop = 0.90
   resP@gsnPanelYWhiteSpacePercent = 0.01
-  gsn_panel(wks,plot,(/2,1/),resP)               ; now draw as one plot
+  gsn_panel(wks,plot,(/3,1/),resP)               ; now draw as one plot
 
 frame(wks)
 

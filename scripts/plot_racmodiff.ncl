@@ -67,6 +67,13 @@ begin
             "ne0ARCTICne30x4_scrip_191212.nc", \
             "ne0ARCTICGRISne30x8_scrip_191209.nc"/)
 
+  basinfl = (/"GrnDrainageSystems.f19.mask.nc", \
+	      "GrnDrainageSystems.f09.mask.nc", \
+	      "GrnDrainageSystems.ne30pg2.mask.nc", \
+              "GrnDrainageSystems.ne30pg3.mask.nc", \
+              "GrnDrainageSystems.ARCTIC.mask.nc", \
+              "GrnDrainageSystems.ARCTICGRIS.mask.nc"/)
+
 ;******************************************************
 ; create plot
 ;******************************************************
@@ -83,10 +90,6 @@ begin
    res@gsnMaximize = False
    res@gsnDraw     = False      ; Will draw later, after overlaying
    res@gsnFrame    = False      ; all plots
-
-   res@cnFillOn          = False               ; turn on color fill
-   res@cnLinesOn         = True
-   res@cnLineLabelsOn    = True
 
    res@cnFillOn          = True               ; turn on color fill
    res@cnLinesOn         = False
@@ -121,6 +124,15 @@ begin
    res@mpMaxLonF = -30.
    res@mpMinLatF = 59.4;;58.
    res@mpMaxLatF = 85;;85.
+
+   resc = True
+   resc@gsnMaximize = False
+   resc@gsnDraw     = False      
+   resc@gsnFrame    = False      
+   resc@cnFillOn          = False
+   resc@cnLinesOn         = True
+   resc@cnLineLabelsOn    = False
+   resc@cnInfoLabelOn     = False
 
 ;******************************************************
 ; begin loop
@@ -175,13 +187,41 @@ begin
      res@cnFillMode = "AreaFill"
    end if 
 
-   res@gsnCenterStringFontHeightF = 0.01
-
    plot(n) = gsn_csm_contour_map(wks,var,res)
    delete(var)
 
+   bf = addfile("../data/basinmask/"+basinfl(n),"r")
+   imask = bf->basinmask 
+   delete(bf)
+
+   delete([/imask@units,imask@long_name/])
+   resc@cnLevelSelectionMode = "ExplicitLevels"
+   resc@cnLevels = (/0.5,1000./)
+   resc@cnLineThicknessF   = 2
+   resc@cnLineColor = "grey43"
+   resc@cnFillMode = "CellFill"
+
+   if (.not.latlon) then
+     resc@sfXArray = res@sfXArray
+     resc@sfYArray = res@sfYArray
+   end if
+   do b=1,7
+     if (b.eq.7 .or. b.eq.3 .or. b.eq.5) then
+       continue
+     end if
+
+     dum = imask
+     dum = where(imask.eq.tofloat(b),1.,0.)
+     tmp = gsn_csm_contour(wks,dum,resc)
+     overlay(plot(n),tmp)
+     delete(tmp)
+     delete(dum)
+   end do
+   delete(imask)
+
    if (.not.latlon) then
      delete([/res@sfXArray,res@sfYArray/])
+     delete([/resc@sfXArray,resc@sfYArray/])
    end if
 
    if (cellfill) then
@@ -190,6 +230,19 @@ begin
 
  end do;;n
 
+;*****************************************************
+; Add legend
+;*****************************************************
+
+ txres = True
+ txres@txFontHeightF = 0.01
+ txres@txJust = "CenterLeft"
+ txres@gsnDraw     = False
+ txres@gsnFrame    = False
+
+ label = (/"N","NE","CE","SE","SW","CW","NW"/)
+ xx = (/0.894,0.92,0.94,0.924,0.892,0.91,0.89/)
+ yy = (/0.61,0.58,0.51,0.479,0.475,0.52,0.56/)
 
 ;;drawNDCGrid(wks)
 ;*****************************************************
@@ -214,26 +267,12 @@ begin
   resP@lbTitleFontHeightF         = 0.015
   resP@lbLabelFontHeightF         = 0.01
   resP@pmLabelBarOrthogonalPosF   = -0.02
-  ;resP@lbOrientation              = "Vertical"
-  ;resP@lbTitleFontHeightF         = 0.015
-  ;resP@lbLabelFontHeightF         = 0.01
-  ;resP@pmLabelBarOrthogonalPosF   = -0.02
 
-  ;;resP@pmLabelBarHeightF = 0.02
-  ;;resP@pmLabelBarWidthF = 0.05
-
-  ;if (m.eq.0) then
-  ;  resP@gsnPanelTop = .95
-  ;  resP@gsnPanelBottom = .65
-  ;else
-  ;  resP@gsnPanelTop = .65
-  ;  resP@gsnPanelBottom = .35
-  ;end if
-  ;resP@gsnPanelLeft = 0.05
-  ;resP@gsnPanelRight = 0.95
-
-  ;resP@txString = pltTitle
   gsn_panel(wks,plot,(/1,6/),resP)               ; now draw as one plot
+
+  do m = 0,6
+    gsn_text_ndc(wks,label(m),xx(m),yy(m),txres)
+  end do
 
 frame(wks)
 

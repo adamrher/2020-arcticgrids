@@ -438,15 +438,23 @@ The combined annual snow/ice melt integrated over the GrIS is given by the botto
 \label{fig:basin}
 \end{figure}
 
-Figure~\ref{fig:pointdiff} shows the distribution of point-wise differences from LIVVkit observational database as violin plots. The IceBridge dataset is exclusively from the interior of the ice sheet and represents accumulation rates. The uniform $1^{\circ}-2^{\circ}$ grids have similar median errors of about +35-50 mm.w.e, while the variable-resolution errors are noticeably smaller. The in-situ observations in the accumulation zone, shown in the middle plot looks very similar to the IceBridge errors, providing confidence that the variable-resolution grids are outperforming the uniform grids in the interior accumulation zone. The errors evaluated at in-situ ablation zone measurements are in tension with the RACMO results in Figure~\ref{fig:tseries}. They indicate that the uniform $1^{\circ}-2^{\circ}$ grids perform similarly, and that the $ARCTICGRIS$ performs best, and an improvement over the $ARCTIC$ grid. However, the in-situ ablation measurements are sparse in time and space, and so there is a large amount of uncertainty in extending these results to the entirety of the ablation zone.
-
 \begin{figure}[t]
 \begin{center}
-         \includegraphics[width=130mm]{figs/temp_violens.pdf}
+         \includegraphics[width=130mm]{figs/temp_contours_diffRACMO_melt.pdf}
 \end{center}
 \caption{.}
-\label{fig:pointdiff}
+\label{fig:melt}
 \end{figure}
+
+Figure~\ref{fig:pointdiff} shows the distribution of point-wise differences from LIVVkit observational database as violin plots. The IceBridge dataset is exclusively from the interior of the ice sheet and represents accumulation rates. The uniform $1^{\circ}-2^{\circ}$ grids have similar median errors of about +35-50 mm.w.e, while the variable-resolution errors are noticeably smaller. The in-situ observations in the accumulation zone, shown in the middle plot looks very similar to the IceBridge errors, providing confidence that the variable-resolution grids are outperforming the uniform grids in the interior accumulation zone. The errors evaluated at in-situ ablation zone measurements are in tension with the RACMO results in Figure~\ref{fig:tseries}. They indicate that the uniform $1^{\circ}-2^{\circ}$ grids perform similarly, and that the $ARCTICGRIS$ performs best, and an improvement over the $ARCTIC$ grid. However, the in-situ ablation measurements are sparse in time and space, and so there is a large amount of uncertainty in extending these results to the entirety of the ablation zone.
+
+%\begin{figure}[t]
+%\begin{center}
+%         \includegraphics[width=130mm]{figs/temp_violens.pdf}
+%\end{center}
+%\caption{.}
+%\label{fig:pointdiff}
+%\end{figure}
 
 The ``k-transect" is perhaps the most well studied transect in Greenland, as it has been regularly monitored since the 1950s. The LIVVkit has compiled the k-transect observations, shown in Figure~\ref{fig:trans} as elevation vs. SMB along the transect, with the model's simulated transects shown as well. The in-situ observation points are nicely replicated by the $ARCTCIGRIS$ run, whereas the $ARCTIC$ grid is biased positive in the higher-elevations of the ablation zone. The $f09$ grid is surprisingly competitive with the variable-resolution grids, capturing a realistic slope of the elevation-SMB curve, although it exhibits a similar positive bias as the $ARCTIC$ grid. The elevation-SMB slopes of the uniform spectral-element and $f19$ grid are too shallow, in particular at the higher elevation regions of the transect. 
 
@@ -454,13 +462,13 @@ Figure~\ref{fig:ztrans} shows the representation of the surface of the ice sheet
 
 What the authors refer to as the ``b-transect" in northwest Greenland (Figure~\ref{fig:trans}) is characterized by orographic precipitation, resulting in the accumulation zone extending down to the ice margin. The variable resolution grids perform relatively well, with larger SMBs at lower elevations where the precipitation rates are highest, whereas the $1^{\circ}-2^{\circ}$ grids underestimate the SMB in these lower elevation regions. Only the variable resolution grids can capture the local reduction in SMB in the 1500-2000 m region. The skill of the variable-resolution grids is clearly related to the more accurate representation of the steepness of the transect, while also capturing the protrusion around 1500-2000 m that coincides with the local minimum in SMB (Figure~\ref{fig:ztrans}).
 
-\begin{figure}[t]
-\begin{center}
-         \includegraphics[width=130mm]{figs/temp_transect_obsperiod.pdf}
-\end{center}
-\caption{.}
-\label{fig:trans}
-\end{figure}
+%\begin{figure}[t]
+%\begin{center}
+%         \includegraphics[width=130mm]{figs/temp_transect_obsperiod.pdf}
+%\end{center}
+%\caption{.}
+%\label{fig:trans}
+%\end{figure}
 
 \begin{figure}[t]
 \begin{center}
@@ -483,7 +491,7 @@ To give an idea of what the ablation zones look like in the highest resolution $
 \label{fig:viz}
 \end{figure}
 
-\subsection{Impact of horizontal resolution on extremes}
+\subsection{Precipitation extremes}
 
 Synoptic storms are tracked and analyzed using TempestExtremes \cite{UETAL2021}. As the $ARCTIC$ grid contains $\frac{1}{4}^{\circ}$ refinement north of about $45^{\circ}$ latitude, the storm tracker is applied to this region for the $ARCTIC$ and $ne30pg3$ run to identify differences in storm characteristics due to horizontal resolution. Figure~\ref{fig:comp-mean} shows the mean precipitation rates averaged over all January storms identified by TempestExtremes. The iconic comma structure of the synoptic cyclones is simulated in $ne30pg3$ and $ARCTIC$ grids, with the magnitudes about the same in these two grids, with perhaps a marginal increase in precipitation rates in the storm center of the $ARCTIC$ grid. For good measure, the $ne30pg3^{*}$ run is also plotted, and looks more-or-less identical to the $ne30pg3$ run.
 
@@ -491,13 +499,13 @@ As has been previously reported, horizontal resolution can have large impacts on
 
 The extreme precipitation rates in the $ARCTIC$ run are closer to the ERA5 reanalysis than in $ne30pg3$ (Figure~\ref{fig:comp-pdf}). It's difficult to know the extent that the extreme precipitation rates in ERA5 are constrained by data assimilation, or whether these precipitation rates are due to using a similar $\frac{1}{4}^{\circ}$ model as the $ARCTIC$ grid. However, it is well documented that $\frac{1}{4}^{\circ}$ models are more skillful at simulating extreme events \cite{BetAl2013JC,OETAL2016JAMES}, and so this is an additional benefit of the variable-resolution grids.
 
-\begin{figure}[t]
-\begin{center}
-         \includegraphics[width=130mm]{figs/temp_composite_ge45N_JAN-PRECT.pdf}
-\end{center}
-\caption{.}
-\label{fig:comp-mean}
-\end{figure}
+%\begin{figure}[t]
+%\begin{center}
+%         \includegraphics[width=130mm]{figs/temp_composite_ge45N_JAN-PRECT.pdf}
+%\end{center}
+%\caption{.}
+%\label{fig:comp-mean}
+%\end{figure}
 
 \begin{figure}[t]
 \begin{center}

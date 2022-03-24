@@ -231,7 +231,193 @@ begin
  end do;;n
 
 ;*****************************************************
-; Add legend
+; k-transect
+;*****************************************************
+
+   klatitude = (/67.099d0, \
+                67.0d000, \
+                67.097d0, \
+                67.098d0, \
+                67.078d0, \
+                66.992d0, \
+                67.005d0, \
+                67.052d0/)
+
+   klongitude= (/-49.936d0, \
+                -47.015d0, \
+                -50.195d0, \
+                -50.084d0, \
+                -49.396d0, \
+                -49.150d0, \
+                -48.876d0, \
+                -48.250d0/)
+
+   kdistance = (/14.0d0, \
+                143.0d0,\
+                3.0d0,  \
+                6.0d0,  \
+                37.0d0, \
+                52.0d0, \
+                63.0d0, \
+                91.0d0/)
+
+   kelevation= (/710.0d0,  \
+                1850.0d0, \
+                383.0d0,  \
+                490.0d0,  \
+                1010.0d0, \
+                1110.0d0, \
+                1260.0d0, \
+                1520.0d0/)
+
+   indz = dim_pqsort(kelevation,1)
+   nobs = dimsizes(kelevation)
+
+   ;;add additional points to the k-transect
+   latedge =  67.1d0
+   lonedge = -54.0d0
+   latsummit =  66.725d0
+   lonsummit = -43.25d0
+
+   nstations = nobs+2
+   latitude = new( (/nstations/),"double")
+   longitude = new( (/nstations/),"double")
+
+   latitude(0) = latedge
+   latitude(1:nobs) = klatitude(indz)
+   latitude(nstations-1) = latsummit
+
+   longitude(0) = lonedge
+   longitude(1:nobs) = klongitude(indz)
+   longitude(nstations-1) = lonsummit
+
+   npts = (/83,3,4,12,8,7,15,28,85/)
+   nnpts = dim_sum(npts)-dimsizes(npts)+1
+   klat = new( (/nnpts/), "double")
+   klon = new( (/nnpts/), "double")
+   kdist= new( (/nnpts/), "double")
+
+  now = 0
+  do i = 0,nstations-2
+
+    dist = gc_latlon(latitude(i),longitude(i),latitude(i+1),longitude(i+1),npts(i),4)
+
+    if (i.ne.nstations-2) then
+
+      klat(now:now+npts(i)-2) = dist@gclat(0:npts(i)-2)
+      klon(now:now+npts(i)-2) = dist@gclon(0:npts(i)-2)
+
+      do m = now,now+npts(i)-2
+        if (m.eq.0) then
+          ;;lowest elevation k-tran distance to margine minus coast segment length
+          kdist(m) = kdistance(indz(0)) - 164.6276113152068d0
+        else
+          kdist(m) = kdist(m-1) + dist@spacing
+        end if
+      end do
+
+    else
+
+      klat(now:now+npts(i)-1) = dist@gclat(0:npts(i)-1)
+      klon(now:now+npts(i)-1) = dist@gclon(0:npts(i)-1)
+
+      do m = now,now+npts(i)-1
+        kdist(m) = kdist(m-1) + dist@spacing
+      end do
+
+    end if
+
+    do j = 0,npts(i)-2
+      now = now + 1
+    end do
+
+  end do
+
+;******************************************************
+; kanger transect
+;******************************************************
+
+  lonsummit = -37.2
+  latsummit = 71.
+
+  lonbrk0 = -36.
+  latbrk0 = 70.2
+
+  lonkang = -30.
+  latkang = 67.
+
+  slatitude = (/latsummit, \
+                latbrk0, \
+                latkang/)
+
+  slongitude = (/lonsummit, \
+                 lonbrk0, \
+                 lonkang/)
+
+  nsummit = dimsizes(slatitude)
+  snpts = (/50,215/)
+  snnpts = dim_sum(snpts)-dimsizes(snpts)+1
+  slon = new( (/snnpts/),"double")
+  slat = new( (/snnpts/),"double")
+  sdist= new( (/snnpts/),"double")
+
+  now = 0
+  do i = 0,nsummit-2
+
+    dist = gc_latlon(slatitude(i),slongitude(i),slatitude(i+1),slongitude(i+1),snpts(i),4)
+
+    if (i.ne.nsummit-2) then
+
+      slat(now:now+snpts(i)-2) = dist@gclat(0:snpts(i)-2)
+      slon(now:now+snpts(i)-2) = dist@gclon(0:snpts(i)-2)
+
+      do m = now,now+snpts(i)-2
+        if (m.eq.0) then
+          sdist(m) = -1.*322.781040192
+        else
+          sdist(m) = sdist(m-1) + dist@spacing
+        end if
+      end do
+
+    else
+
+      slat(now:now+snpts(i)-1) = dist@gclat(0:snpts(i)-1)
+      slon(now:now+snpts(i)-1) = dist@gclon(0:snpts(i)-1)
+
+      do m = now,now+snpts(i)-1
+        sdist(m) = sdist(m-1) + dist@spacing
+      end do
+
+    end if
+
+    do j = 0,snpts(i)-2
+      now = now + 1
+    end do
+
+  end do
+
+  ;************************************************
+  ; plot transect
+  ;************************************************
+
+  gsres               = True
+  gsres@gsMarkerIndex = 16
+  gsres@gsMarkerColor      = "blue"
+  gsres@gsMarkerSizeF      = 2
+  gsres@gsMarkerThicknessF = 1
+
+  do i = 0,nnpts-1
+    tmp = unique_string("tmp")
+    plot@$tmp$ = gsn_add_polymarker(wks,plot(0),klon(i),klat(i),gsres)
+  end do
+
+  do i = 0,snnpts-1
+    tmp = unique_string("tmp")
+    plot@$tmp$ = gsn_add_polymarker(wks,plot(0),slon(i),slat(i),gsres)
+  end do
+
+;*****************************************************
+; Add basin labels to ARTCTICGRIS plot
 ;*****************************************************
 
  txres = True

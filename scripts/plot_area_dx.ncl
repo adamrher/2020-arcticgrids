@@ -118,7 +118,7 @@ begin
  resf@trXMinF                = 40.
  resf@trXMaxF                = 100000
  resf@trXAxisType = "LogAxis"
- plot(0) = gsn_csm_blank_plot(wks,resf)
+ plot(1) = gsn_csm_blank_plot(wks,resf)
 
  resf@tiYAxisString = "GrIS Area Error (%)"
  resf@tiXAxisString = "Number of grid points"
@@ -127,7 +127,7 @@ begin
  resf@trXMinF                = 40.
  resf@trXMaxF                = 100000
  resf@trXAxisType = "LogAxis"
- plot(1) = gsn_csm_blank_plot(wks,resf)
+ plot(0) = gsn_csm_blank_plot(wks,resf)
 
  f = addfile(fname,"r")
  garea = f->garea
@@ -143,12 +143,12 @@ begin
    res@gsMarkerOpacityF = 0.4
    res@gsMarkerColor = colors(n)
    pNam = unique_string("tmp")
-   plot@$pNam$ = gsn_add_polymarker(wks,plot(0),ncells(n),gdx(n),res)
+   plot@$pNam$ = gsn_add_polymarker(wks,plot(1),ncells(n),gdx(n),res)
    delete([/res@gsMarkerOpacityF/])
 
    res@gsMarkerIndex = 4
    pNam = unique_string("tmp")
-   plot@$pNam$ = gsn_add_polymarker(wks,plot(0),ncells(n),gdx(n),res)
+   plot@$pNam$ = gsn_add_polymarker(wks,plot(1),ncells(n),gdx(n),res)
 
    if (n.lt.nfiles-1) then
      res@gsMarkerIndex = 16
@@ -169,12 +169,12 @@ begin
    res@gsMarkerOpacityF = 0.4
    res@gsMarkerColor = colors(n)
    pNam = unique_string("tmp")
-   plot@$pNam$ = gsn_add_polymarker(wks,plot(1),ncells(n),garea(n),res)
+   plot@$pNam$ = gsn_add_polymarker(wks,plot(0),ncells(n),garea(n),res)
    delete([/res@gsMarkerOpacityF/])
 
    res@gsMarkerIndex = 4
    pNam = unique_string("tmp")
-   plot@$pNam$ = gsn_add_polymarker(wks,plot(1),ncells(n),garea(n),res)
+   plot@$pNam$ = gsn_add_polymarker(wks,plot(0),ncells(n),garea(n),res)
 
 end do
  

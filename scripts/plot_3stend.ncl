@@ -33,6 +33,10 @@ begin
 	       "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.dzonal-hgt.dSTEND_CLUBB.ANN.nc", \
 	       "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.dzonal-hgt.dSTEND_CLUBB.ANN.nc"/)
 
+;  fname_in = (/"cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_3600pes_200603_192NCPL-mg3-Nx4yrs-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.dzonal-hgt.dSTEND_CLUBB.JJA.nc", \
+;              "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_3600pes_200603_192NCPL-mg3-Nx4yrs.dzonal-hgt.dSTEND_CLUBB.JJA.nc", \
+;               "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.dzonal-hgt.dSTEND_CLUBB.JJA.nc"/)
+
   nfiles = dimsizes(fname_in)
   ZBAR  = "zbarup_diff"
   ZQBAR  = "zqbarup_diff"
@@ -40,6 +44,10 @@ begin
  titles = (/"f09 - f19", \
 	    "ne30pg3 - f09", \
 	    "ne30pg3 - ne30pg2"/)
+
+; titles = (/"ne30pg3* - ne30pg3", \
+;            "ARCTIC - ne30pg3*", \
+;            "ARCTICGRIS - ARCTIC"/)
 
  lbarnams = (/"Temperature (K)", \
 	      "CLUBB Temperature Tendency (K/day)"/)
@@ -169,7 +177,7 @@ begin
    lnres@gsLineColor = "black"
    xx0 = 0.07
    xx1 = 0.4
-   xx2 = 0.6
+   xx2 = 0.66;;0.6
    xx3 = 0.99
 
 ;****************************************
@@ -254,7 +262,7 @@ do n = 0,nfiles-1
   delete([/tmp,zqbar_diff/])
 
   ;;;add titles
-  gsn_text_ndc(wks,titles(n),0.5,yy(n),txres)
+  gsn_text_ndc(wks,titles(n),0.53,yy(n),txres)
   lnres@gsLineThicknessF = 1.
   lnres@gsLineColor = "black"
   gsn_polyline_ndc(wks,(/xx0,xx1/),(/yy(n),yy(n)/)+0.005,lnres)

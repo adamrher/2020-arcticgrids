@@ -18,13 +18,6 @@ begin
   Rd = 287.
 ;****************************************
 
-  fname = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dQSNOMELT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dQSNOMELT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dQSNOMELT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dQSNOMELT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dQSNOMELT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dQSNOMELT.ANN.nc"/)
-
   fname = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dQSNOMELT.imask.ANN.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dQSNOMELT.imask.ANN.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dQSNOMELT.imask.ANN.nc", \
@@ -45,8 +38,8 @@ begin
   lbtitle = "SNOW+ICE MELT (mm/yr)"
 
   ;;set contour levels
-  maxcn  = 1000.
-  mincn  =-1000.
+  maxcn  = 2000.
+  mincn  =-2000.
   cnlevs = 20.
 
   pltNam = "temp_contours"

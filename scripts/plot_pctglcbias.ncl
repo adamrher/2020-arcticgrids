@@ -54,17 +54,17 @@ begin
 
   pltNam = "temp_bias"
 
-  xaxis = "ICE FRACTION"
+  xaxis = "GRID CELL ICE FRACTION"
   xmin = 0.;;+0.03333334
   xmax = 1.;;-0.03333334
 
-  ymin =     0.
-  ymax =   500.
-  yaxis = "MELT BIAS (mm/yr)"
-
-  ymin =     0.;;1.E-2
-  ymax =    12.;;1.E2
+  ymin =     8.E-3
+  ymax =     1.E2
   yaxis = "MELT BIAS (fraction)"
+
+  ;;ymin =     0.;;1.E-2
+  ;;ymax =    20.;;1.E2
+  ;;yaxis = "MELT BIAS (fraction)"
 
   ;;mm/s -> kg/(m2*yr) = mm/s [1m/1000mm] * rhoh2o * secpday*365 
 
@@ -127,7 +127,7 @@ begin
 
   ;;; transparent polygons
   gsres                = True
-  gsres@gsFillOpacityF = 0.2
+  gsres@gsFillOpacityF = 0.15
   gsres@tfPolyDrawOrder = "PreDraw"
 
 ;******************************************************
@@ -303,7 +303,7 @@ begin
      pct_gris = pct_tmp(indm)
      delete([/indm,ice_tmp,pct_tmp/])
 
-     nbins = 15
+     nbins = 10
      bin_bounds = fspan(0.,1.,nbins+1)
      bin_centers= bin_bounds(0:nbins-1)+(bin_bounds(1)-bin_bounds(0))/2.
 
@@ -320,11 +320,15 @@ begin
      end do
      delete([/ice_gris,pct_gris/])
 
-     ;;resf@xyYStyle ="Log"
+     resf@xyYStyle ="Log"
      indgd = ind(bin_mean.gt.0.)
 
-     ;resf@gsnXYBarChart            = True
-     ;resf@gsnXYBarChartOutlineOnly = True
+     resf@gsnXYBarChart            = True
+     resf@gsnXYBarChartOutlineOnly = True
+     bin_meanext = new( (/nbins+1/), "float")
+     bin_meanext(0:nbins-1) = bin_mean(0:nbins-1)
+     bin_meanext(nbins) = bin_mean(nbins-1)
+
      resf@xyLineThicknessF   = 6.
      resf@xyLineColors       = colors(n)
      if (n.eq.0) then
@@ -336,14 +340,17 @@ begin
        resf@trYMinF                = ymin
        resf@trYMaxF                = ymax
 
-       plot = gsn_csm_xy(wks,bin_centers(indgd),bin_mean(indgd),resf)
+       ;;plot = gsn_csm_xy(wks,bin_centers(indgd),bin_mean(indgd),resf)
+       plot = gsn_csm_xy(wks,bin_bounds,bin_meanext,resf)
        ;;plot = gsn_csm_xy(wks,bin_centers,bin_mean,resf)
      else
-       tmp = gsn_csm_xy(wks,bin_centers(indgd),bin_mean(indgd),resf)
+       ;;tmp = gsn_csm_xy(wks,bin_centers(indgd),bin_mean(indgd),resf)
+       tmp = gsn_csm_xy(wks,bin_bounds,bin_meanext,resf)
        ;;tmp = gsn_csm_xy(wks,bin_centers,bin_mean,resf)
        overlay(plot,tmp)
        delete(tmp)
      end if
+     delete(bin_meanext)
      nbins = dimsizes(indgd)
      ;;delete(indgd)
 
@@ -363,8 +370,8 @@ begin
      yp(nbins+1:np-1) = (/bin_neg(indgd(nbins-1:0))/)
 
      gsres@gsFillColor    = colors(n)
-     polystr = unique_string("hum")
-     plot@$polystr$ = gsn_add_polygon(wks,plot(0),xp,yp,gsres)
+     ;polystr = unique_string("hum")
+     ;plot@$polystr$ = gsn_add_polygon(wks,plot(0),xp,yp,gsres)
 
      delete([/bin_centers,bin_bounds,bin_mean,bin_median,bin_stddev,bin_pos,bin_neg,xp,yp/])
      delete(indgd)
@@ -385,8 +392,8 @@ begin
  res@gsMarkerSizeF = 30
  res@gsMarkerThicknessF = 6
 
- yy = (/0.90,0.87,0.84,0.81,0.78,0.75/)
- xx = 0.45
+ yy = (/0.90,0.87,0.84,0.81,0.78,0.75/)-0.52
+ xx = 0.2
  dx = 0.05
  do n = 0,nfiles-1
    resln@gsLineColor = colors(n)

@@ -37,7 +37,7 @@ begin
   VAR2 = "QSNOMELT"
   VAR2b= "QICE_MELT"
   VAR3 = "PDD"
-  beta = 5. ;;pdd factor
+  beta = 7. ;;pdd factor
   xfactor = 1.e-12;;mm/yr->Gt/yr
 
   modi = (/".regrid_TO_f19.cnsrv.basin",\
@@ -86,12 +86,12 @@ begin
   yaxis1 = "PRECIP (Gt/yr)"
 
   ymin2 =   0.
-  ymax2 = 180.
+  ymax2 = 280.
   yaxis2 = "SNOW+ICE MELT (Gt/yr)"
 
   ymin3 =   0.
-  ymax3 = 180.
-  yaxis3 = "PDD METHOD (Gt/yr)"
+  ymax3 = 280.
+  yaxis3 = "PDD MELT (Gt/yr)"
 
   ;;mm/s -> kg/(m2*yr) = mm/s [1m/1000mm] * rhoh2o * secpday*365 
 

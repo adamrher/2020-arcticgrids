@@ -71,7 +71,7 @@ begin
   ymax1 = 1200.
   yaxis1 = "PRECIP (Gt/yr)"
 
-  ymin2 =   -800.
+  ymin2 =  -1000.
   ymax2 =   -200.
   yaxis2 = "ICE/SNOW MELT (Gt/yr)"
 

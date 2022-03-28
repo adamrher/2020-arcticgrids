@@ -39,10 +39,14 @@ begin
   VAR2 = "QICE_MELT"
   VAR2b= "QSNOMELT"
 
-  modi = (/".regrid_TO_f19.cnsrv.basin.total.",\
-	   ".regrid_TO_f19.te.basin.total.", \
-	   ".regrid_TO_ne30pg2.cnsrv.basin.total.",\
-	   ".regrid_TO_ne30pg2.te.basin.total."/)
+;  modi = (/".regrid_TO_f19.cnsrv.basin.0.",\
+;	   ".regrid_TO_f19.te.basin.0.", \
+;	   ".regrid_TO_ne30pg2.cnsrv.basin.0.",\
+;	   ".regrid_TO_ne30pg2.te.basin.0."/)
+  modi = (/".regrid_TO_f19.cnsrv.basin.",\
+           ".regrid_TO_f19.te.basin.", \
+           ".regrid_TO_ne30pg2.cnsrv.basin.",\
+           ".regrid_TO_ne30pg2.te.basin."/)
   nregrid = dimsizes(modi)
 
   obsvar1  = "precip"
@@ -71,7 +75,7 @@ begin
   ymax1 = 1200.
   yaxis1 = "PRECIP (Gt/yr)"
 
-  ymin2 =  -1000.
+  ymin2 =   -800.
   ymax2 =   -200.
   yaxis2 = "ICE/SNOW MELT (Gt/yr)"
 
@@ -143,14 +147,14 @@ begin
 
    do m = 0,nregrid-1 
 
-     fname_in = fname(n) + ".GRIS." + VAR1 + modi(m) + "h0.nc"
+     fname_in = fname(n) + ".GRIS." + VAR1 + modi(m) + "0.h0.nc"
      print("load: " + fname_in)
      ncdf = addfile(subdir+fname_in,"r")
      xann1 = ncdf->xann
      ann1 = ncdf->ann
      delete(ncdf)
 
-     fname_in = fname(n) + ".GRIS." + VAR1b + modi(m) + "h0.nc"
+     fname_in = fname(n) + ".GRIS." + VAR1b + modi(m) + "0.h0.nc"
      print("load: " + fname_in)
      ncdf = addfile(subdir+fname_in,"r")
      ann1b = ncdf->ann
@@ -158,14 +162,14 @@ begin
      ann1 = ann1 + ann1b
      delete(ann1b)
 
-     fname_in = fname(n) + ".GRIS." + VAR2 + modi(m) + "h0.nc"
+     fname_in = fname(n) + ".GRIS." + VAR2 + modi(m) + "0.h0.nc"
      print("load: " + fname_in)
      ncdf = addfile(subdir+fname_in,"r")
      xann2 = ncdf->xann
      ann2 = ncdf->ann
      delete(ncdf)
 
-     fname_in = fname(n) + ".GRIS." + VAR2b + modi(m) + "h0.nc"
+     fname_in = fname(n) + ".GRIS." + VAR2b + modi(m) + "0.h0.nc"
      print("load: " + fname_in)
      ncdf = addfile(subdir+fname_in,"r")
      ann2b = ncdf->ann
@@ -175,14 +179,14 @@ begin
      delete(ann2b)
 
      if (n.eq.0) then
-       fname_in = obsname01 + ".GRIS." + obsvar1 + modi(m) + "nc"
+       fname_in = obsname01 + ".GRIS." + obsvar1 + modi(m) + "total.nc"
        print("load: " + fname_in)
        ncdf = addfile(subdir+fname_in,"r")
        otime1 = ncdf->otime
        oann1 = ncdf->oann
        delete(ncdf)
 
-       fname_in = obsname02 + ".GRIS." + obsvar2 + modi(m) + "nc"
+       fname_in = obsname02 + ".GRIS." + obsvar2 + modi(m) + "total.nc"
        print("load: " + fname_in)
        ncdf = addfile(subdir+fname_in,"r")
        otime2 = ncdf->otime
@@ -196,14 +200,14 @@ begin
        print("max2 obs: " + max(oann2))
        print("min2 obs: " + min(oann2))
 
-       fname_in = obsname11 + ".GRIS." + obsvar1 + modi(m) + "nc"
+       fname_in = obsname11 + ".GRIS." + obsvar1 + modi(m) + "total.nc"
        print("load: " + fname_in)
        ncdf = addfile(subdir+fname_in,"r")
        otime1b = ncdf->otime
        oann1b = ncdf->oann
        delete(ncdf)
        
-       fname_in = obsname12 + ".GRIS." + obsvar2 + modi(m) + "nc"
+       fname_in = obsname12 + ".GRIS." + obsvar2 + modi(m) + "total.nc"
        print("load: " + fname_in)
        ncdf = addfile(subdir+fname_in,"r")
        otime2b = ncdf->otime
@@ -337,9 +341,6 @@ begin
  pNam = unique_string("tmp")
  plot@$pNam$ = gsn_add_polymarker(wks,plot(1),xmax-1,obarann2,polyres)
 
-   print("RACMO PRECIP: " + obarann1)
-   print("RACMO MELT: " + obarann2)
-
  ;;all cases
  do n = 0,nfiles-1
 
@@ -416,9 +417,6 @@ begin
    pNam = unique_string("tmp")
    plot@$pNam$ = gsn_add_polymarker(wks,plot(1),xmax-1,barann2,polyres)
    delete([/ann11d,ann21d/])
-
-   print(label(n) + " PRECIP: " + barann1)
-   print(label(n) + " MELT: " + barann2)
 
  end do
 

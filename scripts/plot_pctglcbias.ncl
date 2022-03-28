@@ -55,16 +55,16 @@ begin
   pltNam = "temp_bias"
 
   xaxis = "GRID CELL ICE FRACTION"
-  xmin = 0.;;+0.03333334
-  xmax = 1.;;-0.03333334
+  xmin = 0.+0.03333334
+  xmax = 1.-0.03333334
 
   ymin =     8.E-3
   ymax =     1.E2
   yaxis = "MELT BIAS (fraction)"
 
-  ;;ymin =     0.;;1.E-2
-  ;;ymax =    20.;;1.E2
-  ;;yaxis = "MELT BIAS (fraction)"
+  ymin =   -14.;;1.E-2
+  ymax =    40.;;1.E2
+  yaxis = "MELT BIAS (fraction)"
 
   ;;mm/s -> kg/(m2*yr) = mm/s [1m/1000mm] * rhoh2o * secpday*365 
 
@@ -127,7 +127,7 @@ begin
 
   ;;; transparent polygons
   gsres                = True
-  gsres@gsFillOpacityF = 0.15
+  gsres@gsFillOpacityF = 0.20
   gsres@tfPolyDrawOrder = "PreDraw"
 
 ;******************************************************
@@ -147,8 +147,8 @@ begin
      area = ncdf->area
      delete(ncdf)
 
-     ice_diffa0 = ice_diffa0*regionmask*tofloat(lmask)
-     ice_diffa1 = ice_diffa1*regionmask*tofloat(lmask)
+     ice_diffa0 = ice_diffa0*regionmask
+     ice_diffa1 = ice_diffa1*regionmask
      pctglca = pctglca*regionmask*tofloat(lmask)
      delete([/regionmask,lmask,area/])
 
@@ -163,8 +163,8 @@ begin
      area = ncdf->area
      delete(ncdf)
 
-     ice_diffb0 = ice_diffb0*regionmask*tofloat(lmask)
-     ice_diffb1 = ice_diffb1*regionmask*tofloat(lmask)
+     ice_diffb0 = ice_diffb0*regionmask
+     ice_diffb1 = ice_diffb1*regionmask
      pctglcb = pctglcb*regionmask*tofloat(lmask)
      delete([/regionmask,lmask,area/])
 
@@ -179,8 +179,8 @@ begin
      area = ncdf->area
      delete(ncdf)
 
-     ice_diffc0 = ice_diffc0*regionmask*tofloat(lmask)
-     ice_diffc1 = ice_diffc1*regionmask*tofloat(lmask)
+     ice_diffc0 = ice_diffc0*regionmask
+     ice_diffc1 = ice_diffc1*regionmask
      pctglcc = pctglcc*regionmask*tofloat(lmask)
      delete([/regionmask,lmask,area/])
 
@@ -195,8 +195,8 @@ begin
      area = ncdf->area
      delete(ncdf)
 
-     ice_diffd0 = ice_diffd0*regionmask*tofloat(lmask)
-     ice_diffd1 = ice_diffd1*regionmask*tofloat(lmask)
+     ice_diffd0 = ice_diffd0*regionmask
+     ice_diffd1 = ice_diffd1*regionmask
      pctglcd = pctglcd*regionmask*tofloat(lmask)
      delete([/regionmask,lmask,area/])
 
@@ -303,7 +303,7 @@ begin
      pct_gris = pct_tmp(indm)
      delete([/indm,ice_tmp,pct_tmp/])
 
-     nbins = 10
+     nbins = 15
      bin_bounds = fspan(0.,1.,nbins+1)
      bin_centers= bin_bounds(0:nbins-1)+(bin_bounds(1)-bin_bounds(0))/2.
 
@@ -320,11 +320,11 @@ begin
      end do
      delete([/ice_gris,pct_gris/])
 
-     resf@xyYStyle ="Log"
+     ;resf@xyYStyle ="Log"
      indgd = ind(bin_mean.gt.0.)
 
-     resf@gsnXYBarChart            = True
-     resf@gsnXYBarChartOutlineOnly = True
+     ;resf@gsnXYBarChart            = True
+     ;resf@gsnXYBarChartOutlineOnly = True
      bin_meanext = new( (/nbins+1/), "float")
      bin_meanext(0:nbins-1) = bin_mean(0:nbins-1)
      bin_meanext(nbins) = bin_mean(nbins-1)
@@ -341,12 +341,12 @@ begin
        resf@trYMaxF                = ymax
 
        ;;plot = gsn_csm_xy(wks,bin_centers(indgd),bin_mean(indgd),resf)
-       plot = gsn_csm_xy(wks,bin_bounds,bin_meanext,resf)
-       ;;plot = gsn_csm_xy(wks,bin_centers,bin_mean,resf)
+       ;;plot = gsn_csm_xy(wks,bin_bounds,bin_meanext,resf)
+       plot = gsn_csm_xy(wks,bin_centers,bin_mean,resf)
      else
        ;;tmp = gsn_csm_xy(wks,bin_centers(indgd),bin_mean(indgd),resf)
-       tmp = gsn_csm_xy(wks,bin_bounds,bin_meanext,resf)
-       ;;tmp = gsn_csm_xy(wks,bin_centers,bin_mean,resf)
+       ;;tmp = gsn_csm_xy(wks,bin_bounds,bin_meanext,resf)
+       tmp = gsn_csm_xy(wks,bin_centers,bin_mean,resf)
        overlay(plot,tmp)
        delete(tmp)
      end if
@@ -370,8 +370,8 @@ begin
      yp(nbins+1:np-1) = (/bin_neg(indgd(nbins-1:0))/)
 
      gsres@gsFillColor    = colors(n)
-     ;polystr = unique_string("hum")
-     ;plot@$polystr$ = gsn_add_polygon(wks,plot(0),xp,yp,gsres)
+     polystr = unique_string("hum")
+     plot@$polystr$ = gsn_add_polygon(wks,plot(0),xp,yp,gsres)
 
      delete([/bin_centers,bin_bounds,bin_mean,bin_median,bin_stddev,bin_pos,bin_neg,xp,yp/])
      delete(indgd)
@@ -392,8 +392,8 @@ begin
  res@gsMarkerSizeF = 30
  res@gsMarkerThicknessF = 6
 
- yy = (/0.90,0.87,0.84,0.81,0.78,0.75/)-0.52
- xx = 0.2
+ yy = (/0.90,0.87,0.84,0.81,0.78,0.75/)+0.04
+ xx = 0.20
  dx = 0.05
  do n = 0,nfiles-1
    resln@gsLineColor = colors(n)

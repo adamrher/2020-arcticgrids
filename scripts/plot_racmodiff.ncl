@@ -38,8 +38,8 @@ begin
   lbtitle = "SNOW+ICE MELT (mm/yr)"
 
   ;;set contour levels
-  maxcn  = 2000.
-  mincn  =-2000.
+  maxcn  = 500.
+  mincn  =-500.
   cnlevs = 20.
 
   pltNam = "temp_contours"

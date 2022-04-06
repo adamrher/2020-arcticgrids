@@ -32,25 +32,23 @@ begin
 	    "  ARCTIC", \
 	    "  ARCTICGRIS"/)
 
-  VAR1 = "precip"
-  VAR2 = "snowmelt"
-  VAR3 = "t2m"
-  beta = 5. ;;pdd factor
+  VAR1 = "SNOW"
+  VAR1b= "RAIN"
+  VAR2 = "QSNOMELT"
+  VAR2b= "QICE_MELT"
+  VAR3 = "PDD"
+  beta = 7. ;;pdd factor
   xfactor = 1.e-12;;mm/yr->Gt/yr
 
-  modi = (/".method1.regrid_TO_f19.cnsrv.basin",\
-           ".method1.regrid_TO_f19.te.basin", \
-           ".method1.regrid_TO_ne30pg2.cnsrv.basin",\
-           ".method1.regrid_TO_ne30pg2.te.basin", \
-           ".method2.regrid_TO_f19.cnsrv.basin",\
-           ".method2.regrid_TO_f19.te.basin", \
-           ".method2.regrid_TO_ne30pg2.cnsrv.basin",\
-           ".method2.regrid_TO_ne30pg2.te.basin"/)
+  modi = (/".regrid_TO_f19.cnsrv.basin",\
+	   ".regrid_TO_f19.te.basin", \
+	   ".regrid_TO_ne30pg2.cnsrv.basin",\
+	   ".regrid_TO_ne30pg2.te.basin"/)
   nregrid = dimsizes(modi)
 
   obsvar1  = "precip"
   obsvar2  = "snowmelt"
-  obsvar3  = "t2m"
+  obsvar3  = "pdd"
 
   nobs = 2
   obsname1 = "racmo23"
@@ -88,11 +86,11 @@ begin
   yaxis1 = "PRECIP (Gt/yr)"
 
   ymin2 =   0.
-  ymax2 = 180.
+  ymax2 = 280.
   yaxis2 = "SNOW+ICE MELT (Gt/yr)"
 
   ymin3 =   0.
-  ymax3 = 180.
+  ymax3 = 280.
   yaxis3 = "PDD MELT (Gt/yr)"
 
   ;;mm/s -> kg/(m2*yr) = mm/s [1m/1000mm] * rhoh2o * secpday*365 
@@ -147,12 +145,28 @@ begin
        ann1 = ncdf->ann
        delete(ncdf)
 
+       fname_in = fname(n) + ".GRIS." + VAR1b + modi(m) + "." + tostring(q+1) + ".h0.nc"
+       print("load: " + fname_in)
+       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ann1b = ncdf->ann
+       delete(ncdf)
+       ann1 = ann1 + ann1b
+       delete(ann1b)
+
        fname_in = fname(n) + ".GRIS." + VAR2 + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
        ncdf = addfile("../data/basinseries/"+fname_in,"r")
        xann2 = ncdf->xann
        ann2 = ncdf->ann
        delete(ncdf)
+
+       fname_in = fname(n) + ".GRIS." + VAR2b + modi(m) + "." + tostring(q+1) + ".h0.nc"
+       print("load: " + fname_in)
+       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ann2b = ncdf->ann
+       delete(ncdf)
+       ann2 = ann2 + ann2b
+       delete(ann2b)
 
        fname_in = fname(n) + ".GRIS." + VAR3 + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
@@ -390,7 +404,7 @@ begin
  ;;resln@gsLineDashPattern = 1
  resln@gsLineColor = "black"
  gsn_polyline_ndc(wks,(/xx(n),xx(n)+dx/),(/yy(n),yy(n)/),resln)
- gsn_text_ndc(wks,"  RACMO",xx(n)+dx,yy(n),txres)
+ gsn_text_ndc(wks,"  RACMO2.3",xx(n)+dx,yy(n),txres)
 
 
 ;;drawNDCGrid(wks)
@@ -402,11 +416,10 @@ begin
   resP@gsnFrame         = False                  ; don't advance panel plot
   ;resP@gsnPaperOrientation = "portrait"
   resP@gsnPanelBottom   = 0.05
-  resP@gsnPanelFigureStrings = (/"(a)","(b)","(c)"/)
-  resP@gsnPanelFigureStringsFontHeightF = 0.015
+  resP@gsnPanelFigureStringsFontHeightF = 0.02
   resP@gsnPanelFigureStringsPerimOn     = True
   resP@gsnPanelFigureStringsBackgroundFillColor = "white"
-  resP@amJust           = "TopLeft"
+  resP@amJust           = "BottomLeft"
   ;resP@txString = pltTitle
   resP@gsnPanelTop = 0.90
   resP@gsnPanelYWhiteSpacePercent = 0.01

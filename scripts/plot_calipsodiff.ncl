@@ -25,33 +25,33 @@ begin
             "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
             "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc"/)
 
+  fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.fPRECT.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.fPRECT.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.fPRECT.JJA.nc"/)
+
 ;  fname1 = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.ANN.nc", \
 ;            "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.ANN.nc", \
 ;            "cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.ANN.nc", \
 ;            "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.ANN.nc", \
 ;            "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs-2-CALIPSO.dcontours.dCLDTOT.ANN.nc", \
 ;            "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs-2-CALIPSO.dcontours.dCLDTOT.ANN.nc"/)
-
-  fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dPRECT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dPRECT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dPRECT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dPRECT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dPRECT.ANN.nc", \
-	    "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dPRECT.ANN.nc"/)
-
-  fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.fPRECT.ANN.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.fPRECT.ANN.nc"/)
 ;
-;  fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.fPRECT.JJA.nc", \
-;            "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.JJA.nc", \
-;            "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.JJA.nc", \
-;            "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.JJA.nc", \
-;            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.fPRECT.JJA.nc", \
-;            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.fPRECT.JJA.nc"/)
+;  fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dPRECT.ANN.nc", \
+;	    "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dPRECT.ANN.nc", \
+;	    "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dPRECT.ANN.nc", \
+;	    "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dPRECT.ANN.nc", \
+;	    "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dPRECT.ANN.nc", \
+;	    "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dPRECT.ANN.nc"/)
+;
+;  fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
+;            "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
+;            "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
+;            "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
+;            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.fPRECT.ANN.nc", \
+;            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.fPRECT.ANN.nc"/)
 
   runnams1 = (/"f19", \
               "f09", \
@@ -69,16 +69,14 @@ begin
   nfiles = dimsizes(fname1)
 
   VAR = "bar_diff"
-  lbtitle1 = "CLDTOT (fraction)"
-  lbtitle2 = "PRECIP (mm w.e yr~S~-1~N~)"
-  lbtitle1 = "CLDTOT"
-  lbtitle2 = "PRECIP"
+  lbtitle1 = "CLDTOT (absolute fraction)"
+  lbtitle2 = "PRECIP (fractional change)"
 
   ;;set contour levels
   maxcn1  = 0.2
   mincn1  =-0.2
-  maxcn2  = 700.
-  mincn2  =-700.
+  ;maxcn2  = 700.
+  ;mincn2  =-700.
   maxcn2  = 1.
   mincn2  =-1.
   cnlevs1 = 20.
@@ -88,18 +86,8 @@ begin
 
   cellfill = True
 
-  griddir1 = (/"/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/"/)
-  griddir2 = (/"/glade/work/aherring/grids/uniform-res/f19/grids/", \
-              "/glade/work/aherring/grids/uniform-res/f09/grids/", \
-              "/glade/work/aherring/grids/uniform-res/ne30np4.pg2/grids/", \
-              "/glade/work/aherring/grids/uniform-res/ne30np4.pg3/grids/", \
-              "/glade/work/aherring/grids/var-res/ne0np4.ARCTIC.ne30x4/grids/", \
-              "/glade/work/aherring/grids/var-res/ne0np4.ARCTICGRIS.ne30x8/grids/"/)
+  griddir1 = "../data/gridfiles/"
+  griddir2 = "../data/gridfiles/"
 
   scrip1 = (/"CALIPSO_scrip.nc", \
             "CALIPSO_scrip.nc", \
@@ -177,10 +165,6 @@ do m = 0,1
    res@mpFillOn         = True
    ;;res@mpOutlineBoundarySets     = "NoBoundaries"
 
-;   res@mpProjection = "Orthographic"
-;   res@mpCenterLatF      =   45.
-;   res@mpCenterLonF      =  -45.
-
    res@mpProjection = "LambertConformal";;"Orthographic";;"Mollweide"
    res@mpLambertParallel1F = 85
    res@mpLambertParallel2F = 58
@@ -234,10 +218,9 @@ do m = 0,1
    res@cnMaxLevelValF  = maxcn
    res@cnLevelSpacingF = (maxcn-mincn)/cnlevs
 
-
    if (cellfill) then
      res@cnFillMode = "CellFill"
-     vf = addfile(griddir(n)+scrip(n),"r")
+     vf = addfile(griddir+scrip(n),"r")
      res@sfXCellBounds = vf->grid_corner_lon
      res@sfYCellBounds = vf->grid_corner_lat
      delete(vf)
@@ -287,14 +270,14 @@ do m = 0,1
   resP@lbOrientation              = "Vertical"
   resP@lbTitleFontHeightF         = 0.015
   resP@lbLabelFontHeightF         = 0.01
-  resP@pmLabelBarOrthogonalPosF   = 0.00
+  resP@pmLabelBarOrthogonalPosF   = -0.02
 
   ;;resP@pmLabelBarHeightF = 0.02
   resP@pmLabelBarWidthF = 0.05
 
   if (m.eq.0) then
     resP@gsnPanelTop = .95
-    resP@gsnPanelBottom = .60
+    resP@gsnPanelBottom = .65
   else
     resP@gsnPanelTop = .65
     resP@gsnPanelBottom = .35

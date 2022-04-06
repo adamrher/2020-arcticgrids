@@ -26,7 +26,8 @@ begin
 	    "  ne30pg3", \
 	    "  ARCTIC", \
 	    "  ARCTICGRIS", \
-	    "  RACMO23"/)
+	    "  RACMO23", \
+	    "  RACMO23p2"/)
 
   colors = (/"blue","deepskyblue1","green4","green","darkorchid4","magenta","black","black"/)
   nfiles = dimsizes(colors)
@@ -102,8 +103,8 @@ begin
   txres@txFontHeightF = 0.017
   txres@txJust = "CenterLeft"
 
-  yy = (/0.95,0.92,0.95,0.92,0.95,0.92,0.95,0.92/) - 0.16
-  xx = (/0.23,0.23,0.33,0.33,0.48,0.48,0.70,0.70/)
+  yy = 0.76
+  xx = (/0.05,0.11,0.17,0.29,0.41,0.525,0.7,0.84/)
   dx = 0.005
   ;;drawNDCGrid(wks)
 
@@ -146,22 +147,28 @@ begin
    plot@$pNam$ = gsn_add_polymarker(wks,plot(1),ncells(n),gdx(n),res)
    delete([/res@gsMarkerOpacityF/])
 
-   res@gsMarkerIndex = 4
+   if (n.eq.nfiles-1) then
+     res@gsMarkerIndex = 6
+   else
+     res@gsMarkerIndex = 4
+   end if
    pNam = unique_string("tmp")
    plot@$pNam$ = gsn_add_polymarker(wks,plot(1),ncells(n),gdx(n),res)
 
-   if (n.lt.nfiles-1) then
-     res@gsMarkerIndex = 16
-     res@gsMarkerOpacityF = 0.4
-     res@gsMarkerSizeF = 15
-     res@gsMarkerThicknessF = 4
-     gsn_polymarker_ndc(wks,xx(n),yy(n),res)
-     delete([/res@gsMarkerOpacityF/])
+   res@gsMarkerIndex = 16
+   res@gsMarkerOpacityF = 0.4
+   res@gsMarkerSizeF = 15
+   res@gsMarkerThicknessF = 4
+   gsn_polymarker_ndc(wks,xx(n),yy,res)
+   delete([/res@gsMarkerOpacityF/])
 
+   if (n.eq.nfiles-1) then
+     res@gsMarkerIndex = 6
+   else
      res@gsMarkerIndex = 4
-     gsn_polymarker_ndc(wks,xx(n),yy(n),res)
-     gsn_text_ndc(wks,label(n),xx(n)+dx,yy(n),txres)
    end if
+   gsn_polymarker_ndc(wks,xx(n),yy,res)
+   gsn_text_ndc(wks,label(n),xx(n)+dx,yy,txres)
 
    res@gsMarkerIndex = 16
    res@gsMarkerSizeF = 18;;25
@@ -172,7 +179,11 @@ begin
    plot@$pNam$ = gsn_add_polymarker(wks,plot(0),ncells(n),garea(n),res)
    delete([/res@gsMarkerOpacityF/])
 
-   res@gsMarkerIndex = 4
+   if (n.eq.nfiles-1) then
+     res@gsMarkerIndex = 6
+   else
+     res@gsMarkerIndex = 4
+   end if
    pNam = unique_string("tmp")
    plot@$pNam$ = gsn_add_polymarker(wks,plot(0),ncells(n),garea(n),res)
 
@@ -193,10 +204,11 @@ end do
   resP@gsnFrame         = False                  ; don't advance panel plot
   resP@gsnPanelBottom   = 0.10
   resP@gsnPanelTop      = 0.90
-  resP@gsnPanelFigureStringsFontHeightF = 0.02
+  resP@gsnPanelFigureStrings = (/"(a)","(b)"/)
+  resP@gsnPanelFigureStringsFontHeightF = 0.015
   resP@gsnPanelFigureStringsPerimOn     = True
   resP@gsnPanelFigureStringsBackgroundFillColor = "white"
-  resP@amJust           = "BottomLeft"
+  resP@amJust           = "TopRight"
   ;resP@txString = pltTitle
   gsn_panel(wks,plot,(/1,2/),resP)               ; now draw as one plot
 

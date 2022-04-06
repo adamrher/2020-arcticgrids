@@ -19,7 +19,7 @@ begin
 ;****************************************
 
   VAR = "dThyps"
-  VAR = "SWCF"
+  ;;VAR = "SWCF"
 
   if (VAR.eq."dThyps") then
     fname = (/"ERA5-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.dcontours.dThyps.JJA.nc", \
@@ -98,9 +98,9 @@ begin
    end if
 
    res@gsnSpreadColors   = True               ; use full range of color map
-   res@cnInfoLabelOn        = False
    res@lbLabelBarOn         = False
    res@tiMainFontHeightF = 0.006
+   res@cnInfoLabelOn     = False
 
    res@vpWidthF  = 0.3
    res@vpHeightF = 0.8

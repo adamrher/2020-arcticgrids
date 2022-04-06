@@ -18,7 +18,7 @@ begin
   Rd = 287.
 ;****************************************
 
-  subdir = "../data/tseries/"
+  subdir = "../data/basinseries/"
 
   fname = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs", \
 	    "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs", \
@@ -34,19 +34,17 @@ begin
 	    "  ARCTIC", \
 	    "  ARCTICGRIS"/)
 
-  VAR1 = "SNOW"
-  VAR1b= "RAIN"
-  VAR2 = "QICE_MELT"
-  VAR2b= "QSNOMELT"
+  VAR1 = "precip"
+  VAR2 = "snowmelt"
 
-;  modi = (/".regrid_TO_f19.cnsrv.basin.0.",\
-;	   ".regrid_TO_f19.te.basin.0.", \
-;	   ".regrid_TO_ne30pg2.cnsrv.basin.0.",\
-;	   ".regrid_TO_ne30pg2.te.basin.0."/)
-  modi = (/".regrid_TO_f19.cnsrv.basin.",\
-           ".regrid_TO_f19.te.basin.", \
-           ".regrid_TO_ne30pg2.cnsrv.basin.",\
-           ".regrid_TO_ne30pg2.te.basin."/)
+  modi = (/".method1.regrid_TO_f19.cnsrv.basin.0",\
+           ".method1.regrid_TO_f19.te.basin.0", \
+           ".method1.regrid_TO_ne30pg2.cnsrv.basin.0",\
+           ".method1.regrid_TO_ne30pg2.te.basin.0", \
+           ".method2.regrid_TO_f19.cnsrv.basin.0",\
+           ".method2.regrid_TO_f19.te.basin.0", \
+           ".method2.regrid_TO_ne30pg2.cnsrv.basin.0",\
+           ".method2.regrid_TO_ne30pg2.te.basin.0"/)
   nregrid = dimsizes(modi)
 
   obsvar1  = "precip"
@@ -71,12 +69,12 @@ begin
   xmin = 1970.;;1958.
   xmax = 2010.;;2013.
 
-  ymin1 =  600.
-  ymax1 = 1200.
+  ymin1 =  450.
+  ymax1 = 1250.
   yaxis1 = "PRECIP (Gt/yr)"
 
-  ymin2 =   -800.
-  ymax2 =   -200.
+  ymin2 =   -850.
+  ymax2 =   -150.
   yaxis2 = "ICE/SNOW MELT (Gt/yr)"
 
   ;;mm/s -> kg/(m2*yr) = mm/s [1m/1000mm] * rhoh2o * secpday*365 
@@ -147,46 +145,31 @@ begin
 
    do m = 0,nregrid-1 
 
-     fname_in = fname(n) + ".GRIS." + VAR1 + modi(m) + "0.h0.nc"
+     fname_in = fname(n) + ".GRIS." + VAR1 + modi(m) + ".h0.nc"
      print("load: " + fname_in)
      ncdf = addfile(subdir+fname_in,"r")
      xann1 = ncdf->xann
      ann1 = ncdf->ann
      delete(ncdf)
 
-     fname_in = fname(n) + ".GRIS." + VAR1b + modi(m) + "0.h0.nc"
-     print("load: " + fname_in)
-     ncdf = addfile(subdir+fname_in,"r")
-     ann1b = ncdf->ann
-     delete(ncdf)
-     ann1 = ann1 + ann1b
-     delete(ann1b)
-
-     fname_in = fname(n) + ".GRIS." + VAR2 + modi(m) + "0.h0.nc"
+     fname_in = fname(n) + ".GRIS." + VAR2 + modi(m) + ".h0.nc"
      print("load: " + fname_in)
      ncdf = addfile(subdir+fname_in,"r")
      xann2 = ncdf->xann
      ann2 = ncdf->ann
      delete(ncdf)
 
-     fname_in = fname(n) + ".GRIS." + VAR2b + modi(m) + "0.h0.nc"
-     print("load: " + fname_in)
-     ncdf = addfile(subdir+fname_in,"r")
-     ann2b = ncdf->ann
-     delete(ncdf)
-
-     ann2 = -1.*ann2 - ann2b
-     delete(ann2b)
+     ann2 = -1.*ann2
 
      if (n.eq.0) then
-       fname_in = obsname01 + ".GRIS." + obsvar1 + modi(m) + "total.nc"
+       fname_in = obsname01 + ".GRIS." + obsvar1 + modi(m) + ".nc"
        print("load: " + fname_in)
        ncdf = addfile(subdir+fname_in,"r")
        otime1 = ncdf->otime
        oann1 = ncdf->oann
        delete(ncdf)
 
-       fname_in = obsname02 + ".GRIS." + obsvar2 + modi(m) + "total.nc"
+       fname_in = obsname02 + ".GRIS." + obsvar2 + modi(m) + ".nc"
        print("load: " + fname_in)
        ncdf = addfile(subdir+fname_in,"r")
        otime2 = ncdf->otime
@@ -200,14 +183,14 @@ begin
        print("max2 obs: " + max(oann2))
        print("min2 obs: " + min(oann2))
 
-       fname_in = obsname11 + ".GRIS." + obsvar1 + modi(m) + "total.nc"
+       fname_in = obsname11 + ".GRIS." + obsvar1 + modi(m) + ".nc"
        print("load: " + fname_in)
        ncdf = addfile(subdir+fname_in,"r")
        otime1b = ncdf->otime
        oann1b = ncdf->oann
        delete(ncdf)
        
-       fname_in = obsname12 + ".GRIS." + obsvar2 + modi(m) + "total.nc"
+       fname_in = obsname12 + ".GRIS." + obsvar2 + modi(m) + ".nc"
        print("load: " + fname_in)
        ncdf = addfile(subdir+fname_in,"r")
        otime2b = ncdf->otime
@@ -268,7 +251,7 @@ begin
    avoann2(t) = dim_avg(dim_avg(OANN2(:,:,t)))
  end do
 
- resf@xyLineThicknessF   = 4.
+ resf@xyLineThicknessF   = 5.;;4.
  resf@xyLineColors       = "black"
 
  resf@trXMinF                = xmin
@@ -291,7 +274,7 @@ begin
 
  ;;; transparent polygons
  gsres                = True
- gsres@gsFillOpacityF = 0.3
+ gsres@gsFillOpacityF = 0.2;;0.3
  gsres@tfPolyDrawOrder = "PreDraw"
 
  np = 2*notime+1
@@ -324,6 +307,9 @@ begin
  oann21d = ndtooned(SOANN2)
  obarann1 = dim_avg(oann11d)
  obarann2 = dim_avg(oann21d)
+
+ print("racmo mean 1:" + obarann1)
+ print("racmo mean 2:" + obarann2)
 
  polyres@gsMarkerOpacityF = gsres@gsFillOpacityF
  polyres@gsMarkerColor = "black"
@@ -401,6 +387,9 @@ begin
    barann1 = dim_avg(ann11d)
    barann2 = dim_avg(ann21d)
 
+   print(label(n) + " mean 1:" + barann1)
+   print(label(n) + " mean 2:" + barann2)
+
    polyres@gsMarkerOpacityF = 0.4
    polyres@gsMarkerColor = colors(n)
    polyres@gsMarkerIndex = 16
@@ -446,7 +435,7 @@ print("label " + label(n) + ", color " + colors(n))
 
  resln@gsLineColor = "black"
  gsn_polyline_ndc(wks,(/xx(n),xx(n)+dx/),(/yy(n),yy(n)/),resln)
- gsn_text_ndc(wks,"  RACMO2.3",xx(n)+dx,yy(n),txres)
+ gsn_text_ndc(wks,"  RACMO",xx(n)+dx,yy(n),txres)
 
 ;;drawNDCGrid(wks)
 ;*****************************************************

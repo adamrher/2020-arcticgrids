@@ -18,42 +18,51 @@ begin
   Rd = 287.
 ;****************************************
 
-  fname = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dQSNOMELT.imask.ANN.nc", \
+  fname1 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.fPRECT.ANN.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.fPRECT.ANN.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.fPRECT.ANN.nc"/)
+
+  fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dQSNOMELT.imask.ANN.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dQSNOMELT.imask.ANN.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dQSNOMELT.imask.ANN.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dQSNOMELT.imask.ANN.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dQSNOMELT.imask.ANN.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dQSNOMELT.imask.ANN.nc"/)
 
-  runnams = (/"f19", \
+  runnams1 = (/"f19", \
               "f09", \
               "ne30pg2", \
               "ne30pg3", \
               "ARCTIC", \
               "ARCTICGRIS"/)
 
-  nfiles = dimsizes(fname)
+  nfiles = dimsizes(fname1)
 
   VAR = "bar_diff"
-  lbtitle = "SNOW+ICE MELT (mm/yr)"
 
   ;;set contour levels
-  maxcn  = 500.
-  mincn  =-500.
-  cnlevs = 20.
+  maxcn1  = 1.
+  mincn1  =-1.
+  maxcn2  = 500.
+  mincn2  =-500.
+  cnlevs1 = 20.
+  cnlevs2 = 20.
 
   pltNam = "temp_contours"
 
   cellfill = True
 
-  griddir = (/"/glade/work/aherring/grids/uniform-res/f19/grids/", \
+  griddir1 = (/"/glade/work/aherring/grids/uniform-res/f19/grids/", \
               "/glade/work/aherring/grids/uniform-res/f09/grids/", \
               "/glade/work/aherring/grids/uniform-res/ne30np4.pg2/grids/", \
               "/glade/work/aherring/grids/uniform-res/ne30np4.pg3/grids/", \
               "/glade/work/aherring/grids/var-res/ne0np4.ARCTIC.ne30x4/grids/", \
               "/glade/work/aherring/grids/var-res/ne0np4.ARCTICGRIS.ne30x8/grids/"/)
 
-  scrip = (/"fv1.9x2.5_141008.nc", \
+  scrip1 = (/"fv1.9x2.5_141008.nc", \
             "fv0.9x1.25_scrip_141008.nc", \
             "ne30pg2_scrip_170608.nc", \
             "ne30pg3_scrip_170611.nc", \
@@ -61,8 +70,8 @@ begin
             "ne0ARCTICGRISne30x8_scrip_191209.nc"/)
 
   basinfl = (/"GrnDrainageSystems.f19.mask.nc", \
-	      "GrnDrainageSystems.f09.mask.nc", \
-	      "GrnDrainageSystems.ne30pg2.mask.nc", \
+              "GrnDrainageSystems.f09.mask.nc", \
+              "GrnDrainageSystems.ne30pg2.mask.nc", \
               "GrnDrainageSystems.ne30pg3.mask.nc", \
               "GrnDrainageSystems.ARCTIC.mask.nc", \
               "GrnDrainageSystems.ARCTICGRIS.mask.nc"/)
@@ -73,9 +82,27 @@ begin
   wkstype = "pdf"
   wks = gsn_open_wks(wkstype,pltNam)               ; open workstation
 
-  ;;gsn_define_colormap(wks,"BkBlAqGrYeOrReViWh200")
-  gsn_define_colormap(wks,"cmp_b2r")
-  ;;gsn_reverse_colormap(wks)
+do m = 0,1
+
+  if (m.eq.0) then
+    gsn_define_colormap(wks,"precip4_diff_19lev")
+    fname = fname1
+    griddir = griddir1
+    scrip = scrip1
+    runnams = runnams1
+    maxcn = maxcn1
+    mincn = mincn1
+    cnlevs = cnlevs1
+  else
+    gsn_define_colormap(wks,"cmp_b2r")
+    fname = fname2
+    griddir = griddir1
+    scrip = scrip1
+    runnams = runnams1
+    maxcn = maxcn2
+    mincn = mincn2
+    cnlevs = cnlevs2
+  end if
 
   plot = new( (/nfiles/), "graphic")
 
@@ -83,6 +110,10 @@ begin
    res@gsnMaximize = False
    res@gsnDraw     = False      ; Will draw later, after overlaying
    res@gsnFrame    = False      ; all plots
+
+   res@cnFillOn          = False               ; turn on color fill
+   res@cnLinesOn         = True
+   res@cnLineLabelsOn    = True
 
    res@cnFillOn          = True               ; turn on color fill
    res@cnLinesOn         = False
@@ -120,8 +151,8 @@ begin
 
    resc = True
    resc@gsnMaximize = False
-   resc@gsnDraw     = False      
-   resc@gsnFrame    = False      
+   resc@gsnDraw     = False
+   resc@gsnFrame    = False
    resc@cnFillOn          = False
    resc@cnLinesOn         = True
    resc@cnLineLabelsOn    = False
@@ -170,6 +201,7 @@ begin
    res@cnMaxLevelValF  = maxcn
    res@cnLevelSpacingF = (maxcn-mincn)/cnlevs
 
+
    if (cellfill) then
      res@cnFillMode = "CellFill"
      vf = addfile(griddir(n)+scrip(n),"r")
@@ -180,41 +212,47 @@ begin
      res@cnFillMode = "AreaFill"
    end if 
 
+   res@gsnCenterStringFontHeightF = 0.01
+
    plot(n) = gsn_csm_contour_map(wks,var,res)
    delete(var)
 
-   bf = addfile("../data/basinmask/"+basinfl(n),"r")
-   imask = bf->basinmask 
-   delete(bf)
+   if (m.eq.1) then
+     bf = addfile("../data/basinmask/"+basinfl(n),"r")
+     imask = bf->basinmask
+     delete(bf)
+  
+     delete([/imask@units,imask@long_name/])
+     resc@cnLevelSelectionMode = "ExplicitLevels"
+     resc@cnLevels = (/0.5,1000./)
+     resc@cnLineThicknessF   = 2
+     resc@cnLineColor = "grey43"
+     resc@cnFillMode = "CellFill"
 
-   delete([/imask@units,imask@long_name/])
-   resc@cnLevelSelectionMode = "ExplicitLevels"
-   resc@cnLevels = (/0.5,1000./)
-   resc@cnLineThicknessF   = 2
-   resc@cnLineColor = "grey43"
-   resc@cnFillMode = "CellFill"
-
-   if (.not.latlon) then
-     resc@sfXArray = res@sfXArray
-     resc@sfYArray = res@sfYArray
-   end if
-   do b=1,7
-     if (b.eq.7 .or. b.eq.3 .or. b.eq.5) then
-       continue
+     if (.not.latlon) then
+       resc@sfXArray = res@sfXArray
+       resc@sfYArray = res@sfYArray
      end if
+     do b=1,7
+       if (b.eq.7 .or. b.eq.3 .or. b.eq.5) then
+         continue
+       end if
 
-     dum = imask
-     dum = where(imask.eq.tofloat(b),1.,0.)
-     tmp = gsn_csm_contour(wks,dum,resc)
-     overlay(plot(n),tmp)
-     delete(tmp)
-     delete(dum)
-   end do
-   delete(imask)
+       dum = imask
+       dum = where(imask.eq.tofloat(b),1.,0.)
+       tmp = gsn_csm_contour(wks,dum,resc)
+       overlay(plot(n),tmp)
+       delete(tmp)
+       delete(dum)
+     end do
+     delete(imask)
+     if (.not.latlon) then
+       delete([/resc@sfXArray,resc@sfYArray/])
+     end if
+   end if 
 
    if (.not.latlon) then
      delete([/res@sfXArray,res@sfYArray/])
-     delete([/resc@sfXArray,resc@sfYArray/])
    end if
 
    if (cellfill) then
@@ -223,9 +261,10 @@ begin
 
  end do;;n
 
-;*****************************************************
-; k-transect
-;*****************************************************
+ if (m.eq.1) then
+  ;*****************************************************
+  ; k-transect
+  ;*****************************************************
 
    klatitude = (/67.099d0, \
                 67.0d000, \
@@ -326,9 +365,9 @@ begin
 
   end do
 
-;******************************************************
-; kanger transect
-;******************************************************
+  ;******************************************************
+  ; kanger transect
+  ;******************************************************
 
   lonsummit = -37.2
   latsummit = 71.
@@ -409,19 +448,22 @@ begin
     plot@$tmp$ = gsn_add_polymarker(wks,plot(0),slon(i),slat(i),gsres)
   end do
 
-;*****************************************************
-; Add basin labels to ARTCTICGRIS plot
-;*****************************************************
+  ;*****************************************************
+  ; Add basin labels to ARTCTICGRIS plot
+  ;*****************************************************
 
- txres = True
- txres@txFontHeightF = 0.01
- txres@txJust = "CenterLeft"
- txres@gsnDraw     = False
- txres@gsnFrame    = False
+  txres = True
+  txres@txFontHeightF = 0.01
+  txres@txJust = "CenterLeft"
+  txres@gsnDraw     = False
+  txres@gsnFrame    = False
 
- label = (/"N","NE","CE","SE","SW","CW","NW"/)
- xx = (/0.894,0.92,0.94,0.924,0.892,0.91,0.89/)
- yy = (/0.61,0.58,0.51,0.479,0.475,0.52,0.56/)
+  label = (/"N","NE","CE","SE","SW","CW","NW"/)
+  xx = (/0.894,0.92,0.94,0.924,0.895,0.905,0.885/)-0.072
+  yy = (/0.60,0.58,0.51,0.479,0.475,0.52,0.56/)-0.028
+
+ ;;drawNDCGrid(wks)
+ end if
 
 ;;drawNDCGrid(wks)
 ;*****************************************************
@@ -433,7 +475,7 @@ begin
   ;;resP@gsnPaperOrientation = "landscape"
 
   resP@gsnPanelFigureStrings = runnams
-  resP@gsnPanelFigureStringsFontHeightF = 0.01
+  resP@gsnPanelFigureStringsFontHeightF = 0.008;;0.01
   resP@gsnPanelFigureStringsPerimOn     = True
   resP@gsnPanelFigureStringsBackgroundFillColor = "white"
   resP@amJust           = "TopLeft"
@@ -441,17 +483,37 @@ begin
   resP@gsnPanelLabelBar = False
   resP@gsnPanelLabelBar = True
   resP@lbBoxSeparatorLinesOn= False
-  resP@lbTitleString              = lbtitle
-  resP@lbTitlePosition            = "Bottom"
+  ;;resP@lbTitleString              = lbtitle
+  ;;resP@lbTitlePosition            = "Bottom"
+  ;;resP@lbLabelPosition            = "Vertical"
+  ;;resP@lbLabelAngleF              = 90.
+  ;;resP@lbTitleDirection           = "Down"
+  resP@lbOrientation              = "Vertical"
   resP@lbTitleFontHeightF         = 0.015
   resP@lbLabelFontHeightF         = 0.01
-  resP@pmLabelBarOrthogonalPosF   = -0.02
+  resP@pmLabelBarOrthogonalPosF   = 0.00
 
+  ;;resP@pmLabelBarHeightF = 0.02
+  resP@pmLabelBarWidthF = 0.05
+
+  if (m.eq.0) then
+    resP@gsnPanelTop = .95
+    resP@gsnPanelBottom = .60
+  else
+    resP@gsnPanelTop = .65
+    resP@gsnPanelBottom = .35
+  end if
+  resP@gsnPanelLeft = 0.05
+  resP@gsnPanelRight = 0.95
+
+  ;resP@txString = pltTitle
   gsn_panel(wks,plot,(/1,6/),resP)               ; now draw as one plot
 
-  do m = 0,6
-    gsn_text_ndc(wks,label(m),xx(m),yy(m),txres)
-  end do
+end do
+
+do p = 0,6
+  gsn_text_ndc(wks,label(p),xx(p),yy(p),txres)
+end do
 
 frame(wks)
 

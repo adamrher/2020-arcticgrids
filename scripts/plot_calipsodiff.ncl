@@ -18,12 +18,12 @@ begin
   Rd = 287.
 ;****************************************
 
-  fname1 = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
-            "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
-            "cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
-            "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
-            "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
-            "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc"/)
+  fname1 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dFSDS.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dFSDS.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dFSDS.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dFSDS.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dFSDS.JJA.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dFSDS.JJA.nc"/)
 
   fname2 = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs-2-CERES.dcontours.dFSDS.JJA.nc", \
             "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs-2-CERES.dcontours.dFSDS.JJA.nc", \
@@ -32,12 +32,12 @@ begin
             "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs-2-CERES.dcontours.dFSDS.JJA.nc", \
             "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs-2-CERES.dcontours.dFSDS.JJA.nc"/)
 
-  fname3 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dFSDS.JJA.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dFSDS.JJA.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dFSDS.JJA.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dFSDS.JJA.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dFSDS.JJA.nc", \
-            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dFSDS.JJA.nc"/)
+  fname3 = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
+            "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
+            "cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
+            "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
+            "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc", \
+            "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs-2-CALIPSO.dcontours.dCLDTOT.JJA.nc"/)
 
   runnams1 = (/"f19", \
               "f09", \
@@ -62,6 +62,9 @@ begin
   nfiles2 = dimsizes(fname2)
   nfiles3 = dimsizes(fname3)
 
+  titles = (/"RACMO3p2","CERES","CALIPSO"/)
+  yy = (/0.78,0.5,0.22/)
+
   VAR = "bar_diff"
   lbtitle1 = "CLDTOT (fraction)"
   lbtitle2 = "PRECIP (mm w.e yr~S~-1~N~)"
@@ -70,10 +73,10 @@ begin
   lbtitle3 = "FSDS"
 
   ;;set contour levels
-  maxcn1  = 0.2
-  mincn1  =-0.2
-  maxcn2  = 50.
-  mincn2  =-50.
+  maxcn1  = 50.
+  mincn1  =-50.
+  maxcn2  = 0.2
+  mincn2  =-0.2
   cnlevs1 = 20.
   cnlevs2 = 20.
 
@@ -81,31 +84,31 @@ begin
 
   cellfill = True
 
-  griddir1 = (/"/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/", \
-              "/glade/work/aherring/grids/SCRIP_files/"/)
+  griddir1 = (/"../data/gridfiles/", \
+               "../data/gridfiles/", \
+               "../data/gridfiles/", \
+               "../data/gridfiles/", \
+               "../data/gridfiles/", \
+               "../data/gridfiles/"/)
   griddir2 = (/"../data/gridfiles/", \
                "../data/gridfiles/", \
                "../data/gridfiles/", \
                "../data/gridfiles/", \
                "../data/gridfiles/", \
                "../data/gridfiles/"/)
-  griddir3 = (/"../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/"/)
+  griddir3 = (/"/glade/work/aherring/grids/SCRIP_files/", \
+              "/glade/work/aherring/grids/SCRIP_files/", \
+              "/glade/work/aherring/grids/SCRIP_files/", \
+              "/glade/work/aherring/grids/SCRIP_files/", \
+              "/glade/work/aherring/grids/SCRIP_files/", \
+              "/glade/work/aherring/grids/SCRIP_files/"/)
 
-  scrip1 = (/"CALIPSO_scrip.nc", \
-            "CALIPSO_scrip.nc", \
-            "CALIPSO_scrip.nc", \
-            "CALIPSO_scrip.nc", \
-            "CALIPSO_scrip.nc", \
-            "CALIPSO_scrip.nc"/)
+  scrip1 = (/"fv1.9x2.5_141008.nc", \
+            "fv0.9x1.25_scrip_141008.nc", \
+            "ne30pg2_scrip_170608.nc", \
+            "ne30pg3_scrip_170611.nc", \
+            "ne0ARCTICne30x4_scrip_191212.nc", \
+            "ne0ARCTICGRISne30x8_scrip_191209.nc"/)
 
   scrip2 = (/"CERES-EBAF_scrip.nc", \
             "CERES-EBAF_scrip.nc", \
@@ -114,12 +117,12 @@ begin
             "CERES-EBAF_scrip.nc", \
             "CERES-EBAF_scrip.nc"/)
 
-  scrip3 = (/"fv1.9x2.5_141008.nc", \
-            "fv0.9x1.25_scrip_141008.nc", \
-            "ne30pg2_scrip_170608.nc", \
-            "ne30pg3_scrip_170611.nc", \
-            "ne0ARCTICne30x4_scrip_191212.nc", \
-            "ne0ARCTICGRISne30x8_scrip_191209.nc"/)
+  scrip3 = (/"CALIPSO_scrip.nc", \
+            "CALIPSO_scrip.nc", \
+            "CALIPSO_scrip.nc", \
+            "CALIPSO_scrip.nc", \
+            "CALIPSO_scrip.nc", \
+            "CALIPSO_scrip.nc"/)
 
 ;******************************************************
 ; create plot
@@ -130,8 +133,7 @@ begin
 do m = 0,2
 
   if (m.eq.0) then
-    gsn_define_colormap(wks,"BkBlAqGrYeOrReViWh200")
-    gsn_reverse_colormap(wks)
+    gsn_define_colormap(wks,"cmp_b2r")
     fname = fname1
     nfiles = nfiles1
     griddir = griddir1
@@ -149,11 +151,12 @@ do m = 0,2
     scrip = scrip2
     runnams = runnams2
     lbtitle = lbtitle2
-    maxcn = maxcn2
-    mincn = mincn2
-    cnlevs = cnlevs2
+    maxcn = maxcn1
+    mincn = mincn1
+    cnlevs = cnlevs1
   else if (m.eq.2) then
-    gsn_define_colormap(wks,"cmp_b2r")
+    gsn_define_colormap(wks,"BkBlAqGrYeOrReViWh200")
+    gsn_reverse_colormap(wks)
     fname = fname3
     nfiles = nfiles3
     griddir = griddir3
@@ -281,6 +284,10 @@ do m = 0,2
 
  end do;;n
 
+ txres = True
+ txres@txFontHeightF = 0.016
+ txres@txAngleF = 90.
+ gsn_text_ndc(wks,titles(m),0.035,yy(m),txres)
 
 ;;drawNDCGrid(wks)
 ;*****************************************************

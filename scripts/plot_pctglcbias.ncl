@@ -18,14 +18,14 @@ begin
   Rd = 287.
 ;****************************************
 
-  subdir = "../data/pctglc/"
+  subdir = "2020-arcticgrids/data/pctglc/"
 
-  fname = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs", \
-	    "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs", \
+  fname = (/"cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs", \
+            "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs", \
+	    "cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs", \
 	    "cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs", \
-	    "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs", \
 	    "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs", \
-	    "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs"/)
+            "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs"/)
   nfiles = dimsizes(fname)
   label = (/"  f19", \
 	    "  f09", \
@@ -49,7 +49,8 @@ begin
            ".method2.regrid_TO_ne30pg2.te."/)
   nregrid = dimsizes(modi)
 
-  colors = (/"blue","deepskyblue1","green4","green","darkorchid4","magenta"/)
+  colors0 = (/"blue","deepskyblue1","green4","green","darkorchid4","magenta"/)
+  colors = (/"deepskyblue1","green","blue","green4","darkorchid4","magenta"/)
 
 ;******************************************************
 ; stuff
@@ -553,7 +554,7 @@ begin
  xx = 0.72
  dx = 0.05
  do n = 0,nfiles-1
-   resln@gsLineColor = colors(n)
+   resln@gsLineColor = colors0(n)
    gsn_polyline_ndc(wks,(/xx,xx+dx/),(/yy(n),yy(n)/),resln)
    gsn_text_ndc(wks,label(n),xx+dx,yy(n),txres)
  end do

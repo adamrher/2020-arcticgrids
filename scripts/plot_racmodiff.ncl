@@ -32,6 +32,13 @@ begin
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dQSNOMELT.imask.ANN.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dQSNOMELT.imask.ANN.nc"/)
 
+  ;fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.fQSNOMELT.imask.ANN.nc", \
+  ;          "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.fQSNOMELT.imask.ANN.nc", \
+  ;          "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.fQSNOMELT.imask.ANN.nc", \
+  ;          "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.fQSNOMELT.imask.ANN.nc", \
+  ;          "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.fQSNOMELT.imask.ANN.nc", \
+  ;          "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.fQSNOMELT.imask.ANN.nc"/)
+
   runnams1 = (/"f19", \
               "f09", \
               "ne30pg2", \
@@ -48,6 +55,8 @@ begin
   mincn1  =-1.
   maxcn2  = 500.
   mincn2  =-500.
+  ;maxcn2  = 1.
+  ;mincn2  =-1.
   cnlevs1 = 20.
   cnlevs2 = 20.
 
@@ -95,6 +104,7 @@ do m = 0,1
     cnlevs = cnlevs1
   else
     gsn_define_colormap(wks,"cmp_b2r")
+    gsn_reverse_colormap(wks)
     fname = fname2
     griddir = griddir1
     scrip = scrip1
@@ -167,6 +177,10 @@ do m = 0,1
    print("load file: " + fname(n))
    f  = addfile ("../data/lambert/"+fname(n),"r")
    var = f->$VAR$
+
+   if (m.eq.1) then
+     var = -1.*var
+   end if
 
    dims = dimsizes(dimsizes(var))
    if (dims.eq.2) then

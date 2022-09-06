@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: arcticgrids.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: bib.bib
+apacite.bst [2013/07/21 v6.03 APA bibliography style]
+Warning--No address in GMTED2010
+Warning--No journal in ST1995GEOS
+Warning--No institution in ESMF
+Warning--No address in ESMF
+You've used 87 entries,
+            6951 wiz_defined-function locations,
+            1918 strings with 33955 characters,
+and the built_in function-call counts, 212267 in all, are:
+= -- 25316
+> -- 1893
+< -- 11485
++ -- 12939
+- -- 196
+* -- 14719
+:= -- 40704
+add.period$ -- 324
+call.type$ -- 87
+change.case$ -- 1482
+chr.to.int$ -- 0
+cite$ -- 178
+duplicate$ -- 6543
+empty$ -- 7270
+format.name$ -- 3707
+if$ -- 37780
+int.to.chr$ -- 0
+int.to.str$ -- 261
+missing$ -- 0
+newline$ -- 2382
+num.names$ -- 698
+pop$ -- 2796
+preamble$ -- 1
+purify$ -- 350
+quote$ -- 0
+skip$ -- 12073
+stack$ -- 0
+substring$ -- 13977
+swap$ -- 3529
+text.length$ -- 203
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 7024
+warning$ -- 4
+while$ -- 1222
+width$ -- 0
+write$ -- 3123
+(There were 4 warnings)

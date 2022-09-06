@@ -1,0 +1,299 @@
+\documentclass[12pt,oneside,a4paper]{article}%{amsart}
+\usepackage[margin=1in]{geometry} % see geometry.pdf on how to lay out the page. There's lots.
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{caption}
+\setlength\parindent{0pt}
+\usepackage[round]{natbib}
+\bibliographystyle{abbrvnat}
+\renewcommand{\bibsection}{}
+
+\title{\large Response to Reviewers}
+\author{\normalsize Adam R. Herrington and CoAuthors}
+\date{} % delete this line to display the current date
+
+\begin{document}
+
+\maketitle
+
+\section*{General Remarks}
+
+{\color{red}{We would like to thank both reviewers for taking the time to provide thoughtful feedback on our manuscript.}} \newline
+
+\section*{Reviewer 1}
+
+\subsection*{General comments}
+
+Given that the different grid and dycore choices come with considerable different computational costs, I think it would be useful to include a section addressing that specific question. Some information touching on the costs appears at different places in the manuscript. It would be good to bring that all together somewhere and make a clear comparison, e.g. including a comparative table. \newline
+
+The way the term surface mass balance (SMB) is defined and used in the manuscript is confusing. The different components to the SMB are not consistently applied and there are two different definitions of the SMB in use. In part this confusion is related to the fact that the model itself does not calculate all the SMB components and assumptions have to be made about the separation between snow and ice, especially in the currently discussed uncoupled case. I would suggest to start with a physical definition of SMB with all its components in an equation and then explain based on that what the model is actually doing and what constraints have to be applied. In this context it may help to describe what the model would do in a coupled setup with active CISM and then apply further constraints for the diagnostic case currently described. \newline
+
+In the discussion about the different dycores, I was wondering if there could be a notion that the latitude-longitude approaches are more mature because they have a longer history. Maybe further improvements on technical aspects like filtering and optimal solutions may be expected for the FE approaches. \newline
+
+The relationship between atmospheric grid and land grid seems to be important. Would it be possible to say that higher resolution of the atmospheric grid improves the precipitation, while increased resolution of the land model improves the melt calculation/ablation components? \newline
+
+
+
+\subsection*{Specific comments}
+
+l12 I am confused about the use of the terms "uniform resolution" and "equivalent resolution". Since the lat-lon grids are also uniform (they have 1 or 2 degree resolution everywhere) I find this is not a good description to distinguish them here. Maybe this requires a few more words to make it clear to the reader what is meant here. The confusion is not fully removed in the main text either. See later comments.\newline
+
+{\color{blue}{We take your point and agree that this is confusing. To clarify this, we've replaced ``uniform resolution" with ``quasi-uniform unstructured grids" and clarify that ``uniform" refers to isotropic grids where every grid cell has the same length in meters, as opposed to an angular distance in spherical coordinates. Whereas we had previously used ``uniform grids" to refer to both lat-lon and quasi-uniform unstructured grids, we replace ``uniform" with ``lat-lon and quasi-uniform grids" throughout the manuscript, to be more explicit about the differences between the SE and lat-lon grids.}} \newline
+
+l29 It would be good to add one sentence about the cost here. E.g. "... recovering resolution lost in the transition to quasi-uniform grids, albeit at increased computational cost." \newline
+
+{\color{blue}{Done.}} \newline
+
+l37 "latitude-longitude grids" \newline
+
+{\color{blue}{Done.}} \newline
+
+l75 "Dycores built on lat-lon grids have some advantages over dycores built on unstructured grids" \newline
+
+{\color{blue}{Done.}} \newline
+
+l92 "have large" --> "has a large" \newline
+
+{\color{blue}{Done.}} \newline
+
+l94 The logic of "Conversely" is not clear, since I think it is referring to the first sentence in the paragraph not the preceding one. Reformulate? \newline
+
+{\color{blue}{Sentence beginning with conversely has been reformulated to improve clarity.}} \newline
+
+l107 Move "(SMB; the integrated sum of precipitation and runoff)" before "of the Greenland ice sheet". \newline
+
+{\color{blue}{Done.}} \newline
+
+l104-110 With the benefit of a high resolution land model in mind, is it possible to run the land model at a different/higher resolution than the atmosphere model? If so, this could be mentioned here. \newline
+
+{\color{blue}{As discussed above, I'm not optimistic about the utility of a higher-res land model, and would rather not go on a tangent about custom configurations.}} \newline
+
+l117 "(marginal regions where seasonal melting exceeds the annual mass input from precipitation)" This sentence is not correct. What defines the ablation area is a negative SMB. Problems with the statement are that melt can refreeze and precipitation can occur as snow and rain. It would maybe help to write out the whole SMB in an equation if there is confusion about these terms. \newline
+
+{\color{blue}{Replaced with ``marginal regions where the annual SMB is negative."}} \newline
+
+l138 "is represented with 1/4 resolution" I believe they have used two different levels of refinement (0.5 and 0.25 degree): Maybe state "is represented with up to 1/4 resolution" instead. Or give resolution in km as they do in most of the paper: 55 km and 28 km. \newline
+
+{\color{blue}{Used reviewers ``up to" suggestion.}} \newline
+
+l159 What I miss in this section is a short introduction to CESM. Can be brief, but should bring the reader up to speed what kind of model that is \newline
+
+{\color{blue}{Included a short introduction to CESM. Also moved language from the experimental design section in here, as well as include a statement that the ice sheet model is not dynamically active. Our hope is that by including this at the very top of the methods section, this partly addresses the reviewers concern that it is not clear we are not running with an active ice sheet.}} \newline
+
+l174 Is it correct to say the dycore is a model? \newline
+
+{\color{blue}{Reworded.}} \newline
+
+l203 "the SE numerics have been enhanced". Enhanced compared to what. An earlier model version, I suspect. Mention that. \newline
+
+{\color{blue}{added: relative to the CESM2.0 release.}} \newline
+
+l214 "... has been modified to scale the smoothing radius by the local element size, resulting in rougher topography in the refinement zone." This seems in contrast to the very idea of refinement. Maybe this should be mentioned here? \newline
+
+{\color{blue}{I don't follow. How is rougher topography in the refinement zone inconsistent with the very idea of refinement? From our perspective it is a requirement of refinement -- finer dynamics permits rougher topography.}} \newline
+
+l215 "For SE grids". The grids are not SE! It is clear what you mean, but good to use proper terminology. Maybe "When using the SE dycore with quasi-uniform element sizes ..." \newline
+
+{\color{blue}{Used the reviewers preferred wording.}} \newline
+
+l215-219 I seem to understand from this paragraph that CSLAM is an improvement, but that it cannot be applied for VR grids. If so, please make that clear here. \newline
+
+{\color{blue}{Added. Yes, this is unfortunately true. We do have plans to address this in VR within the next 2 years.}} \newline
+
+l220-224 I am wondering if this separate grid could in principle be extended to match an underlying SE dynamics VR grid by further subdivision into more control volumes. \newline
+
+{\color{blue}{The underlying issue is that the SE dynamics don't have control volumes. They have GLL nodes, which are point samples of a spectrally truncated state. In order to couple SE to other model components, we had to invent control volumes because the CESM infrastructure uses finite-volume mapping algorithms to couple to other model components. The resulting control volume grid is an anisotropic mess (see Figure 4 in my MWR 2019 paper), which was constructed by constructing control volumes consistent with each GLL node's quadrature weight. It is much preferable to split the elements into quadrilateral control volumes and use the continuous basis representation to project the SE solution onto the quadrilateral control volumes (like we do in pg3 and pg2.}} \newline
+
+l224 add "at" after "evaluated" \newline
+
+{\color{blue}{Done.}} \newline
+
+l249 I don't think "RACMO" has been defined yet. Please do. \newline
+
+{\color{blue}{Done.}} \newline
+
+l251 The discussion about computational costs is an important one in this comparison and should get at least an own paragraph, if not an own sub-section. \newline
+
+{\color{blue}{See introductory remarks.}} \newline
+
+l288 It is not the grids that calculate the SMB. Maybe "CESM simulates the GrIS SMB as the sum of mass accumulation and ablation" \newline
+
+{\color{blue}{We have replaced with the suggested language. In order to reconcile your following comments regarding this paragraph, what follows this top sentence is a description of how the SMB is computed in CESM. This requires some changes to the language, such as excluding rain from the runoff terms, and making clear only ice accumulation is contained in the accumulation terms. Having addressed some unclear statements about the definition of the SMB in the introduction, we don't feel that we need to add another equation for CESM's SMB, or a common glaciological definition plus a simplified version used by CESM. These equations can be found in the references in the sentence "For a more detailed description of the SMB is computed in CESM ...", in particular equations 4 and 5 in van Kampenhout et al. 2020. }} \newline
+
+l289 Strictly speaking only snow accumulation is a definite positive mass source, while rain can either runoff or refreeze. Again, an equation that gives all the terms in the SMB may be useful here. \newline
+
+{\color{blue}{See above comment.}} \newline
+
+l290 Suggest to replace "with runoff being a combination of" by "with runoff having sources of a combination of". Again, I think runoff is not a straight sum of these, because of refreezing. \newline
+
+{\color{blue}{This has been modified in the reworked section.}} \newline
+
+l300 Mention here that this can change if the Greenland ice sheet is fully coupled. I generally miss already earlier a statement that you are using CESM without interactive Greenland ice sheet. \newline
+
+{\color{blue}{This is a good catch and the language has been inserted about how this changes with an active ice sheet.}} \newline
+
+l305 These descriptions apply to the uncoupled case, which should be clarified. It may also be interesting to explain what happens in the coupled case, since CESM has that as an option. I am a bit surprised that this is not the primary option you are describing here. \newline
+
+{\color{blue}{After addressing your last comment, we believe the paragraph is valid for both coupled and un-coupled cases.}} \newline
+
+l308 I think it would be interesting to show that downscaled SMB (using the elevation classes) and compare that between the different cases. That is the SMB product one would actually use either in the coupled case or when extracting the SMB from CESM for offline forcing of an ice sheet model. In addition, you could compare that result more easily between the different cases as they would all be well-defined on the output grid. \newline
+
+{\color{blue}{We agree that would be interesting. The reason we didn't employ this approach -- which to be clear, we interpret as evaluating the SMB field downscaled to the 4km CISM grid -- is that only the SMB is downscaled. It is the resolution sensitivity of the individual components of the SMB that is the main focus of this study. It's representation on the CLM grid is still quite advanced, owing to the EC scheme. I suppose we could have tried to hack the code to downscale the SMB components to CISM, but we didn't go down that road (and no telling the number of issues that would've cropped up going down that road). That said, our approach of mapping to the common ice mask is quite complicated as well.}} \newline
+
+l313 "Changes in ice depth, but not snow depth, count toward the SMB" seems to be in contrast with "Any snow above the 10 m cap contributes towards ice accumulation in the SMB" in the paragraph before. Please clarify. \newline
+
+{\color{blue}{I'm not sure I see the contradiction the reviewer is referring to, but this a clearly a redundancy that we've eliminated by consolidating the paragraphs.}} \newline
+
+l322 The datasets you use are not observational but model results. I think this should be made clear already in the heading. Maybe "Target" or "Validation" datasets. \newline
+
+{\color{blue}{Done.}} \newline
+
+l323 Again, the datasets in use are not observational. \newline
+
+{\color{blue}{Done.}} \newline
+
+l323-338 You do not seem to describe anywhere the other datasets in Table 2: ERA, CERES, Calipso. These should all be described here as well. \newline
+
+{\color{blue}{Done.}} \newline
+
+l331 add "e.g." after before "maintained". This is a very specific collection of the data. \newline
+
+{\color{blue}{I'm not sure I follow, but I did clarify the second category to be less specific (remote sensing datasets instead of radar accumulation datasets).}} \newline
+
+l343 "reference dataset" Remind us what this is and where it is sourced from. \newline
+
+{\color{blue}{Clarified the reference dataset and added citation.}} \newline
+
+l348 "can lead to large differences in integrated SMB" Could explain briefly why that is, because the mass loss happens in a narrow band along the margins. \newline
+
+{\color{blue}{The Hansen paper indicates that differences in the ice masks occur in its representation of the ice margins, where lots of melting conceivable occurs. So an erroneously small ice mask may overestimate the SMB due to omitting areas where melting occurs. }} \newline
+
+l363 Equ 1. Could be read as "evaporation divided by sublimation". Why not "SMB = accumulation + runoff + evaporation + sublimation"? \newline
+
+{\color{blue}{Done.}} \newline
+
+l369 This is confusing, because we are in section 2.4. If you are operating with two different SMB terms, you should have two equations to clearly distinguish them. \newline
+
+{\color{blue}{We have reworded and moved this last sentence, indicating that the total water SMB is different than the SMB internally computed by CLM, as a topic sentence to its own paragraph immediately following. We've added clarification on the role of the internally generated CLM SMB, that we don't use this definition in this study.}} \newline
+
+l372 "grid-cell mean quantities" Clarify that these are atmospheric/land-model grid cells. \newline
+
+{\color{blue}{Apologies for not understanding the suggestion here. What is it that needs clarification? A topic sentence in a paragraph in the methods section begins with ``CLM runs on the same grid as the atmosphere..." Is that what you are asking about?}} \newline
+
+l388 insert "further" before "diversify". \newline
+
+{\color{blue}{Done.}} \newline
+
+l439 Since you start the section in 404 with "Before delving into the simulated Arctic climate conditions ...", could mark that we are now moving from global to Arctic discussion. \newline
+
+{\color{blue}{Good suggestion. Done}} \newline
+
+l461 "CERES product" needs to be described in 2.5. \newline
+
+{\color{blue}{Done.}} \newline
+
+l478 Add "radiation" after "shortwave". \newline
+
+{\color{blue}{Done.}} \newline
+
+l525 "underline"? \newline
+
+{\color{blue}{Yes. Fixed.}} \newline
+
+l528 Did you test how much biased the results could be due to the relatively short period of 20 years in view of the large inter-annual variability? If you don't have more years, you could remove any of the 20 years and see how much the numbers change. \newline
+
+l553 "smaller melt-rates" or smaller melt-rate biases? \newline
+
+{\color{blue}{since both are true, replaced with ``smaller melt-rates and melt-rate biases."}} \newline
+
+l564 Often PDD schemes have different PDD factors for snow and ice melt. Is this not not the case here? \newline
+
+{\color{blue}{To simplify the calculation I just took an intermediate value between snow and ice (Braithwaite 1984 uses 3 mm/d/C and 7 mm/d/C for ice), so I wouldn't need to approximate how to partition at particular monthly average grid cell. Added these details in the manuscript in parenthesis.}} \newline
+
+l557-564 Description and motivation for using the PDD model should probably be moved/added to the Methods section. \newline
+
+{\color{blue}{Our personal opinion is that defining it on the fly, naturally arising from the analysis to explain a discrepancy between two contrasting results, is preferable instead of premeditating it earlier on in the manuscript.}} \newline
+
+l571 Consider reordering figures, since we are jumping back from 11 to 9 here. \newline
+
+l594 This reads like a contradiction to me "coarser models ... depress melt rates, which is the opposite of the melt bias that occurs in the coarse grid simulations". What happens in course models is the opposite to what happens in coarse models? \newline
+
+{\color{blue}{Reworded this slightly to improve the clarity. ``This suggests that coarser models will tend to elevate the ablation zones relative to where they should be, which may be expected to cause anomalous (adiabatic) cooling and depressed melt rates, but this is opposite the melt bias that occurs in the coarse grid simulations."}} \newline
+
+l603 "volume averaging" I would have guessed this was done by area averaging. \newline
+
+{\color{blue}{Fair point. Changed to area averaging.}} \newline
+
+l605 Maybe add "and more melting" after "warm bias over the ice-covered patch". \newline
+
+{\color{blue}{Done.}} \newline
+
+l622 Define PDFs. \newline
+
+{\color{blue}{Done.}} \newline
+
+l648 Add "refined over the US" after CONUS. \newline
+
+{\color{blue}{Done.}} \newline
+
+l735 hydrid --> hybrid \newline
+
+{\color{blue}{Done.}} \newline
+
+l748 Replace "shown" by "given" to avoid repeat of "showing/show". \newline
+
+{\color{blue}{Done.}}
+
+\subsection*{Figures}
+
+
+\subsubsection*{Fig 1}
+I think the grid lines could be thinner. On a printout this doesn't come out well. \newline
+The color choice puts a lot of emphasis on the lakes in blue. Suggest to display the land-sea mask instead, i.e. make the lakes part of the land mask. \newline
+
+{\color{blue}{Thinned the lines by half and changed the lake colors to tan/land.}} \newline
+
+I would also consider using another projection that includes all of Greenland and it's surroundings. \newline
+
+{\color{blue}{We have decided to keep the original polar projection, in order to show the polar points and Greenland.}} \newline
+
+Caption. It is confusing to refer to all 4 grids as uniform, because they are uniform in different ways. At least distinguish them as uniform 1, 2 latitude-longitude grids (top) and quasi-uniform element size grids (bottom), or similar. \newline
+
+{\color{blue}{Changed to new labeling discussed above.}}
+
+\subsubsection*{Fig 10}
+Better use y-axis label ICE+SNOW MELT consistent with Fig 11 and to avoid confusion ICE divided by SNOW. \newline
+
+\subsubsection*{Fig 11}
+The sign convention seems to be changed from Fig 10 with positive melt. Make consistent. \newline
+
+
+
+\subsection*{References}
+
+Many references are not formatted correctly in terms of upper case / lower case. There are also other problems like incomplete author lists and formatting problems. Please revise. Some examples below. \newline
+
+l793 This is a regular paper citation that doesn't need a "Retrieved from" entry. Author list incomplete. \newline
+
+l797 Incomplete author list. \newline
+
+l924 Refer to final paper. Note title change: NCAR Topo v1.0 NCAR global model topography generation software for unstructured grids. https://doi.org/10.5194/gmd-8-3975-2015 \newline
+
+l988 This is a regular paper citation that doesn't need a "Retrieved from" entry. Author list with "...". \newline
+
+l1063 Refer to final paper. https://doi.org/10.5194/gmd-14-5023-2021 \newline
+
+l1071 Refer to final paper. https://doi.org/10.5194/tc-13-1547-2019 \newline
+
+
+\section*{Reviewer 2}
+
+%\section*{\normalsize References}
+%\setlength{\bibsep}{0pt}
+%{\footnotesize
+%\bibliography{bib}}
+
+
+\end{document}

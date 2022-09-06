@@ -1,0 +1,233 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;\red16\green60\blue192;
+}
+{\*\expandedcolortbl;;\cssrgb\c13333\c13333\c13333;\cssrgb\c100000\c100000\c100000;\cssrgb\c6667\c33333\c80000;
+}
+\margl1440\margr1440\vieww29860\viewh15280\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs20 \cf2 \cb3 \expnd0\expndtw0\kerning0
+-------------------------------------------------------------------------------\
+Associate Editor Evaluations:\
+Accurate Key Points: Yes\
+\
+Associate Editor (Remarks to Author):\
+\
+Dear Dr Herrington,\
+\
+We have received two reviews of your manuscript `Impact of grids and dynamical cores in CESM2.2 on the surface mass balance of the Greenland Ice Sheet'. The reviewers agree that the work is timely and that the manuscript could potentially make a significant contribution to the field. However, both reviewers make a number of suggestions for improving the clarity of the arguments and presentation. I am therefore recommending to the Editor that the manuscript be returned to you for minor revision.\
+\
+John Thuburn\
+Associate Editor\
+\
+\
+Reviewer #1 Evaluations:\
+Recommendation: Return to author for minor revisions\
+Significant: Yes, the science is at the forefront of the discipline.\
+Supported: Yes\
+Referencing: Yes\
+Quality: Yes, it is well-written, logically organized, and the figures and tables are appropriate.\
+Data: Yes\
+Accurate Key Points: Yes\
+\
+Reviewer #1 (Formal Review for Authors (shown to authors)):\
+\
+Summary\
+-------\
+\
+The authors compare a number of different dynamical cores and computational grids for the Earth System Model CESM and study their impact on the simulated surface mass balance of the Greenland ice sheet. The paper addresses a timely issue as including coupled ice sheet components in Earth System models is an emerging scientific endeavour and the quality of the modelling is often limited by the horizontal resolution of the atmosphere and land components. I consider the manuscript an important contribution and would recommend publishing it in James.\
+\
+The document is well written and structured and I have only minor comments that should be addressed before the paper is published.\
+\
+\
+General comments\
+----------------\
+\
+Given that the different grid and dycore choices come with considerable different computational costs, I think it would be useful to include a section addressing that specific question. Some information touching on the costs appears at different places in the manuscript. It would be good to bring that all together somewhere and make a clear comparison, e.g. including a comparative table.\
+\
+The way the term surface mass balance (SMB) is defined and used in the manuscript is confusing. The different components to the SMB are not consistently applied and there are two different definitions of the SMB in use. In part this confusion is related to the fact that the model itself does not calculate all the SMB components and assumptions have to be made about the separation between snow and ice, especially in the currently discussed uncoupled case. I would suggest to start with a physical definition of SMB with all its components in an equation and then explain based on that what the model is actually doing and what constraints have to be applied. In this context it may help to describe what the model would do in a coupled setup with active CISM and then apply further constraints for the diagnostic case currently described.\
+\
+In the discussion about the different dycores, I was wondering if there could be a notion that the latitude-longitude approaches are more mature because they have a longer history. Maybe further improvements on technical aspects like filtering and optimal solutions may be expected for the FE approaches.\
+\
+The relationship between atmospheric grid and land grid seems to be important. Would it be possible to say that higher resolution of the atmospheric grid improves the precipitation, while increased resolution of the land model improves the melt calculation/ablation components?\
+\
+\
+\
+Specific comments\
+-----------------\
+\
+l12 I am confused about the use of the terms "uniform resolution" and "equivalent resolution". Since the lat-lon grids are also uniform (they have 1 or 2 degree resolution everywhere) I find this is not a good description to distinguish them here. Maybe this requires a few more words to make it clear to the reader what is meant here. The confusion is not fully removed in the main text either. See later comments.\
+\
+l29 It would be good to add one sentence about the cost here. E.g.\
+"... recovering resolution lost in the transition to quasi-uniform grids, albeit at increased computational cost."\
+\
+l37 "latitude-longitude grids"\
+\
+l75 "Dycores built on lat-lon grids have some advantages over dycores built on unstructured grids"\
+\
+l92 "have large" --> "has a large"\
+\
+l94 The logic of "Conversely" is not clear, since I think it is referring to the first sentence in the paragraph not the preceding one. Reformulate?\
+\
+l107 Move "(SMB; the integrated sum of precipitation and runoff)" before "of the Greenland ice sheet".\
+\
+l104-110 With the benefit of a high resolution land model in mind, is it possible to run the land model at a different/higher resolution than the atmosphere model? If so, this could be mentioned here.\
+\
+\
+l117 "(marginal regions where seasonal melting exceeds the annual mass input from precipitation)"\
+This sentence is not correct. What defines the ablation area is a negative SMB. Problems with the statement are that melt can refreeze and precipitation can occur as snow and rain. It would maybe help to write out the whole SMB in an equation if there is confusion about these terms.\
+\
+l138 "is represented with 1/4\uc0\u9702  resolution"\
+I believe they have used two different levels of refinement (0.5 and 0.25 degree): Maybe state "is represented with up to 1/4\uc0\u9702  resolution" instead. Or give resolution in km as they do in most of the paper: 55 km and 28 km.\
+\
+l159 What I miss in this section is a short introduction to CESM. Can be brief, but should bring the reader up to speed what kind of model that is\
+\
+l174 Is it correct to say the dycore is a model?\
+\
+l203 "the SE numerics have been enhanced". Enhanced compared to what. An earlier model version, I suspect. Mention that.\
+\
+l214 "... has been modified to scale the smoothing radius by the local element size, resulting in rougher topography in the refinement zone."\
+This seems in contrast to the very idea of refinement. Maybe this should be mentioned here?\
+\
+l215 "For SE grids". The grids are not SE! It is clear what you mean, but good to use proper terminology. Maybe "When using the SE dycore with quasi-uniform element sizes ..."\
+\
+l215-219 I seem to understand from this paragraph that CSLAM is an improvement, but that it cannot be applied for VR grids. If so, please make that clear here.\
+\
+l220-224 I am wondering if this separate grid could in principle be extended to match an underlying SE dynamics VR grid by further subdivision into more control volumes.\
+\
+l224 add "at" after "evaluated"\
+\
+l249 I don't think "RACMO" has been defined yet. Please do.\
+\
+l251 The discussion about computational costs is an important one in this comparison and should get at least an own paragraph, if not an own sub-section.\
+\
+l288 It is not the grids that calculate the SMB. Maybe "CESM simulates the GrIS SMB as the sum of mass accumulation and ablation"\
+\
+l289 Strictly speaking only snow accumulation is a definite positive mass source, while rain can either runoff or refreeze. Again, an equation that gives all the terms in the SMB may be useful here.\
+\
+l290 Suggest to replace "with runoff being a combination of" by "with runoff having sources of a combinati	on of". Again, I think runoff is not a straight sum of these, because of refreezing.\
+\
+l300 Mention here that this can change if the Greenland ice sheet is fully coupled. I generally miss already earlier a statement that you are using CESM without interactive Greenland ice sheet.\
+\
+l305 These descriptions apply to the uncoupled case, which should be clarified. It may also be interesting to explain what happens in the coupled case, since CESM has that as an option. I am a bit surprised that this is not the primary option you are describing here.\
+\
+l308 I think it would be interesting to show that downscaled SMB (using the elevation classes) and compare that between the different cases. That is the SMB product one would actually use either in the coupled case or when extracting the SMB from CESM for offline forcing of an ice sheet model. In addition, you could compare that result more easily between the different cases as they would all be well-defined on the output grid.\
+\
+l313 "Changes in ice depth, but not snow depth, count toward the SMB" seems to be in contrast with "Any snow above the 10 m cap contributes towards ice accumulation in the SMB" in the paragraph before. Please clarify.\
+\
+l322 The datasets you use are not observational but model results. I think this should be made clear already in the heading. Maybe "Target" or "Validation" datasets.\
+\
+l323 Again, the datasets in use are not observational.\
+\
+l323-338 You do not seem to describe anywhere the other datasets in Table 2: ERA, CERES, Calipso. These should all be described here as well.\
+\
+l331 add "e.g." after before "maintained". This is a very specific collection of the data.\
+\
+l343 "reference dataset" Remind us what this is and where it is sourced from.\
+\
+l348 "can lead to large differences in integrated SMB" Could explain briefly why that is, because the mass loss happens in a narrow band along the margins.\
+\
+l363 Equ 1. Could be read as "evaporation divided by sublimation". Why not "SMB = accumulation + runoff + evaporation + sublimation"?\
+\
+l369 This is confusing, because we are in section 2.4. If you are operating with two different SMB terms, you should have two equations to clearly distinguish them.\
+\
+l372 "grid-cell mean quantities" Clarify that these are atmospheric/land-model grid cells.\
+\
+l388 insert "further" before "diversify".\
+\
+l439 Since you start the section in 404 with "Before delving into the simulated Arctic climate conditions ...", could mark that we are now moving from global to Arctic discussion.\
+\
+l461 "CERES product" needs to be described in 2.5.\
+\
+l478 Add "radiation" after "shortwave".\
+\
+l525 "underline"?\
+\
+l528 Did you test how much biased the results could be due to the relatively short period of 20 years in view of the large inter-annual variability? If you don't have more years, you could remove any of the 20 years and see how much the numbers change.\
+\
+l553 "smaller melt-rates" or smaller melt-rate biases?\
+\
+l564 Often PDD schemes have different PDD factors for snow and ice melt. Is this not not the case here?\
+l557-564 Description and motivation for using the PDD model should probably be moved/added to the Methods section.\
+\
+l571 Consider reordering figures, since we are jumping back from 11 to 9 here.\
+\
+l594 This reads like a contradiction to me "coarser models ... depress melt rates, which is the opposite of the melt bias that occurs in the coarse grid simulations". What happens in course models is the opposite to what happens in coarse models?\
+\
+l603 "volume averaging" I would have guessed this was done by area averaging.\
+\
+l605 Maybe add "and more melting" after "warm bias over the ice-covered patch".\
+\
+l622 Define PDFs.\
+\
+l648 Add "refined over the US" after CONUS.\
+\
+l735 hydrid --> hybrid\
+\
+l748 Replace "shown" by "given" to avoid repeat of "showing/show".\
+\
+\
+Figures\
+-------\
+\
+Fig 1\
+I think the grid lines could be thinner. On a printout this doesn't come out well.\
+The color choice puts a lot of emphasis on the lakes in blue. Suggest to display the land-sea mask instead, i.e. make the lakes part of the land mask.\
+\
+I would also consider using another projection that includes all of Greenland and it's surroundings.\
+\
+Caption. It is confusing to refer to all 4 grids as uniform, because they are uniform in different ways. At least distinguish them as uniform 1\uc0\u9702  \u8722  2\u9702  latitude-longitude grids (top) and quasi-uniform element size grids (bottom), or similar.\
+\
+\
+Fig 10\
+Better use y-axis label ICE+SNOW MELT consistent with Fig 11 and to avoid confusion ICE divided by SNOW.\
+\
+\
+Fig 11\
+The sign convention seems to be changed from Fig 10 with positive melt. Make consistent.\
+\
+\
+\
+References\
+----------\
+Many references are not formatted correctly in terms of upper case / lower case. There are also other problems like incomplete author lists and formatting problems. Please revise. Some examples below.\
+\
+l793\
+This is a regular paper citation that doesn't need a "Retrieved from" entry. Author list incomplete.\
+\
+l797\
+Incomplete author list.\
+\
+l924\
+Refer to final paper. Note title change: NCAR_Topo (v1.0): NCAR global model topography generation software for unstructured grids.\'a0{\field{\*\fldinst{HYPERLINK "https://doi.org/10.5194/gmd-8-3975-2015"}}{\fldrslt \cf4 \ul \ulc4 https://doi.org/10.5194/gmd-8-3975-2015}}\
+\
+l988\
+This is a regular paper citation that doesn't need a "Retrieved from" entry. Author list with "...".\
+\
+l1063\
+Refer to final paper.\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://doi.org/10.5194/gmd-14-5023-2021"}}{\fldrslt \cf4 \ul \ulc4 https://doi.org/10.5194/gmd-14-5023-2021}}\
+\
+l1071\
+Refer to final paper.\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://doi.org/10.5194/tc-13-1547-2019"}}{\fldrslt \cf4 \ul \ulc4 https://doi.org/10.5194/tc-13-1547-2019}}\
+\
+\
+Reviewer #2 Evaluations:\
+Recommendation: Return to author for minor revisions\
+Significant: The paper has some unclear or incomplete reasoning but will likely be a significant contribution with revision and clarification.\
+Supported: Yes\
+Referencing: Yes\
+Quality: Yes, it is well-written, logically organized, and the figures and tables are appropriate.\
+Data: Yes\
+Accurate Key Points: Yes\
+\
+Reviewer #2 (Formal Review for Authors (shown to authors)):\
+\
+Please see the attached file.\
+\
+}

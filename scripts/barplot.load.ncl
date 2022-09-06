@@ -18,6 +18,8 @@ begin
   Rd = 287.
 ;****************************************
 
+  subdir = "../data/tseries/"
+
   fname = (/"cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs", \
             "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs", \
 	    "cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs", \
@@ -32,23 +34,25 @@ begin
 	    "  ARCTIC", \
 	    "  ARCTICGRIS"/)
 
-  VAR1 = "SNOW"
-  VAR1b= "RAIN"
-  VAR2 = "QSNOMELT"
-  VAR2b= "QICE_MELT"
-  VAR3 = "PDD"
-  beta = 7. ;;pdd factor
+  VAR1 = "precip"
+  VAR2 = "snowmelt"
+  VAR3 = "t2m"
+  beta = 5. ;;pdd factor
   xfactor = 1.e-12;;mm/yr->Gt/yr
 
-  modi = (/".regrid_TO_f19.cnsrv.basin",\
-	   ".regrid_TO_f19.te.basin", \
-	   ".regrid_TO_ne30pg2.cnsrv.basin",\
-	   ".regrid_TO_ne30pg2.te.basin"/)
+  modi = (/".method1.regrid_TO_f19.cnsrv.basin",\
+           ".method1.regrid_TO_f19.te.basin", \
+           ".method1.regrid_TO_ne30pg2.cnsrv.basin",\
+           ".method1.regrid_TO_ne30pg2.te.basin", \
+           ".method2.regrid_TO_f19.cnsrv.basin",\
+           ".method2.regrid_TO_f19.te.basin", \
+           ".method2.regrid_TO_ne30pg2.cnsrv.basin",\
+           ".method2.regrid_TO_ne30pg2.te.basin"/)
   nregrid = dimsizes(modi)
 
   obsvar1  = "precip"
   obsvar2  = "snowmelt"
-  obsvar3  = "pdd"
+  obsvar3  = "t2m"
 
   nobs = 2
   obsname1 = "racmo23"
@@ -86,12 +90,12 @@ begin
   yaxis1 = "PRECIP (Gt/yr)"
 
   ymin2 =   0.
-  ymax2 = 280.
+  ymax2 = 180.
   yaxis2 = "SNOW+ICE MELT (Gt/yr)"
 
   ymin3 =   0.
-  ymax3 = 280.
-  yaxis3 = "PDD MELT (Gt/yr)"
+  ymax3 = 180.
+  yaxis3 = "PDD METHOD (Gt/yr)"
 
   ;;mm/s -> kg/(m2*yr) = mm/s [1m/1000mm] * rhoh2o * secpday*365 
 
@@ -139,38 +143,22 @@ begin
 
        fname_in = fname(n) + ".GRIS." + VAR1 + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ncdf = addfile(subdir+fname_in,"r")
        xann1 = ncdf->xann
 
        ann1 = ncdf->ann
        delete(ncdf)
 
-       fname_in = fname(n) + ".GRIS." + VAR1b + modi(m) + "." + tostring(q+1) + ".h0.nc"
-       print("load: " + fname_in)
-       ncdf = addfile("../data/basinseries/"+fname_in,"r")
-       ann1b = ncdf->ann
-       delete(ncdf)
-       ann1 = ann1 + ann1b
-       delete(ann1b)
-
        fname_in = fname(n) + ".GRIS." + VAR2 + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ncdf = addfile(subdir+fname_in,"r")
        xann2 = ncdf->xann
        ann2 = ncdf->ann
        delete(ncdf)
 
-       fname_in = fname(n) + ".GRIS." + VAR2b + modi(m) + "." + tostring(q+1) + ".h0.nc"
-       print("load: " + fname_in)
-       ncdf = addfile("../data/basinseries/"+fname_in,"r")
-       ann2b = ncdf->ann
-       delete(ncdf)
-       ann2 = ann2 + ann2b
-       delete(ann2b)
-
        fname_in = fname(n) + ".GRIS." + VAR3 + modi(m) + "." + tostring(q+1) + ".h0.nc"
        print("load: " + fname_in)
-       ncdf = addfile("../data/basinseries/"+fname_in,"r")
+       ncdf = addfile(subdir+fname_in,"r")
        ann3 = ncdf->ann
        delete(ncdf)
 
@@ -179,21 +167,21 @@ begin
        if (n.eq.0) then
          fname_in = obsname1 + ".GRIS." + obsvar1 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile(subdir+fname_in,"r")
          otime1 = ncdf->otime(ot0:ot1)
          oann1 = ncdf->oann(ot0:ot1)
          delete(ncdf)
 
          fname_in = obsname1 + ".GRIS." + obsvar2 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile(subdir+fname_in,"r")
          otime2 = ncdf->otime(ot0:ot1)
          oann2 = ncdf->oann(ot0:ot1)
          delete(ncdf)
 
          fname_in = obsname1 + ".GRIS." + obsvar3 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile(subdir+fname_in,"r")
          oann3 = ncdf->oann
          delete(ncdf)
 
@@ -201,21 +189,21 @@ begin
 
          fname_in = obsname2 + ".GRIS." + obsvar1 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile(subdir+fname_in,"r")
          otime1a = ncdf->otime(ot0:ot1)
          oann1a = ncdf->oann(ot0:ot1)
          delete(ncdf)
 
          fname_in = obsname2 + ".GRIS." + obsvar2 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile(subdir+fname_in,"r")
          otime2a = ncdf->otime(ot0:ot1)
          oann2a = ncdf->oann(ot0:ot1)
          delete(ncdf)
 
          fname_in = obsname2 + ".GRIS." + obsvar3 + modi(m) + "." + tostring(q+1) + ".nc"
          print("load: " + fname_in)
-         ncdf = addfile("../data/basinseries/"+fname_in,"r")
+         ncdf = addfile(subdir+fname_in,"r")
          oann3a = ncdf->oann
          delete(ncdf)
 
@@ -330,6 +318,10 @@ begin
  res@trYMinF                = ymin2
  res@trYMaxF                = ymax2
 
+ res@tmYLMode        = "Explicit"
+ res@tmYLValues      = (/0.,30.,60.,90.,120.,150.,180./)
+ res@tmYLLabels      = (/"0","-30","-60","-90","-120","-150","-180"/)
+
  plot(1) = gsn_csm_xy(wks,X1,CLIM2,res)
 
  res@tiXAxisString = xaxis
@@ -339,6 +331,7 @@ begin
  res@trYMaxF                = ymax3
 
  plot(2) = gsn_csm_xy(wks,X1,CLIM3,res)
+ res@tmYLMode        = "Automatic"
 
  pgres                  = True
  pgres@gsLineThicknessF = 2.0
@@ -404,7 +397,7 @@ begin
  ;;resln@gsLineDashPattern = 1
  resln@gsLineColor = "black"
  gsn_polyline_ndc(wks,(/xx(n),xx(n)+dx/),(/yy(n),yy(n)/),resln)
- gsn_text_ndc(wks,"  RACMO2.3",xx(n)+dx,yy(n),txres)
+ gsn_text_ndc(wks,"  RACMO",xx(n)+dx,yy(n),txres)
 
 
 ;;drawNDCGrid(wks)
@@ -416,10 +409,12 @@ begin
   resP@gsnFrame         = False                  ; don't advance panel plot
   ;resP@gsnPaperOrientation = "portrait"
   resP@gsnPanelBottom   = 0.05
-  resP@gsnPanelFigureStringsFontHeightF = 0.02
+  resP@gsnPanelFigureStrings = (/"(a)","(b)","(c)"/)
+  resP@gsnPanelFigureStringsFontHeightF = 0.015
   resP@gsnPanelFigureStringsPerimOn     = True
   resP@gsnPanelFigureStringsBackgroundFillColor = "white"
-  resP@amJust           = "BottomLeft"
+  resP@amJust           = "TopLeft"
+
   ;resP@txString = pltTitle
   resP@gsnPanelTop = 0.90
   resP@gsnPanelYWhiteSpacePercent = 0.01

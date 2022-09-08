@@ -28,12 +28,19 @@
 
 Given that the different grid and dycore choices come with considerable different computational costs, I think it would be useful to include a section addressing that specific question. Some information touching on the costs appears at different places in the manuscript. It would be good to bring that all together somewhere and make a clear comparison, e.g. including a comparative table. \newline
 
+{\color{blue}{We have added a subsection on computational costs to address the reviewers concern, in the methods section.}} \newline
+
 The way the term surface mass balance (SMB) is defined and used in the manuscript is confusing. The different components to the SMB are not consistently applied and there are two different definitions of the SMB in use. In part this confusion is related to the fact that the model itself does not calculate all the SMB components and assumptions have to be made about the separation between snow and ice, especially in the currently discussed uncoupled case. I would suggest to start with a physical definition of SMB with all its components in an equation and then explain based on that what the model is actually doing and what constraints have to be applied. In this context it may help to describe what the model would do in a coupled setup with active CISM and then apply further constraints for the diagnostic case currently described. \newline
+
+{\color{blue}{We thanks the reviewer for bringing this to our attention, and agree that our constant referencing of what the SMB refers to has led to some inconsistent definitions and confusion in the text. We have (1) removed attempts (other than very generally) to define the SMB (and the ablation zone) in parenthesis after introducing these terms in the introduction, (2) clarified the description of the SMB that is computed in CESM (the section ``Simulated surface mass balance"), and (3) made clear in the ``SMB analysis" section that the SMB equation we are computing in this paper is different from that computed by CESM.}} \newline
 
 In the discussion about the different dycores, I was wondering if there could be a notion that the latitude-longitude approaches are more mature because they have a longer history. Maybe further improvements on technical aspects like filtering and optimal solutions may be expected for the FE approaches. \newline
 
+{\color{blue}{This is a good point. A case in point would be the improvements to the flow over topography going from CESM2.0 to CESM2.2. We are still developing CAM-SE. We have elaborated on this point in the methods section (where we point to the CESM2.2 enhancements in the Appendix) and the conclusions section, the second to last paragraph.}} \newline
+
 The relationship between atmospheric grid and land grid seems to be important. Would it be possible to say that higher resolution of the atmospheric grid improves the precipitation, while increased resolution of the land model improves the melt calculation/ablation components? \newline
 
+{\color{blue}{Based on my understanding of how the atmosphere and land models are coupled, I don't think running the land model at a higher resolution (and holding the atmosphere resolution fixed) will alleviate the melt biases that tends to occur with partially ice covered grid cells. This is because it is the averaging of the land state over the atmospheric grid cell that is responsible for homogenizing the state. Even if the land cells are a lot smaller, and even binary in ice cover, If the fractional ice cover within an \textit{atmospheric grid cell} is still small, then we think that the atmospheric state that is then passed back to the land model will still be unduly influenced by the non-ice portions of the atmosphere grid cell.}}
 
 
 \subsection*{Specific comments}
@@ -88,7 +95,7 @@ l174 Is it correct to say the dycore is a model? \newline
 
 l203 "the SE numerics have been enhanced". Enhanced compared to what. An earlier model version, I suspect. Mention that. \newline
 
-{\color{blue}{added: relative to the CESM2.0 release.}} \newline
+{\color{blue}{Added: relative to the CESM2.0 release.}} \newline
 
 l214 "... has been modified to scale the smoothing radius by the local element size, resulting in rougher topography in the refinement zone." This seems in contrast to the very idea of refinement. Maybe this should be mentioned here? \newline
 
@@ -204,6 +211,8 @@ l525 "underline"? \newline
 
 l528 Did you test how much biased the results could be due to the relatively short period of 20 years in view of the large inter-annual variability? If you don't have more years, you could remove any of the 20 years and see how much the numbers change. \newline
 
+{\color{blue}{We've done performed a Monte Carlo analysis similar to what is suggested and have found that the errors due to inter-annual variability (in Figure 10) are much smaller than our current error bars, and have therefore omitted these estimates.}} \newline
+
 l553 "smaller melt-rates" or smaller melt-rate biases? \newline
 
 {\color{blue}{since both are true, replaced with ``smaller melt-rates and melt-rate biases."}} \newline
@@ -266,10 +275,12 @@ Caption. It is confusing to refer to all 4 grids as uniform, because they are un
 \subsubsection*{Fig 10}
 Better use y-axis label ICE+SNOW MELT consistent with Fig 11 and to avoid confusion ICE divided by SNOW. \newline
 
+{\color{blue}{Done.}} \newline
+
 \subsubsection*{Fig 11}
 The sign convention seems to be changed from Fig 10 with positive melt. Make consistent. \newline
 
-
+{\color{blue}{Done.}} \newline
 
 \subsection*{References}
 
@@ -277,18 +288,109 @@ Many references are not formatted correctly in terms of upper case / lower case.
 
 l793 This is a regular paper citation that doesn't need a "Retrieved from" entry. Author list incomplete. \newline
 
+{\color{blue}{Done.}} \newline
+
 l797 Incomplete author list. \newline
 
 l924 Refer to final paper. Note title change: NCAR Topo v1.0 NCAR global model topography generation software for unstructured grids. https://doi.org/10.5194/gmd-8-3975-2015 \newline
+
+{\color{blue}{Done.}} \newline
 
 l988 This is a regular paper citation that doesn't need a "Retrieved from" entry. Author list with "...". \newline
 
 l1063 Refer to final paper. https://doi.org/10.5194/gmd-14-5023-2021 \newline
 
+{\color{blue}{Done.}} \newline
+
 l1071 Refer to final paper. https://doi.org/10.5194/tc-13-1547-2019 \newline
 
+{\color{blue}{Done.}}
 
 \section*{Reviewer 2}
+
+\subsection*{General comments}
+
+The manuscript is well-written and provides an important contribution to understanding simulation of ice sheet SMB in global climate model simulations. The paper provides important documentation of the impact of changes to the grid and spatial resolution in CESM on ice sheet SMB. Some points below should be addressed before the manuscript is published but I feel these are minor overall. \newline
+
+One general comment: surface albedo has been shown to be an important factor in climate model simulations of GrIS SMB (e.g. van Angelen et al., 2012; Cullather et al., 2014; Helsen et al., 2017; Alexander et al., 2019), but this has not been discussed by the authors. Some of the melt differences could be influenced by the interaction between precipitation, surface albedo, and melt. In areas of underestimated snowfall, which tend to occur along the ice sheet margins, erroneous bare ice exposure can lead to a darker surface and enhanced melt. IThe authors should examine the possibility of differences in albedo influencing simulated melt. \newline
+
+%Cullather, R. I., Nowicki, S. M. J., Zhao, B., & Suarez, M. J. (2014) Evaluation of the surface representation of the Greenland Ice Sheet in a General Circulation Model. J. Climate, 27 (13), 4835-4856. \newline
+
+%Helsen, M. M., van de Wal, R. S. W., Reerink, T. S., Bitanja, R., Madsen, M. S., Yang, S., Li, Q., & Zhang, Q. (2017) On the importance of the albedo parameterization for the mass balance of the Greenland ice sheet in EC-Earth. The Cryosphere, 11, 1949-2017. \newline
+
+%Alexander, P. M., LeGrande, A. N., Fischer, E., Tedesco, M., Fettweis, X., Kelley, M., Nowicki, S. M. J., & Schmidt, G. A. (2019) Simulated Greenland surface mass balance in the GISS ModelE2 GCM: Role of the ice sheet surface. J. Geophys. Res., 124 (3), 750- 765.
+
+\subsection*{Specific comments}
+
+1. Lines 19-24: The language is confusing here. The quasi-uniform grids should be introduced with a brief description of how they are constructed, and what “quasi- uniform” means. Then their performance in terms of surface mass balance can be discussed, followed by the impact of grid refinement on the simulation. Also perhaps it can be mentioned here how one dycore is linked to two lon-lat configurations and another is linked to the quasi-uniform unstructured grid. \newline
+
+2. Line 38: Again, please explain the meaning of “quasi-uniform unstructured grid”  \newline
+
+3. Lines 52-55: Again, it would be helpful if “globally uniform unstructured grid”, “dynamical cores”, and “variable-resolution grids” can be briefly explained. Additionally, perhaps it should be explained here that two dycores are examined, one linked to the longitude latitude grid, and the other linked to unstructured grids.  \newline
+
+4. Line 94: Why is “conversely” used here? It seems like a word such as “Additionally” would be more appropriate.  \newline
+
+5. Lines 115-116: Clarify that this is a positive precipitation bias in the interior.  \newline
+
+6. Lines 111-123: Here there is no mention of elevation classes. I suggest mentioning them briefly here as this is a way to increase SMB resolution (from the standpoint of runoff but not precipitation) that is used in CESM  \newline
+.
+7. Figure 1, caption: Please provide a brief description of each of the grids here for the benefit of the reader. E.g. (a) 2 latitude-longitude grid (f19), etc.  \newline
+
+8. Line 189: Briefly explain “cubed-sphere”.  \newline
+
+9. Table 1: It would be helpful to specify which grids are latitude-longitude and which are unstructured either as a column in the table or text in the caption.  \newline
+
+10. Lines 229-230: Does ne30 indicate 30 quadrilateral elements per face and pg3 indicate 3 control volumes per element? Please clarify. \newline
+
+11. Lines 239-243: I suppose degree coordinates here correspond the latitude dimension, or degrees at the equator. Please clarify.  \newline
+
+12. Line 249: This is the first time RACMO is mentioned. Please explain briefly what RACMO is here.  \newline
+
+13. Line 254: Clarify that “expensive” means “computationally expensive.” \newline
+
+14. Line 301: Though not essential it would be interesting to know the lapse rate that is assumed. \newline
+
+15. Line 314: I’m confused as to why accumulation below 10 m does not contribute to SMB. How is this addition of mass accounted for? \newline
+
+16. Lines 318-319: What is the period for the prescribed SSTs? \newline
+
+17. Lines 322-338: This section only includes discussion of RACMO and in-situ measurements, which are not used, while ERA5, CERES and CALIPSO are not at all discussed. These validation products must be documented here as well. \newline
+
+18. Line 322: RACMO2 is still a model, and does not fall under an “observational” dataset. I suggest changing this to read “Validation Datasets”, “Evaluation Datasets” or “Comparison Datasets”. \newline
+
+19. Figure 3 caption: I believe the left and right figures are switched here. Also, the fact that RACMO RCM simulations are included should be mentioned. \newline
+
+20. Formula 1: The f’s in runoff seem to have been turned into function symbols. Also I suggest using “evaporation + sublimation” to avoid confusion with division. \newline
+
+21. Line 406: I believe this should read “expressed as temperature differences”. 22. Lines 408-416, 429-433: How can the effect be primarily ascribed to condensational heating if the temperature differences do not align in magnitude or spatial extent? Are there feedbacks involved? Please clarify in the text, or qualify the statements. \newline
+
+23. Lines 437-438: This also seems to be true in other cases. \newline
+
+24. Lines 440-441: This seems consistent with other results that increasing resolution led to a temperature increase. \newline
+
+25. Line 459: Perhaps the authors could mention the potential influence of clouds earlier as prior to this point, they are not mentioned. \newline
+
+26. Line 479: Clarify that cooler temperatures in the coarse resolution simulations are being referred to here. \newline
+
+27. Figure 8: The CALIPSO grid appears to be coarser resolution than the CERES grid. Is this a 2 grid? \newline
+
+28. Lines 573-575: Wouldn’t the elevation class scheme fix this problem by raising the ice-covered sub-grid portion to a higher elevation? \newline
+
+29. Lines 606-616: If the biases are larger at low elevations, it could also be coincidental that these areas also have lower ice fractions. I think the authors should also consider the possibility of other factors. \newline
+
+30. Lines 675-680: Perhaps the fact that clouds and precipitation move more easily inland could reduce snowfall and increase shortwave radiation along the coast, enhancing melt. \newline
+
+31. Lines 681-688: Again, I’m curious about the impact of elevation classes and whether precipitation-albedo feedbacks could influence the melt biases. I suppose the elevation classes might not entirely balance out other coarse- resolution effects. \newline
+
+32. Line 719: Change “spectra-element” to “spectral-element”. \newline
+
+33. Line 729: g can be defined after mentioning T1 for clarity. \newline
+
+34. Line 731: Add “is the” before “surface geopotential”. \newline
+
+35. Equation A5: How is T(ref) computed? \newline
+
+36. Lines 740-748: Here some terms should be defined, including Tv, qv and p0.
 
 %\section*{\normalsize References}
 %\setlength{\bibsep}{0pt}

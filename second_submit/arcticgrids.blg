@@ -19,43 +19,43 @@ Warning--No institution in ESMF
 Warning--No address in ESMF
 You've used 90 entries,
             6951 wiz_defined-function locations,
-            1936 strings with 34720 characters,
-and the built_in function-call counts, 219264 in all, are:
-= -- 26117
-> -- 1957
-< -- 11895
-+ -- 13348
-- -- 204
-* -- 15222
-:= -- 42118
-add.period$ -- 336
+            1934 strings with 34822 characters,
+and the built_in function-call counts, 219914 in all, are:
+= -- 26176
+> -- 1970
+< -- 11935
++ -- 13409
+- -- 202
+* -- 15272
+:= -- 42238
+add.period$ -- 335
 call.type$ -- 90
 change.case$ -- 1533
 chr.to.int$ -- 0
 cite$ -- 184
-duplicate$ -- 6733
-empty$ -- 7511
-format.name$ -- 3829
-if$ -- 39002
+duplicate$ -- 6777
+empty$ -- 7525
+format.name$ -- 3863
+if$ -- 39091
 int.to.chr$ -- 0
 int.to.str$ -- 270
 missing$ -- 0
-newline$ -- 2464
+newline$ -- 2463
 num.names$ -- 722
-pop$ -- 2926
+pop$ -- 2935
 preamble$ -- 1
 purify$ -- 362
 quote$ -- 0
-skip$ -- 12431
+skip$ -- 12452
 stack$ -- 0
-substring$ -- 14401
-swap$ -- 3636
-text.length$ -- 210
+substring$ -- 14465
+swap$ -- 3658
+text.length$ -- 209
 text.prefix$ -- 0
 top$ -- 1
 type$ -- 7264
 warning$ -- 4
-while$ -- 1262
+while$ -- 1274
 width$ -- 0
-write$ -- 3231
+write$ -- 3234
 (There were 4 warnings)

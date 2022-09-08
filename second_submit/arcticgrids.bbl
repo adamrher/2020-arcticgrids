@@ -2,33 +2,33 @@
 
 \bibitem [\protect \citeauthoryear {%
 Bacmeister%
-\ \BBA {} Coauthors%
-}{%
+\ \protect \BOthers {.}}{%
 Bacmeister%
-\ \BBA {} Coauthors%
-}{%
-{\protect \APACyear {2018}}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
 }]{%
-BETAL2018CC}
+BetAl2016CC}
 \APACinsertmetastar {%
-BETAL2018CC}%
+BetAl2016CC}%
 \begin{APACrefauthors}%
 Bacmeister, J\BPBI T.%
-\BCBT {}\ \BBA {} Coauthors.%
+, Reed, K\BPBI A.%
+, Hannay, C.%
+, Lawrence, P.%
+, Bates, S.%
+, Truesdale, J\BPBI E.%
+\BDBL {}Levy, M.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2018}{}{}.
+\APACrefYearMonthDay{2016}{}{}.
 \newblock
 {\BBOQ}\APACrefatitle {Projected changes in tropical cyclone activity under
   future warming scenarios using a high-resolution climate model} {Projected
   changes in tropical cyclone activity under future warming scenarios using a
   high-resolution climate model}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Climatic Change}{146}{}{547-560}.
-\newblock
-\begin{APACrefURL} \url{http://dx.doi.org/10.1007/s10584-016-1750-x}
-  \end{APACrefURL}
+\APACjournalVolNumPages{Climatic Change}{}{}{}.
 \newblock
 \begin{APACrefDOI} \doi{10.1007/s10584-016-1750-x} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
@@ -1197,9 +1197,9 @@ Lauritzen%
 \ \protect \BOthers {.}}{%
 {\protect \APACyear {2015}}%
 }]{%
-gmdd-8-4623-2015}
+LetAl2015GMD}
 \APACinsertmetastar {%
-gmdd-8-4623-2015}%
+LetAl2015GMD}%
 \begin{APACrefauthors}%
 Lauritzen, P\BPBI H.%
 , Bacmeister, J\BPBI T.%
@@ -1210,14 +1210,13 @@ Lauritzen, P\BPBI H.%
 \newblock
 \APACrefYearMonthDay{2015}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {NCAR global model topography generation software for
-  unstructured grids} {Ncar global model topography generation software for
-  unstructured grids}.{\BBCQ}
+{\BBOQ}\APACrefatitle {{NCAR}\_{T}opo (v1.0): {NCAR} global model topography
+  generation software for unstructured grids} {{NCAR}\_{T}opo (v1.0): {NCAR}
+  global model topography generation software for unstructured grids}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Geoscientific Model Development
-  Discussions}{8}{6}{4623--4651}.
+\APACjournalVolNumPages{Geosci. Model Dev.}{8}{12}{3975-3986}.
 \newblock
-\begin{APACrefDOI} \doi{10.5194/gmdd-8-4623-2015} \end{APACrefDOI}
+\begin{APACrefDOI} \doi{10.5194/gmd-8-3975-2015} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -2535,36 +2534,34 @@ van Kampenhout, L.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-van Kampenhout%
+Van~Kampenhout%
 \ \protect \BOthers {.}}{%
-van Kampenhout%
+Van~Kampenhout%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {2018}}%
+{\protect \APACyear {2019}}%
 }]{%
 VETAL2018TC}
 \APACinsertmetastar {%
 VETAL2018TC}%
 \begin{APACrefauthors}%
-van Kampenhout, L.%
+Van~Kampenhout, L.%
 , Rhoades, A\BPBI M.%
 , Herrington, A\BPBI R.%
 , Zarzycki, C\BPBI M.%
-, Lenaerts, J\BPBI T\BPBI M.%
+, Lenaerts, J.%
 , Sacks, W\BPBI J.%
-\BCBL {}\ \BBA {} van~den Broeke, M\BPBI R.%
+\BCBL {}\ \BBA {} Van Den~Broeke, M\BPBI R.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2018}{}{}.
+\APACrefYearMonthDay{2019}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Regional Grid Refinement in an Earth System Model:
-  Impacts on the Simulated Greenland Surface Mass Balance} {Regional grid
-  refinement in an earth system model: Impacts on the simulated greenland
+{\BBOQ}\APACrefatitle {Regional grid refinement in an Earth system model:
+  impacts on the simulated Greenland surface mass balance} {Regional grid
+  refinement in an earth system model: impacts on the simulated greenland
   surface mass balance}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{The Cryosphere Discuss.}{}{}{}.
-\newblock
-\begin{APACrefDOI} \doi{10.5194/tc-2018-257} \end{APACrefDOI}
+\APACjournalVolNumPages{The Cryosphere}{13}{6}{1547--1564}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

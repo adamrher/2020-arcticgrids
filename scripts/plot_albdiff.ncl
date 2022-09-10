@@ -25,26 +25,19 @@ begin
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dderive-ALBD.JJA.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dderive-ALBD.JJA.nc"/)
 
-  fname2 = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs-2-CERES.dcontours.dderive-ALBD.JJA.nc", \
-            "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs-2-CERES.dcontours.dderive-ALBD.JJA.nc", \
-            "cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs-2-CERES.dcontours.dderive-ALBD.JJA.nc", \
-            "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs-2-CERES.dcontours.dderive-ALBD.JJA.nc", \
-            "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs-2-CERES.dcontours.dderive-ALBD.JJA.nc", \
-            "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs-2-CERES.dcontours.dderive-ALBD.JJA.nc"/)
+  fname2 = (/"MAR-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dderive-ALBD.JJA.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dderive-ALBD.JJA.nc"/)
 
-;  fname3 = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.PH2OSNO10mm.ANN.nc", \
-;            "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.PH2OSNO10mm.ANN.nc", \
-;            "cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.PH2OSNO10mm.ANN.nc", \
-;            "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.PH2OSNO10mm.ANN.nc", \
-;            "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.PH2OSNO10mm.ANN.nc", \
-;            "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.PH2OSNO10mm.ANN.nc"/)
-;
-;  fname3 = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.H2OSNO.JJA.nc", \
-;            "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.H2OSNO.JJA.nc", \
-;            "cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.H2OSNO.JJA.nc", \
-;            "cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.H2OSNO.JJA.nc", \
-;            "cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.H2OSNO.JJA.nc", \
-;            "cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.H2OSNO.JJA.nc"/)
+  fname3 = (/"ERA5-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.dcontours.dFSNO_EFF.JJA.nc"/)
 
   runnams1 = (/"f19", \
               "f09", \
@@ -67,29 +60,27 @@ begin
 
   nfiles1 = dimsizes(fname1)
   nfiles2 = dimsizes(fname2)
-  ;nfiles3 = dimsizes(fname3)
+  nfiles3 = dimsizes(fname3)
 
-  titles = (/"RACMO2.3p2","CERES-EBAF","MODEL"/)
+  titles = (/"RACMO2.3p2 (albedo)","MODIS (albedo)","ERA5 (snow cover)"/)
   yy = (/0.78,0.5,0.22/)
 
   VAR = "bar_diff"
   lbtitle1 = "Albedo (fraction)"
   lbtitle2 = "Albedo (fraction)"
-  lbtitle3 = "Bare Ice Exposure (fraction)"
+  lbtitle3 = "Albedo (fraction)"
 
   factor1 = 1.
   factor2 = 1.
-  factor3 = 1.;;/1000.
+  factor3 = 1.
 
   ;;set contour levels
   maxcn1  = 0.25
   mincn1  =-0.25
   maxcn2  = 0.25
   mincn2  =-0.25
-  maxcn3  = 1.
-  mincn3  = 0.
-  ;maxcn3  = 10.
-  ;mincn3  = 0.
+  maxcn3  = 0.5
+  mincn3  =-0.5
   cnlevs1 = 20.
   cnlevs2 = 20.
   cnlevs3 = 20.
@@ -98,24 +89,24 @@ begin
 
   cellfill = True
 
-  griddir1 = (/"../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/"/)
-  griddir2 = (/"../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/"/)
-  griddir3 = (/"../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/", \
-               "../data/gridfiles/"/)
+  griddir1 = (/"/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/"/)
+  griddir2 = (/"/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/"/)
+  griddir3 = (/"/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/", \
+               "/glade/work/aherring/papers/2020-arcticgrids/data/gridfiles/"/)
 
   scrip1 = (/"fv1.9x2.5_141008.nc", \
             "fv0.9x1.25_scrip_141008.nc", \
@@ -124,12 +115,12 @@ begin
             "ne0ARCTICne30x4_scrip_191212.nc", \
             "ne0ARCTICGRISne30x8_scrip_191209.nc"/)
 
-  scrip2 = (/"CERES-EBAF_scrip.nc", \
-            "CERES-EBAF_scrip.nc", \
-            "CERES-EBAF_scrip.nc", \
-            "CERES-EBAF_scrip.nc", \
-            "CERES-EBAF_scrip.nc", \
-            "CERES-EBAF_scrip.nc"/)
+  scrip2 = (/"fv1.9x2.5_141008.nc", \
+            "fv0.9x1.25_scrip_141008.nc", \
+            "ne30pg2_scrip_170608.nc", \
+            "ne30pg3_scrip_170611.nc", \
+            "ne0ARCTICne30x4_scrip_191212.nc", \
+            "ne0ARCTICGRISne30x8_scrip_191209.nc"/)
 
   scrip3 = (/"fv1.9x2.5_141008.nc", \
             "fv0.9x1.25_scrip_141008.nc", \
@@ -144,7 +135,7 @@ begin
   wkstype = "pdf"
   wks = gsn_open_wks(wkstype,pltNam)               ; open workstation
 
-do m = 0,1
+do m = 0,2
 
   if (m.eq.0) then
     gsn_define_colormap(wks,"cmp_b2r")
@@ -173,7 +164,8 @@ do m = 0,1
     mincn = mincn1
     cnlevs = cnlevs1
   else if (m.eq.2) then
-    gsn_define_colormap(wks,"cmp_b2r")
+    ;;gsn_define_colormap(wks,"cmp_b2r")
+    gsn_define_colormap(wks,"BlWhRe")
     ;;gsn_define_colormap(wks,"BkBlAqGrYeOrReViWh200")
     gsn_reverse_colormap(wks)
     fname = fname3

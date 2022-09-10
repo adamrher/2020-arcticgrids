@@ -320,83 +320,153 @@ One general comment: surface albedo has been shown to be an important factor in 
 
 %Alexander, P. M., LeGrande, A. N., Fischer, E., Tedesco, M., Fettweis, X., Kelley, M., Nowicki, S. M. J., & Schmidt, G. A. (2019) Simulated Greenland surface mass balance in the GISS ModelE2 GCM: Role of the ice sheet surface. J. Geophys. Res., 124 (3), 750- 765.
 
+{\color{blue}{We thank the reviewer for this point. We had not thought too much about albedo and so it's for the best that this was brought up. This is an interesting hypothesis, that in the coarser grids, the negative precip biases along the ice sheet margins may lead to more frequent bare ice exposure, and through it's lesser albedo, more melt. We have explored whether there is any evidence for this in our simulations, and do find that there is a negative albedo anomaly around the southeast, southwest and northwest coasts in the coarse grids. However, this is only with respect to the RACMO simulations.}}
+
 \subsection*{Specific comments}
 
 1. Lines 19-24: The language is confusing here. The quasi-uniform grids should be introduced with a brief description of how they are constructed, and what “quasi- uniform” means. Then their performance in terms of surface mass balance can be discussed, followed by the impact of grid refinement on the simulation. Also perhaps it can be mentioned here how one dycore is linked to two lon-lat configurations and another is linked to the quasi-uniform unstructured grid. \newline
 
-{\color{blue}{We agree that this is confusing and have added a sentence describing the different grids/dycores in more detail, before talking about their SMB performance.}}.
+{\color{blue}{We agree that this is confusing and have added a sentence describing the different grids/dycores in more detail, before talking about their SMB performance.}}. \newline
 
 2. Line 38: Again, please explain the meaning of “quasi-uniform unstructured grid”  \newline
 
-{\color{blue}{See above.}}.
+{\color{blue}{See above.}} \newline
 
 3. Lines 52-55: Again, it would be helpful if “globally uniform unstructured grid”, “dynamical cores”, and “variable-resolution grids” can be briefly explained. Additionally, perhaps it should be explained here that two dycores are examined, one linked to the longitude latitude grid, and the other linked to unstructured grids.  \newline
 
-{\color{blue}{Added clarification for the meaning of quasi-uniform and variable-resolution. Decided against getting into the specifics of which dycore uses which grid, as this becomes apparent later on in the introduction}}.
+{\color{blue}{Added clarification for the meaning of quasi-uniform and variable-resolution. Decided against getting into the specifics of which dycore uses which grid, as this becomes apparent later on in the introduction}}. \newline
 
 4. Line 94: Why is “conversely” used here? It seems like a word such as “Additionally” would be more appropriate.  \newline
 
+{\color{blue}{Sentence has been reworded.}} \newline
+
 5. Lines 115-116: Clarify that this is a positive precipitation bias in the interior.  \newline
 
+{\color{blue}{Done.}} \newline
+
 6. Lines 111-123: Here there is no mention of elevation classes. I suggest mentioning them briefly here as this is a way to increase SMB resolution (from the standpoint of runoff but not precipitation) that is used in CESM  \newline
-.
+
+{\color{blue}{We agree that the idea of ECs should be introduced here, and have added a sentence.}} \newline
+
 7. Figure 1, caption: Please provide a brief description of each of the grids here for the benefit of the reader. E.g. (a) 2 latitude-longitude grid (f19), etc.  \newline
+
+{\color{blue}{Done.}} \newline
 
 8. Line 189: Briefly explain “cubed-sphere”.  \newline
 
+{\color{blue}{Done.}} \newline
+
 9. Table 1: It would be helpful to specify which grids are latitude-longitude and which are unstructured either as a column in the table or text in the caption.  \newline
+
+{\color{blue}{Added to the text which grids are lat-lon and which are unstructured.}} \newline
 
 10. Lines 229-230: Does ne30 indicate 30 quadrilateral elements per face and pg3 indicate 3 control volumes per element? Please clarify. \newline
 
+{\color{blue}{The text indicates that ne30 indicates are 30x30 elements per cube-face, and pg3 refers to 3x3 control volumes per element. The global number of grid columns is then 6 faces * 30x30 elements per face * 3x3 control volumes per element.}} \newline
+
 11. Lines 239-243: I suppose degree coordinates here correspond the latitude dimension, or degrees at the equator. Please clarify.  \newline
+
+{\color{blue}{Done.}} \newline
 
 12. Line 249: This is the first time RACMO is mentioned. Please explain briefly what RACMO is here.  \newline
 
+{\color{blue}{Fixed.}} \newline
+
 13. Line 254: Clarify that “expensive” means “computationally expensive.” \newline
+
+{\color{blue}{This information has been absorbed into a new sub-section on computational costs. References to ``cheaper" or ``more expensive" are more obviously referring computational costs as that is the title of the section.}} \newline
 
 14. Line 301: Though not essential it would be interesting to know the lapse rate that is assumed. \newline
 
+{\color{blue}{6.5K/km. I'd refer to reviewer to the Sellevold et al paper referenced, for more details on the choice of lapse rate.}} \newline
+
 15. Line 314: I’m confused as to why accumulation below 10 m does not contribute to SMB. How is this addition of mass accounted for? \newline
+
+{\color{blue}{The internally computed SMB is a bit strange, in that only tracks ice. It does not consider the overlying 10m of snow to contribute to the SMB. In response to the other reviewer, we've clarified this in sections 2.5.}} \newline
 
 16. Lines 318-319: What is the period for the prescribed SSTs? \newline
 
+{\color{blue}{Perpetual 1979. Added this in parantheses.}} \newline
+
 17. Lines 322-338: This section only includes discussion of RACMO and in-situ measurements, which are not used, while ERA5, CERES and CALIPSO are not at all discussed. These validation products must be documented here as well. \newline
+
+{\color{blue}{Fixed.}} \newline
 
 18. Line 322: RACMO2 is still a model, and does not fall under an “observational” dataset. I suggest changing this to read “Validation Datasets”, “Evaluation Datasets” or “Comparison Datasets”. \newline
 
+{\color{blue}{Changed to validation dataset throughout the manuscript.}} \newline
+
 19. Figure 3 caption: I believe the left and right figures are switched here. Also, the fact that RACMO RCM simulations are included should be mentioned. \newline
+
+{\color{blue}{Fixed, and included references to the RACMO grids in the text and figure caption.}} \newline
 
 20. Formula 1: The f’s in runoff seem to have been turned into function symbols. Also I suggest using “evaporation + sublimation” to avoid confusion with division. \newline
 
-21. Line 406: I believe this should read “expressed as temperature differences”. 22. Lines 408-416, 429-433: How can the effect be primarily ascribed to condensational heating if the temperature differences do not align in magnitude or spatial extent? Are there feedbacks involved? Please clarify in the text, or qualify the statements. \newline
+{\color{blue}{Switched to type writer font. Used reviewers suggestion to replace slash with a plus sign.}} \newline
+
+21. Line 406: I believe this should read “expressed as temperature differences”. 
+
+{\color{blue}{Did something similar, as temperature was missing from the sentence.}} \newline
+
+22. Lines 408-416, 429-433: How can the effect be primarily ascribed to condensational heating if the temperature differences do not align in magnitude or spatial extent? Are there feedbacks involved? Please clarify in the text, or qualify the statements. \newline
+
+{\color{blue}{The imperfect alignment of the clubb heating anomalies and the temperature anomalies has a lot to do with averaging the clubb heating over all time. If you look at Figure 10 in Herrington and Reed QJRMS paper, the alignment is strongest when you sample the clubb heating when/where the dycore has upward vertical velocities. Whereas there is no correspondence with the temperature anomalies for descending grid columns. So since our clubb heating is just a climatology, we lose that alignment with the temperature anomalies. But it's clear that a strong heating signal is piercing through in the climatology anyway, and so I'm strongly implying that this is consistent with QJRMS mechanism. I've added an entire paragraph discussing this misalignment.}} \newline
 
 23. Lines 437-438: This also seems to be true in other cases. \newline
 
+{\color{blue}{See above comment.}} \newline
+
 24. Lines 440-441: This seems consistent with other results that increasing resolution led to a temperature increase. \newline
+
+{\color{blue}{This response appears to be different from the other cases; with clear changes to the planetary waves that are not seen in the other simulations.}} \newline
 
 25. Line 459: Perhaps the authors could mention the potential influence of clouds earlier as prior to this point, they are not mentioned. \newline
 
+{\color{blue}{See above comment.}} \newline
+
 26. Line 479: Clarify that cooler temperatures in the coarse resolution simulations are being referred to here. \newline
+
+{\color{blue}{Decided to leave it as.}} \newline
 
 27. Figure 8: The CALIPSO grid appears to be coarser resolution than the CERES grid. Is this a 2 grid? \newline
 
+{\color{blue}{Yes, CALIPSO is on a 2 degree grid. Corrected Table 2. Great catch!}} \newline
+
 28. Lines 573-575: Wouldn’t the elevation class scheme fix this problem by raising the ice-covered sub-grid portion to a higher elevation? \newline
+
+{\color{blue}{That's a good point that we overlooked. We have added a sentence to the end of the next paragraph clarifying that differences between the grid cell mean and actual ice surface are not necessarily problematic due to the EC scheme.}} \newline
 
 29. Lines 606-616: If the biases are larger at low elevations, it could also be coincidental that these areas also have lower ice fractions. I think the authors should also consider the possibility of other factors. \newline
 
+{\color{blue}{We've added references to this coincidence in response to your related questions in the general remarks.}} \newline
+
 30. Lines 675-680: Perhaps the fact that clouds and precipitation move more easily inland could reduce snowfall and increase shortwave radiation along the coast, enhancing melt. \newline
+
+{\color{blue}{See response to general remarks.}} \newline
 
 31. Lines 681-688: Again, I’m curious about the impact of elevation classes and whether precipitation-albedo feedbacks could influence the melt biases. I suppose the elevation classes might not entirely balance out other coarse- resolution effects. \newline
 
+{\color{blue}{See response to general remarks.}} \newline
+
 32. Line 719: Change “spectra-element” to “spectral-element”. \newline
+
+{\color{blue}{Done.}} \newline
 
 33. Line 729: g can be defined after mentioning T1 for clarity. \newline
 
+{\color{blue}{Done.}} \newline
+
 34. Line 731: Add “is the” before “surface geopotential”. \newline
+
+{\color{blue}{Done.}} \newline
 
 35. Equation A5: How is T(ref) computed? \newline
 
-36. Lines 740-748: Here some terms should be defined, including Tv, qv and p0.
+{\color{blue}{Defined in equation A1.}} \newline
+
+36. Lines 740-748: Here some terms should be defined, including Tv, qv and p0. \newline
+
+{\color{blue}{Added definitions for Tv and thetav. p0 is defined just below equation A3. I don't see a ``qv".}}
 
 %\section*{\normalsize References}
 %\setlength{\bibsep}{0pt}

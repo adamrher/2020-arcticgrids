@@ -18,26 +18,26 @@ begin
   Rd = 287.
 ;****************************************
 
-  fname1 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
+  fname1 = (/"ERA5-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.dcontours.dFSNO_EFF.JJA.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.dcontours.dFSNO_EFF.JJA.nc"/)
+
+  fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dderive-ALBD.JJA.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dderive-ALBD.JJA.nc"/)
 
-  fname2 = (/"MAR-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
+  fname3 = (/"MAR-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dderive-ALBD.JJA.nc"/)
-
-  fname3 = (/"ERA5-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
-             "ERA5-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
-             "ERA5-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
-             "ERA5-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.nc", \
-             "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.dcontours.dFSNO_EFF.JJA.nc", \
-             "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.dcontours.dFSNO_EFF.JJA.nc"/)
 
   runnams1 = (/"f19", \
               "f09", \
@@ -62,7 +62,7 @@ begin
   nfiles2 = dimsizes(fname2)
   nfiles3 = dimsizes(fname3)
 
-  titles = (/"RACMO2.3p2 (albedo)","MODIS (albedo)","ERA5 (snow cover)"/)
+  titles = (/"ERA5 (snow cover)","RACMO2.3p2 (albedo)","MODIS (albedo)"/)
   yy = (/0.78,0.5,0.22/)
 
   VAR = "bar_diff"
@@ -75,12 +75,12 @@ begin
   factor3 = 1.
 
   ;;set contour levels
-  maxcn1  = 0.25
-  mincn1  =-0.25
+  maxcn1  = 0.5
+  mincn1  =-0.5
   maxcn2  = 0.25
   mincn2  =-0.25
-  maxcn3  = 0.5
-  mincn3  =-0.5
+  maxcn3  = 0.25
+  mincn3  =-0.25
   cnlevs1 = 20.
   cnlevs2 = 20.
   cnlevs3 = 20.
@@ -138,7 +138,7 @@ begin
 do m = 0,2
 
   if (m.eq.0) then
-    gsn_define_colormap(wks,"cmp_b2r")
+    gsn_define_colormap(wks,"BlWhRe")
     gsn_reverse_colormap(wks)
     fname = fname1
     nfiles = nfiles1
@@ -160,13 +160,11 @@ do m = 0,2
     runnams = runnams2
     lbtitle = lbtitle2
     factor = factor2
-    maxcn = maxcn1
-    mincn = mincn1
-    cnlevs = cnlevs1
+    maxcn = maxcn2
+    mincn = mincn2
+    cnlevs = cnlevs2
   else if (m.eq.2) then
-    ;;gsn_define_colormap(wks,"cmp_b2r")
-    gsn_define_colormap(wks,"BlWhRe")
-    ;;gsn_define_colormap(wks,"BkBlAqGrYeOrReViWh200")
+    gsn_define_colormap(wks,"cmp_b2r")
     gsn_reverse_colormap(wks)
     fname = fname3
     nfiles = nfiles3

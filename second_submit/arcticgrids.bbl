@@ -2445,6 +2445,35 @@ Team, E\BPBI J\BPBI S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Tedesco%
+\ \BBA {} Alexander%
+}{%
+Tedesco%
+\ \BBA {} Alexander%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+MODIS}
+\APACinsertmetastar {%
+MODIS}%
+\begin{APACrefauthors}%
+Tedesco, M.%
+\BCBT {}\ \BBA {} Alexander, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {MODIS (MOD10A1) albedo data on the MAR RCM grid
+  (2000–2013).} {Modis (mod10a1) albedo data on the mar rcm grid
+  (2000–2013).}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{URL: https://cds. climate. copernicus. eu}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.18739/A2SK7T} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Ullrich%
 \ \BBA {} Taylor%
 }{%

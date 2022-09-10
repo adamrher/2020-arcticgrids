@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 SEP 2022 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 SEP 2022 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4429,33 +4429,33 @@ Overfull \hbox (5.87686pt too wide) in paragraph at lines 529--530
 ids, in both val-i-da-tion dataset, 
  []
 
-<temp_contours_diffALB.pdf, id=112, 520.53897pt x 454.77013pt>
+<temp_contours_diffALB.pdf, id=112, 521.08244pt x 456.66177pt>
 File: temp_contours_diffALB.pdf Graphic file (type pdf)
 <use temp_contours_diffALB.pdf>
 Package pdftex.def Info: temp_contours_diffALB.pdf  used on input line 534.
-(pdftex.def)             Requested size: 369.88582pt x 323.15274pt.
+(pdftex.def)             Requested size: 369.88582pt x 324.16243pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 537--537
-[]\OT1/cmr/bx/n/9 Figure  14. \OT1/cmr/m/n/9 1979-1998 north-ern hemi-sphere su
-m-mer albedo bias (frac-tion), com-puted as the
+[]\OT1/cmr/bx/n/9 Figure  14. \OT1/cmr/m/n/9 (Top) 1979-1998 bias in north-ern 
+hemi-sphere sum-mer snow cover (frac-tion) rel-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 537--537
-\OT1/cmr/m/n/9 dif-fer-ence (top) from RACMO2.3p2, and (mid-dle) the MODIS data
-set of []Tedesco and Alexan-der
+\OT1/cmr/m/n/9 a-tive to ERA4. (Mid-dle and bot-tom) 1979-1998 sum-mer albedo b
+ias (frac-tion), com-puted as
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 537--537
-\OT1/cmr/m/n/9 (2013). The bot-tom row is 1979-1998 bias in sum-mer snow cover 
-(frac-tion), rel-a-tive to ERA5. As
+\OT1/cmr/m/n/9 the dif-fer-ence (mid-dle) from RACMO2.3p2, and (bot-tom) the MO
+DIS dataset of []Tedesco and
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 537--537
-\OT1/cmr/m/n/9 all ob-ser-va-tional datasets in this plot are on high-resolutio
-n grids, they've all been mapped to the
+\OT1/cmr/m/n/9 Alexan-der (2013). As all ob-ser-va-tional datasets in this plot
+ are on high-resolution grids, they've
  []
 
 
@@ -6476,7 +6476,7 @@ nts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt9.pfb>
-Output written on arcticgrids.pdf (41 pages, 38889719 bytes).
+Output written on arcticgrids.pdf (41 pages, 38889431 bytes).
 PDF statistics:
  302 PDF objects out of 1000 (max. 8388607)
  204 compressed objects within 3 object streams

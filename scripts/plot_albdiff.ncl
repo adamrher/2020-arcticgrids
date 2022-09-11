@@ -25,6 +25,13 @@ begin
              "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.dcontours.dFSNO_EFF.JJA.nc", \
              "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.dcontours.dFSNO_EFF.JJA.nc"/)
 
+  fname1 = (/"ERA5-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.TO_f19.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.TO_f19.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.TO_f19.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.dcontours.dFSNO_EFF.JJA.TO_f19.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.dcontours.dFSNO_EFF.JJA.TO_f19.nc", \
+             "ERA5-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.dcontours.dFSNO_EFF.JJA.TO_f19.nc"/)
+
   fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
@@ -32,12 +39,26 @@ begin
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dderive-ALBD.JJA.nc", \
             "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dderive-ALBD.JJA.nc"/)
 
+  fname2 = (/"RACMO-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "RACMO-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dderive-ALBD.JJA.TO_f19.nc"/)
+
   fname3 = (/"MAR-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dderive-ALBD.JJA.nc", \
             "MAR-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dderive-ALBD.JJA.nc"/)
+
+  fname3 = (/"MAR-2-cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_ne30pg2_ne30pg2_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_ne30pg3_ne30pg3_mg17_1800pes_200507_mg3-Nx5yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_ne0np4.ARCTIC.ne30x4_mt12_7680pes_200507_mg3-Nx2yrs.contours.dderive-ALBD.JJA.TO_f19.nc", \
+            "MAR-2-cam6_2_022.se_FHIST_ne0np4.ARCTICGRIS.ne30x8_mt12_7680pes_200510_mg3-Nx1yrs.contours.dderive-ALBD.JJA.TO_f19.nc"/)
 
   runnams1 = (/"f19", \
               "f09", \
@@ -66,7 +87,7 @@ begin
   yy = (/0.78,0.5,0.22/)
 
   VAR = "bar_diff"
-  lbtitle1 = "Albedo (fraction)"
+  lbtitle1 = "Snow cover (fraction)"
   lbtitle2 = "Albedo (fraction)"
   lbtitle3 = "Albedo (fraction)"
 
@@ -75,12 +96,12 @@ begin
   factor3 = 1.
 
   ;;set contour levels
-  maxcn1  = 0.5
-  mincn1  =-0.5
-  maxcn2  = 0.25
-  mincn2  =-0.25
-  maxcn3  = 0.25
-  mincn3  =-0.25
+  maxcn1  = 0.4
+  mincn1  =-0.4
+  maxcn2  = 0.2
+  mincn2  =-0.2
+  maxcn3  = 0.2
+  mincn3  =-0.2
   cnlevs1 = 20.
   cnlevs2 = 20.
   cnlevs3 = 20.
@@ -115,6 +136,13 @@ begin
             "ne0ARCTICne30x4_scrip_191212.nc", \
             "ne0ARCTICGRISne30x8_scrip_191209.nc"/)
 
+  scrip1 = (/"fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc"/)
+
   scrip2 = (/"fv1.9x2.5_141008.nc", \
             "fv0.9x1.25_scrip_141008.nc", \
             "ne30pg2_scrip_170608.nc", \
@@ -122,12 +150,26 @@ begin
             "ne0ARCTICne30x4_scrip_191212.nc", \
             "ne0ARCTICGRISne30x8_scrip_191209.nc"/)
 
+  scrip2 = (/"fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc"/)
+
   scrip3 = (/"fv1.9x2.5_141008.nc", \
             "fv0.9x1.25_scrip_141008.nc", \
             "ne30pg2_scrip_170608.nc", \
             "ne30pg3_scrip_170611.nc", \
             "ne0ARCTICne30x4_scrip_191212.nc", \
             "ne0ARCTICGRISne30x8_scrip_191209.nc"/)
+
+  scrip3 = (/"fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc", \
+             "fv1.9x2.5_141008.nc"/)
 
 ;******************************************************
 ; create plot

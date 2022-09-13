@@ -62,7 +62,7 @@ begin
   nfiles2 = dimsizes(fname2)
   nfiles3 = dimsizes(fname3)
 
-  titles = (/"ERA5 (snow cover)","RACMO2.3p2 (albedo)","MODIS (albedo)"/)
+  titles = (/"RACMO2.3p2 (albedo)","MODIS (albedo)","ERA5 (snow cover)"/)
   yy = (/0.78,0.5,0.22/)
 
   VAR = "bar_diff"

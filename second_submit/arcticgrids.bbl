@@ -753,6 +753,40 @@ Fettweis, X.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Fyke%
+, Sergienko%
+, Lofverstrom%
+, Price%
+\BCBL {}\ \BBA {} Lenaerts%
+}{%
+Fyke%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Fyke_EA_2018_Rev_Geophys}
+\APACinsertmetastar {%
+Fyke_EA_2018_Rev_Geophys}%
+\begin{APACrefauthors}%
+Fyke, J\BPBI G.%
+, Sergienko, O.%
+, Lofverstrom, M.%
+, Price, S.%
+\BCBL {}\ \BBA {} Lenaerts, J\BPBI T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{An overview of interactions and feedbacks between ice
+  sheets and the Earth system}} {{An overview of interactions and feedbacks
+  between ice sheets and the Earth system}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Reviews of Geophysics}{}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1029/2018RG000600} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Gettelman%
 \ \protect \BOthers {.}}{%
 Gettelman%

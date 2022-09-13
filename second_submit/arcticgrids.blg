@@ -17,45 +17,45 @@ Warning--No address in GMTED2010
 Warning--No journal in ST1995GEOS
 Warning--No institution in ESMF
 Warning--No address in ESMF
-You've used 92 entries,
+You've used 93 entries,
             6951 wiz_defined-function locations,
-            1945 strings with 35196 characters,
-and the built_in function-call counts, 224241 in all, are:
-= -- 26680
-> -- 2011
-< -- 12158
-+ -- 13641
-- -- 206
-* -- 15567
-:= -- 43053
-add.period$ -- 342
-call.type$ -- 92
-change.case$ -- 1567
+            1951 strings with 35456 characters,
+and the built_in function-call counts, 226663 in all, are:
+= -- 26963
+> -- 2038
+< -- 12285
++ -- 13785
+- -- 208
+* -- 15731
+:= -- 43496
+add.period$ -- 346
+call.type$ -- 93
+change.case$ -- 1584
 chr.to.int$ -- 0
-cite$ -- 188
-duplicate$ -- 6913
-empty$ -- 7690
-format.name$ -- 3945
-if$ -- 39876
+cite$ -- 190
+duplicate$ -- 6992
+empty$ -- 7775
+format.name$ -- 3995
+if$ -- 40313
 int.to.chr$ -- 0
-int.to.str$ -- 276
+int.to.str$ -- 279
 missing$ -- 0
-newline$ -- 2518
-num.names$ -- 738
-pop$ -- 2992
+newline$ -- 2550
+num.names$ -- 746
+pop$ -- 3024
 preamble$ -- 1
-purify$ -- 370
+purify$ -- 374
 quote$ -- 0
-skip$ -- 12723
+skip$ -- 12868
 stack$ -- 0
-substring$ -- 14713
-swap$ -- 3734
-text.length$ -- 213
+substring$ -- 14865
+swap$ -- 3772
+text.length$ -- 215
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 7424
+type$ -- 7504
 warning$ -- 4
-while$ -- 1300
+while$ -- 1316
 width$ -- 0
-write$ -- 3305
+write$ -- 3350
 (There were 4 warnings)

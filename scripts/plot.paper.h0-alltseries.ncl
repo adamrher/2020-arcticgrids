@@ -19,6 +19,7 @@ begin
 ;****************************************
 
   subdir = "../data/tseries/"
+  ;;subdir = "/glade/work/aherring/CESM2/SMB/data/methods/"
 
   fname = (/"cam6_2_022.se_FHIST_f19_f19_mg17_900pes_200506_mg3-Nx5yrs", \
 	    "cam6_2_022.se_FHIST_f09_f09_mg17_1800pes_200507_mg3-Nx5yrs", \
@@ -80,7 +81,7 @@ begin
   ymax1 = 1250.
   yaxis1 = "PRECIP (Gt/yr)"
 
-  ymin2 =   -850.
+  ymin2 =   -900.
   ymax2 =   -150.
   yaxis2 = "SNOW+ICE MELT (Gt/yr)"
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  13 SEP 2022 19:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  16 SEP 2022 15:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3507,31 +3507,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 431--431
 
 Underfull \hbox (badness 10000) in paragraph at lines 431--431
 \OT1/cmr/m/n/9 dataset, and the (bot-tom) to-tal cloud frac-tion bias rel-a-tiv
-e to the CALIPSO dataset. CALIPSO
+e to the CALIPSO dataset. CERES
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 431--431
-\OT1/cmr/m/n/9 and CERES dif-fer-ences are found by map-ping the model out-put 
-to the $1[]$ grid, and dif-fer-ences
+\OT1/cmr/m/n/9 and CALIPSO dif-fer-ences are found by map-ping the model out-pu
+t to their $1[]$ and $2[]$ grids, re-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 431--431
-\OT1/cmr/m/n/9 in the bot-tom panel are com-puted af-ter map-ping the RACMO2.3p
-2 dataset to the in-di-vid-ual
+\OT1/cmr/m/n/9 spec-tively, and dif-fer-ences in the bot-tom panel are com-pute
+d af-ter map-ping the RACMO2.3p2
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 431--431
-\OT1/cmr/m/n/9 model grids. Note that the av-er-ag-ing pe-riod for the CALIPSO-
-GOCCP and CERES-EBAF pan-
+\OT1/cmr/m/n/9 dataset to the in-di-vid-ual model grids. Note that the av-er-ag
+-ing pe-riod for the CALIPSO-GOCCP
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 431--431
-\OT1/cmr/m/n/9 els, 2006-2017 and 2003-2020, re-spec-tively, are dif-fer-ent fr
-om the av-er-ag-ing pe-riod for the model
+\OT1/cmr/m/n/9 and CERES-EBAF pan-els, 2006-2017 and 2003-2020, re-spec-tively,
+ are dif-fer-ent from the av-er-ag-
  []
 
 <temp_contours_diffRACMO.pdf, id=98, 501.06856pt x 299.47324pt>
@@ -3588,11 +3588,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 462--462
 -ods sec-tion, whereas val-ues in
  []
 
-<temp_tseries_GRIS.pdf, id=99, 540.82472pt x 504.49088pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 462--462
+\OT1/cmr/m/n/9 paren-the-ses are from in-te-grat-ing over the na-tive grid and 
+ice mask. evap+subl refers to the com-
+ []
+
+<temp_tseries_GRIS.pdf, id=99, 540.76456pt x 502.1653pt>
 File: temp_tseries_GRIS.pdf Graphic file (type pdf)
 <use temp_tseries_GRIS.pdf>
 Package pdftex.def Info: temp_tseries_GRIS.pdf  used on input line 468.
-(pdftex.def)             Requested size: 284.52756pt x 265.41592pt.
+(pdftex.def)             Requested size: 284.52756pt x 264.22307pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 470--470
 []\OT1/cmr/bx/n/9 Figure  10. \OT1/cmr/m/n/9 Time-series of an-nual (solid+liqu
@@ -3648,31 +3654,32 @@ Overfull \hbox (10.54355pt too wide) in paragraph at lines 474--475
  []
 
 
-Overfull \hbox (10.46011pt too wide) in paragraph at lines 474--475
-\OT1/cmr/m/n/10 ice mask. Of note is the large re-duc-tion in melt rates com-pa
-red to the val-ues com-puted 
+Overfull \hbox (10.71017pt too wide) in paragraph at lines 474--475
+\OT1/cmr/m/n/10 ice mask. For the ac-cu-mu-la-tion term in the quasi-uniform SE
+ grids, the na-tive grid val- 
  []
 
 
-Overfull \hbox (4.51573pt too wide) in paragraph at lines 474--475
-\OT1/cmr/m/n/10 on the na-tive grid, il-lus-trat-ing the dis-si-pa-tion of this
- quan-tity dis-cussed in sec-tion 2.7[]. 
+Overfull \hbox (16.0713pt too wide) in paragraph at lines 474--475
+\OT1/cmr/m/n/10 ues are ac-tu-ally less than com-mon ice mask val-ues, likely d
+ue to the in-fla-tion-ary im-pacts 
  []
 
 
-Overfull \hbox (2.43233pt too wide) in paragraph at lines 474--475
-\OT1/cmr/m/n/10 For in-te-grated pre-cip-i-ta-tion, the dif-fer-ences be-tween 
-the na-tive and com-mon ice mask 
+Overfull \hbox (13.65459pt too wide) in paragraph at lines 474--475
+\OT1/cmr/m/n/10 of method 1 dis-cussed in sec-tion 2.7[]. For the to-tal melt t
+erm, the com-mon ice mask val- 
  []
 
 
-Overfull \hbox (12.79344pt too wide) in paragraph at lines 474--475
-\OT1/cmr/m/n/10 ap-proaches are much smaller, since the com-bined solid/liquid 
-pre-cip-i-ta-tion rates are not 
+Overfull \hbox (1.93178pt too wide) in paragraph at lines 474--475
+\OT1/cmr/m/n/10 ues aren't nearly as dis-si-pa-tive as ex-pected, with only the
+ $\OT1/cmtt/m/n/10 Arctic \OMS/cmsy/m/n/10 ^^@ \OT1/cmtt/m/n/10 GrIS$ \OT1/cmr/
+m/n/10 grid show-ing 
  []
 
 
-Underfull \vbox (badness 1960) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
 Overfull \hbox (6.6267pt too wide) in paragraph at lines 476--477
@@ -3731,7 +3738,7 @@ Overfull \hbox (2.21004pt too wide) in paragraph at lines 478--479
 
 Overfull \hbox (30.91777pt too wide) in paragraph at lines 478--479
 \OT1/cmr/m/n/10 RACMO. The $\OT1/cmtt/m/n/10 f19$ \OT1/cmr/m/n/10 and $\OT1/cmt
-t/m/n/10 f09$ \OT1/cmr/m/n/10 grids per-form sim-i-larly, with +110 Gt/yr bias,
+t/m/n/10 f09$ \OT1/cmr/m/n/10 grids per-form sim-i-larly, with +200 Gt/yr bias,
  whereas $\OT1/cmtt/m/n/10 ne30pg3$ 
  []
 
@@ -3756,7 +3763,7 @@ Overfull \hbox (14.04295pt too wide) in paragraph at lines 480--481
 
 
 Overfull \hbox (18.4185pt too wide) in paragraph at lines 480--481
-\OT1/cmr/m/n/10 125 Gt/yr. This is likely due to an anoma-lously warm lower tro
+\OT1/cmr/m/n/10 150 Gt/yr. This is likely due to an anoma-lously warm lower tro
 -po-sphere dur-ing the sum- 
  []
 
@@ -3765,6 +3772,13 @@ Overfull \hbox (14.90388pt too wide) in paragraph at lines 480--481
 \OT1/cmr/m/n/10 mer, rel-a-tive to the $\OT1/cmtt/m/n/10 Arctic$ \OT1/cmr/m/n/1
 0 run (Fig-ure 6[]). The $\OT1/cmtt/m/n/10 f19$ \OT1/cmr/m/n/10 and $\OT1/cmtt/
 m/n/10 f09$ \OT1/cmr/m/n/10 melt-ing rates are im-proved 
+ []
+
+
+Overfull \hbox (9.16795pt too wide) in paragraph at lines 480--481
+\OT1/cmr/m/n/10 over $\OT1/cmtt/m/n/10 Arctic \OMS/cmsy/m/n/10 ^^@ \OT1/cmtt/m/
+n/10 GrIS$\OT1/cmr/m/n/10 , over-es-ti-mat-ing melt by only 100--120 Gt/yr. The
+ SE grids have the 
  []
 
 
@@ -3816,11 +3830,11 @@ Overfull \hbox (24.15457pt too wide) in paragraph at lines 482--483
 ins, and is clos-est of all grids 
  []
 
-<temp_tseries_BASIN.pdf, id=103, 357.10315pt x 498.49599pt>
+<temp_tseries_BASIN.pdf, id=103, 355.22491pt x 498.0993pt>
 File: temp_tseries_BASIN.pdf Graphic file (type pdf)
 <use temp_tseries_BASIN.pdf>
 Package pdftex.def Info: temp_tseries_BASIN.pdf  used on input line 486.
-(pdftex.def)             Requested size: 284.52756pt x 397.19237pt.
+(pdftex.def)             Requested size: 284.52756pt x 398.9664pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 488--488
 []\OT1/cmr/bx/n/9 Figure  11. \OT1/cmr/m/n/9 1979--1998 basin in-te-grated com-
@@ -5088,6 +5102,9 @@ nts
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
 Overfull \hbox (7.79338pt too wide) in paragraph at lines 718--719
 []\OT1/cmr/m/n/10 Since the CESM2.0 re-lease of the spectral-element dy-nam-i-c
 al core doc-u-mented in 
@@ -5112,9 +5129,6 @@ ed with the el-e-ment bound-
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
 Overfull \hbox (13.51569pt too wide) in paragraph at lines 720--721
 []\OT1/cmr/m/n/10 Significant im-prove-ment in re-mov-ing noise for flow over o
 rog-ra-phy can be achieved 
@@ -6503,10 +6517,9 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.45pt have occurred.
 
  )
-(\end occurred inside a group at level 2)
+(\end occurred inside a group at level 1)
 
-### simple group (level 2) entered at line 570 ({)
-### simple group (level 1) entered at line 333 ({)
+### simple group (level 1) entered at line 510 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  3653 strings out of 492616
@@ -6515,7 +6528,7 @@ Here is how much of TeX's memory you used:
  7495 multiletter control sequences out of 15000+600000
  10706 words of font info for 39 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
- 43i,12n,37p,1630b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,12n,37p,1630b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
@@ -6542,7 +6555,7 @@ ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on arcticgrids.pdf (41 pages, 37769695 bytes).
+Output written on arcticgrids.pdf (41 pages, 37770214 bytes).
 PDF statistics:
  302 PDF objects out of 1000 (max. 8388607)
  204 compressed objects within 3 object streams
